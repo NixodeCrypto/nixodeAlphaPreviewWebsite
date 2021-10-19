@@ -13,7 +13,10 @@
     "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\"",
     "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write",
     "postinstall": "husky install",
-    "commit": "cz"
+    "commit": "cz",
+    "test": "jest ---passWithNoTests --detectOpenHandles --runInBand --ci --reporters=default --reporters=jest-junit --coverage --coverageDirectory=coverage",
+    "test:watch": "jest --passWithNoTests --watchAll",
+    "test:update": "jest --updateSnapshot"
   },
   "lint-staged": {
     "./src/**/*.{ts,js,jsx,tsx}": [
@@ -22,6 +25,8 @@
     ]
   },
   "dependencies": {
+    "@babel/core": "7.15.8",
+    "@babel/preset-env": "7.15.8",
     "@emotion/babel-plugin": "11.3.0",
     "@emotion/core": "11.0.0",
     "@emotion/css": "11.5.0",
@@ -37,14 +42,18 @@
   "devDependencies": {
     "@commitlint/cli": "13.2.0",
     "@commitlint/config-conventional": "13.2.0",
+    "@types/enzyme": "3.10.9",
+    "@types/jest": "27.0.2",
     "@types/node": "14.17.20",
     "@types/react": "17.0.27",
     "@types/react-dom": "17.0.9",
     "@typescript-eslint/eslint-plugin": "4.33.0",
     "@typescript-eslint/parser": "4.33.0",
     "ansi-regex": "6.0.1",
+    "babel-jest": "27.3.1",
     "commitizen": "4.2.4",
     "cz-conventional-changelog": "3.3.0",
+    "enzyme": "3.11.0",
     "eslint": "7.32.0",
     "eslint-config-airbnb": "18.2.1",
     "eslint-config-next": "11.1.2",
@@ -56,6 +65,10 @@
     "eslint-plugin-react": "7.24.0",
     "eslint-plugin-react-hooks": "4.2.0",
     "husky": "7.0.2",
+    "jest": "27.3.1",
+    "jest-enzyme": "7.1.2",
+    "jest-junit": "13.0.0",
+    "jest-watch-typeahead": "1.0.0",
     "lint-staged": "11.2.0",
     "prettier": "2.4.1",
     "typescript": "4.4.3"

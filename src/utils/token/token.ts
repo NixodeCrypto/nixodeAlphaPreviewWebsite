@@ -1,7 +1,7 @@
 import { GlobalTheme } from '@/UI';
 
 // Helper function for emotionjs
-const tokenDriver = ((): any => {
+const token = ((): any => {
   const tokenAliases = [['fs', 'fontSizes']];
   const tokenEntries = Object.entries(GlobalTheme);
   for (let i = 0; i < tokenEntries.length; i += 1) {
@@ -21,4 +21,4 @@ const tokenDriver = ((): any => {
   return Object.fromEntries(tokenEntries);
 })();
 
-export default tokenDriver;
+export default token;

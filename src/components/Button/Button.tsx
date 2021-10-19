@@ -2,7 +2,6 @@
 import styled from '@emotion/styled';
 
 const ButtonRoot = styled.button``;
-
 const Button = (props: ButtonProps): JSX.Element => {
   const { children } = props;
   return (
