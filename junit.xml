@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="3" failures="0" errors="0" time="4.328">
-  <testsuite name="utils/token" errors="0" failures="0" skipped="0" timestamp="2021-10-19T07:48:11" time="3.588" tests="3">
+<testsuites name="jest tests" tests="3" failures="0" errors="0" time="0.694">
+  <testsuite name="utils/token" errors="0" failures="0" skipped="0" timestamp="2021-10-19T07:50:20" time="0.282" tests="3">
     <testcase classname="utils/token single property access in design system object" name="utils/token single property access in design system object" time="0.003">
     </testcase>
     <testcase classname="utils/token dot notation property access in design system object" name="utils/token dot notation property access in design system object" time="0.001">
     </testcase>
-    <testcase classname="utils/token alias property access in design system object" name="utils/token alias property access in design system object" time="0">
+    <testcase classname="utils/token alias property access in design system object" name="utils/token alias property access in design system object" time="0.002">
     </testcase>
   </testsuite>
 </testsuites>

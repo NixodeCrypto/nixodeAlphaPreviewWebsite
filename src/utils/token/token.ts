@@ -2,7 +2,10 @@ import { GlobalTheme } from '@/UI';
 
 // Helper function for emotionjs
 const token = ((): any => {
-  const tokenAliases = [['fs', 'fontSizes']];
+  const tokenAliases = [
+    ['fs', 'fontSizes'],
+    ['bp', 'breakpoints'],
+  ];
   const tokenEntries = Object.entries(GlobalTheme);
   for (let i = 0; i < tokenEntries.length; i += 1) {
     const tokenVal = { ...tokenEntries[i][1] };

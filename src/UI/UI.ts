@@ -59,6 +59,13 @@ export const GlobalTheme = {
   lineHeights: {},
   letterSpacings: {},
   sizes: {},
+  breakpoints: {
+    xss: '0px',
+    xs: '320px',
+    s: '640px',
+    m: '960px',
+    l: '1280px',
+  },
   borders: {},
   borderWidths: {},
   borderStyles: {},
