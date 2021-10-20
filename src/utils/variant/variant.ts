@@ -11,7 +11,7 @@ const variant = (
       return variantEntries[i][1];
     }
   }
-  return null;
+  return variantStructure?.default;
 };
 
 export default variant;

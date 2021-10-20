@@ -17,6 +17,7 @@ const config = {
     '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/test/__mocks__/fileMock.js',
     '@/(.*)': '<rootDir>/src/$1',
   },
+  snapshotSerializers: ['@emotion/jest/serializer'],
 };
 
 export default config;

@@ -1,4 +1,4 @@
-/** @jsxImportSource @emotion/react */
+/* @jsxImportSource @emotion/react */
 import styled from '@emotion/styled';
 import variant from '@/utils/variant';
 import { css } from '@emotion/react';
