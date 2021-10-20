@@ -8,6 +8,7 @@ interface IProps extends ButtonProps {
 }
 
 const ButtonRoot = styled.button`
+  color: ${token.colors('primary.base')}
   font-family: ${token.fonts('text')};
   ${(props) =>
     variant(props.color, {
@@ -23,13 +24,17 @@ const ButtonRoot = styled.button`
         background: purple;
         color: white;
       `,
+      default: css`
+        backgrond: grey;
+        color: white;
+      `,
     })};
 `;
 
 const Button = (props: IProps): JSX.Element => {
   const { children, type = 'button', ...other } = props;
   return (
-    <ButtonRoot type={type} {...other} color="accent">
+    <ButtonRoot type={type} {...other}>
       {children}
     </ButtonRoot>
   );

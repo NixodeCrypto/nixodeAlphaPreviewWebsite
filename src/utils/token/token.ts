@@ -1,3 +1,4 @@
+import { PaletteGenObj } from '@/types/emotion';
 import { GlobalTheme } from '@/UI';
 import { Theme } from '@emotion/react';
 
@@ -7,7 +8,7 @@ interface FnTheme {
   space(key: keyof Theme['space']): string;
   fontSizes(key: keyof Theme['fontSizes']): string;
   fs(key: keyof Theme['fontSizes']): string;
-  colors(key: keyof Theme['colors']): string;
+  colors(key: `${keyof Theme['colors']}.${keyof PaletteGenObj}`): string;
   fonts(key: keyof Theme['fonts']): string;
   fontWeights(key: keyof Theme['fontWeights']): string;
   lineHeights(key: keyof Theme['lineHeights']): string;
