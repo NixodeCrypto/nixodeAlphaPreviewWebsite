@@ -1,7 +1,31 @@
 import { GlobalTheme } from '@/UI';
+import { Theme } from '@emotion/react';
 
 // Helper function for emotionjs
-const token = ((): any => {
+
+interface FnTheme {
+  space(key: keyof Theme['space']): string;
+  fontSizes(key: keyof Theme['fontSizes']): string;
+  fs(key: keyof Theme['fontSizes']): string;
+  colors(key: keyof Theme['colors']): string;
+  fonts(key: keyof Theme['fonts']): string;
+  fontWeights(key: keyof Theme['fontWeights']): string;
+  lineHeights(key: keyof Theme['lineHeights']): string;
+  letterSpacings(key: keyof Theme['letterSpacings']): string;
+  sizes(key: keyof Theme['sizes']): string;
+  breakpoints(key: keyof Theme['breakpoints']): string;
+  bp(key: keyof Theme['breakpoints']): string;
+  borders(key: keyof Theme['borders']): string;
+  borderWidths(key: keyof Theme['borderWidths']): string;
+  borderStyles(key: keyof Theme['borderStyles']): string;
+  radii(key: keyof Theme['radii']): string;
+  shadows(key: keyof Theme['shadows']): string;
+  zIndices(key: keyof Theme['zIndices']): string;
+}
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+const token: FnTheme = (() => {
   const tokenAliases = [
     ['fs', 'fontSizes'],
     ['bp', 'breakpoints'],

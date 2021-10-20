@@ -1,15 +1,14 @@
-import { css } from '@emotion/react';
+import { PaletteGenObj } from '@/types/emotion';
+import { css, Theme } from '@emotion/react';
 import { rem, lighten, darken } from 'polished';
 
-const paletteGen = (
-  color: string,
-): { light: string; base: string; dark: string } => ({
+const paletteGen = (color: string): PaletteGenObj => ({
   light: lighten(0.25, color),
   base: color,
   dark: darken(0.25, color),
 });
 
-export const GlobalTheme = {
+export const GlobalTheme: Theme = {
   space: {
     xss: rem(2),
     xs: rem(4),

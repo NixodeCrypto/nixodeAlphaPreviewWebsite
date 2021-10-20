@@ -1,6 +1,6 @@
 /* @jsxImportSource @emotion/react */
 import styled from '@emotion/styled';
-import variant from '@/utils/variant';
+import { token, variant } from '@/utils';
 import { css } from '@emotion/react';
 
 interface IProps extends ButtonProps {
@@ -8,6 +8,7 @@ interface IProps extends ButtonProps {
 }
 
 const ButtonRoot = styled.button`
+  font-family: ${token.fonts('text')};
   ${(props) =>
     variant(props.color, {
       primary: css`
@@ -24,10 +25,11 @@ const ButtonRoot = styled.button`
       `,
     })};
 `;
+
 const Button = (props: IProps): JSX.Element => {
-  const { children } = props;
+  const { children, type = 'button', ...other } = props;
   return (
-    <ButtonRoot type="button" {...props} color="accent">
+    <ButtonRoot type={type} {...other} color="accent">
       {children}
     </ButtonRoot>
   );

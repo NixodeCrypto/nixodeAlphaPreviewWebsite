@@ -1,6 +1,7 @@
 import '@emotion/react';
 
-type PaletteGenObj = { light: string; base: string; dark: string };
+export type PaletteGenObj = { light: string; base: string; dark: string };
+
 declare module '@emotion/react' {
   export interface Theme {
     space: {
@@ -48,5 +49,22 @@ declare module '@emotion/react' {
       title: string;
       text: string;
     };
+    fontWeights: Record<string, string>;
+    lineHeights: Record<string, string>;
+    letterSpacings: Record<string, string>;
+    sizes: Record<string, string>;
+    breakpoints: {
+      xss: string;
+      xs: string;
+      s: string;
+      m: string;
+      l: string;
+    };
+    borders: Record<string, string>;
+    borderWidths: Record<string, string>;
+    borderStyles: Record<string, string>;
+    radii: Record<string, string>;
+    shadows: Record<string, string>;
+    zIndices: Record<string, string>;
   }
 }
