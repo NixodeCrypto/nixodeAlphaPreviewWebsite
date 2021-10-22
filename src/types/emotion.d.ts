@@ -1,6 +1,5 @@
 import '@emotion/react';
-
-export type PaletteGenObj = { light: string; base: string; dark: string };
+import { ColorSwatches } from '@/utils/colorSwatches';
 
 declare module '@emotion/react' {
   export interface Theme {
@@ -41,9 +40,28 @@ declare module '@emotion/react' {
       h1: string;
     };
     colors: {
-      primary: PaletteGenObj;
-      secondary: PaletteGenObj;
-      accent: PaletteGenObj;
+      primary: ColorSwatches;
+      secondary: ColorSwatches;
+      accent: ColorSwatches;
+      red: ColorSwatches;
+      pink: ColorSwatches;
+      purple: ColorSwatches;
+      deepPurple: ColorSwatches;
+      indigo: ColorSwatches;
+      blue: ColorSwatches;
+      lightBlue: ColorSwatches;
+      cyan: ColorSwatches;
+      teal: ColorSwatches;
+      green: ColorSwatches;
+      lightGreen: ColorSwatches;
+      lime: ColorSwatches;
+      yellow: ColorSwatches;
+      amber: ColorSwatches;
+      orange: ColorSwatches;
+      deepOrange: ColorSwatches;
+      brown: ColorSwatches;
+      grey: ColorSwatches;
+      blueGrey: ColorSwatches;
     };
     fonts: {
       title: string;

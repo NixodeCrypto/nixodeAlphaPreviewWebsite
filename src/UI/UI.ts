@@ -1,12 +1,6 @@
-import { PaletteGenObj } from '@/types/emotion';
 import { css, Theme } from '@emotion/react';
-import { rem, lighten, darken } from 'polished';
-
-const paletteGen = (color: string): PaletteGenObj => ({
-  light: lighten(0.25, color),
-  base: color,
-  dark: darken(0.25, color),
-});
+import { rem } from 'polished';
+import colorSwatches from '@/utils/colorSwatches'; // import directly to avoid circular dependency with utils/token
 
 export const GlobalTheme: Theme = {
   space: {
@@ -46,9 +40,30 @@ export const GlobalTheme: Theme = {
     h1: rem(48),
   },
   colors: {
-    primary: paletteGen('#FD9500'),
-    secondary: paletteGen('#82B5B2'),
-    accent: paletteGen('#FF8484'),
+    // Brand Colors
+    primary: colorSwatches('#FD9500'),
+    secondary: colorSwatches('#82B5B2'),
+    accent: colorSwatches('#FF8484'),
+    // Base Colors
+    red: colorSwatches('#f44336'),
+    pink: colorSwatches('#e91e63'),
+    purple: colorSwatches('#9c27b0'),
+    deepPurple: colorSwatches('#673ab7'),
+    indigo: colorSwatches('#3f51b5'),
+    blue: colorSwatches('#2196f3'),
+    lightBlue: colorSwatches('#03a9f4'),
+    cyan: colorSwatches('#00bcd4'),
+    teal: colorSwatches('#009688'),
+    green: colorSwatches('#4caf50'),
+    lightGreen: colorSwatches('#8bc34a'),
+    lime: colorSwatches('#cddc39'),
+    yellow: colorSwatches('#ffeb3b'),
+    amber: colorSwatches('#ffc107'),
+    orange: colorSwatches('#ff9800'),
+    deepOrange: colorSwatches('#ff5722'),
+    brown: colorSwatches('#795548'),
+    grey: colorSwatches('#9e9e9e'),
+    blueGrey: colorSwatches('#607d8b'),
   },
   fonts: {
     title: 'Poppins',

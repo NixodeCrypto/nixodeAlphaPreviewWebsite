@@ -1,4 +1,5 @@
-import token from '@/utils/token';
-import variant from '@/utils/variant';
+import variant from './variant';
+import colorSwatches from './colorSwatches';
+import token from './token';
 
-export { token, variant };
+export { token, variant, colorSwatches };

@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { SerializedStyles } from '@emotion/react';
+import { css, SerializedStyles } from '@emotion/react';
 
 const variant = (
   prop: string | undefined,
@@ -8,10 +8,16 @@ const variant = (
   const variantEntries = Object.entries(variantStructure);
   for (let i = 0; i < variantEntries.length; i += 1) {
     if (prop === variantEntries[i][0]) {
-      return variantEntries[i][1];
+      return css`
+        ${variantStructure?.all}
+        ${variantEntries[i][1]}
+      `;
     }
   }
-  return variantStructure?.default;
+  return css`
+    ${variantStructure?.all};
+    ${variantStructure?.default};
+  `;
 };
 
 export default variant;

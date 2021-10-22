@@ -4,11 +4,10 @@ import { token, variant } from '@/utils';
 import { css } from '@emotion/react';
 
 interface IProps extends ButtonProps {
-  color: string;
+  color?: string;
 }
 
 const ButtonRoot = styled.button`
-  color: ${token.colors('primary.base')}
   font-family: ${token.fonts('text')};
   ${(props) =>
     variant(props.color, {
@@ -21,12 +20,15 @@ const ButtonRoot = styled.button`
         color: white;
       `,
       accent: css`
-        background: purple;
+        background: ${token.colors('blue.200')};
         color: white;
       `,
       default: css`
-        backgrond: grey;
-        color: white;
+        background: ${token.colors('grey.400')};
+        color: ${token.colors('grey.600')};
+        &:hover {
+          background: ${token.colors('grey.500')};
+        }
       `,
     })};
 `;
