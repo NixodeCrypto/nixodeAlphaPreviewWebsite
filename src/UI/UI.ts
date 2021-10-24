@@ -4,11 +4,11 @@ import colorSwatches from '@/utils/colorSwatches'; // import directly to avoid c
 
 export const GlobalTheme: Theme = {
   space: {
-    xss: rem(2),
-    xs: rem(4),
-    s: rem(8),
-    m: rem(16),
-    l: rem(32),
+    xss: rem(4),
+    xs: rem(8),
+    sm: rem(16),
+    md: rem(24),
+    lg: rem(32),
     xl: rem(64),
   },
   fontSizes: {
@@ -84,18 +84,7 @@ export const GlobalTheme: Theme = {
     sm: rem(28),
     md: rem(37),
     lg: rem(46),
-  },
-  insets: {
-    xs: rem(8),
-    sm: rem(16),
-    md: rem(24),
-    lg: rem(32),
-  },
-  outsets: {
-    xs: rem(8),
-    sm: rem(16),
-    md: rem(24),
-    lg: rem(32),
+    xl: rem(64),
   },
   breakpoints: {
     xss: '0px',
@@ -111,7 +100,9 @@ export const GlobalTheme: Theme = {
     sm: rem(4),
   },
   shadows: {},
-  zIndices: {},
+  zIndices: {
+    navbar: 9999,
+  },
   transition: {
     standard: 'all 0.1s ease-in-out',
   },

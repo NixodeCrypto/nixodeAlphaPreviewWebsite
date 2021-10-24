@@ -14,8 +14,6 @@ interface FnTheme {
   lineHeights(key: keyof Theme['lineHeights']): string;
   letterSpacings(key: keyof Theme['letterSpacings']): string;
   sizes(key: keyof Theme['sizes']): string;
-  insets(key: keyof Theme['insets']): string;
-  outsets(key: keyof Theme['outsets']): string;
   breakpoints(key: keyof Theme['breakpoints']): string;
   bp(key: keyof Theme['breakpoints']): string;
   borders(key: keyof Theme['borders']): string;

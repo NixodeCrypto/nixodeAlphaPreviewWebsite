@@ -6,9 +6,9 @@ declare module '@emotion/react' {
     space: {
       xss: string;
       xs: string;
-      s: string;
-      m: string;
-      l: string;
+      sm: string;
+      md: string;
+      lg: string;
       xl: string;
     };
     fontSizes: {
@@ -82,18 +82,7 @@ declare module '@emotion/react' {
       sm: string;
       md: string;
       lg: string;
-    };
-    insets: {
-      xs: string;
-      sm: string;
-      md: string;
-      lg: string;
-    };
-    outsets: {
-      xs: string;
-      sm: string;
-      md: string;
-      lg: string;
+      xl: string;
     };
     breakpoints: {
       xss: string;
@@ -105,7 +94,7 @@ declare module '@emotion/react' {
     borders: Record<'sm', string>;
     radii: Record<'sm', string>;
     shadows: Record<string, string>;
-    zIndices: Record<string, string>;
+    zIndices: Record<'navbar', number>;
     transition: Record<'standard', string>;
   }
 }
