@@ -20,10 +20,10 @@ const colorSwatches = (color: string): ColorSwatches => ({
   300: lighten(0.12, color),
   400: lighten(0.06, color),
   500: color,
-  600: darken(0.12, color),
-  700: darken(0.192, color),
-  800: darken(0.252, color),
-  900: darken(0.288, color),
+  600: darken(0.08, color),
+  700: darken(0.122, color),
+  800: darken(0.152, color),
+  900: darken(0.2, color),
 });
 
 export default colorSwatches;

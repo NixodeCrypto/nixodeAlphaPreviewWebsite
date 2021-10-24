@@ -43,7 +43,7 @@ export const GlobalTheme: Theme = {
     // Brand Colors
     primary: colorSwatches('#FD9500'),
     secondary: colorSwatches('#82B5B2'),
-    accent: colorSwatches('#FF8484'),
+    accent: colorSwatches('#DC5D3C'),
     // Base Colors
     red: colorSwatches('#f44336'),
     pink: colorSwatches('#e91e63'),
@@ -69,10 +69,34 @@ export const GlobalTheme: Theme = {
     title: 'Poppins',
     text: 'Inter, Roboto, sans-serif',
   },
-  fontWeights: {},
+  fontWeights: {
+    thin: 100,
+    light: 300,
+    regular: 400,
+    medium: 500,
+    semiBold: 600,
+    bold: 700,
+    extraBold: 800,
+  },
   lineHeights: {},
   letterSpacings: {},
-  sizes: {},
+  sizes: {
+    sm: rem(28),
+    md: rem(37),
+    lg: rem(46),
+  },
+  insets: {
+    xs: rem(8),
+    sm: rem(16),
+    md: rem(24),
+    lg: rem(32),
+  },
+  outsets: {
+    xs: rem(8),
+    sm: rem(16),
+    md: rem(24),
+    lg: rem(32),
+  },
   breakpoints: {
     xss: '0px',
     xs: '320px',
@@ -80,12 +104,17 @@ export const GlobalTheme: Theme = {
     m: '960px',
     l: '1280px',
   },
-  borders: {},
-  borderWidths: {},
-  borderStyles: {},
-  radii: {},
+  borders: {
+    sm: `${rem(2)} solid`,
+  },
+  radii: {
+    sm: rem(4),
+  },
   shadows: {},
   zIndices: {},
+  transition: {
+    standard: 'all 0.1s ease-in-out',
+  },
 };
 
 export const GlobalReset = css`

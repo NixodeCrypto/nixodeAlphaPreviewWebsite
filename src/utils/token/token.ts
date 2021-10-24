@@ -14,14 +14,15 @@ interface FnTheme {
   lineHeights(key: keyof Theme['lineHeights']): string;
   letterSpacings(key: keyof Theme['letterSpacings']): string;
   sizes(key: keyof Theme['sizes']): string;
+  insets(key: keyof Theme['insets']): string;
+  outsets(key: keyof Theme['outsets']): string;
   breakpoints(key: keyof Theme['breakpoints']): string;
   bp(key: keyof Theme['breakpoints']): string;
   borders(key: keyof Theme['borders']): string;
-  borderWidths(key: keyof Theme['borderWidths']): string;
-  borderStyles(key: keyof Theme['borderStyles']): string;
   radii(key: keyof Theme['radii']): string;
   shadows(key: keyof Theme['shadows']): string;
   zIndices(key: keyof Theme['zIndices']): string;
+  transition(key: keyof Theme['transition']): string;
 }
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment

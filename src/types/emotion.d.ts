@@ -67,10 +67,34 @@ declare module '@emotion/react' {
       title: string;
       text: string;
     };
-    fontWeights: Record<string, string>;
+    fontWeights: {
+      thin: number;
+      light: number;
+      regular: number;
+      medium: number;
+      semiBold: number;
+      bold: number;
+      extraBold: number;
+    };
     lineHeights: Record<string, string>;
     letterSpacings: Record<string, string>;
-    sizes: Record<string, string>;
+    sizes: {
+      sm: string;
+      md: string;
+      lg: string;
+    };
+    insets: {
+      xs: string;
+      sm: string;
+      md: string;
+      lg: string;
+    };
+    outsets: {
+      xs: string;
+      sm: string;
+      md: string;
+      lg: string;
+    };
     breakpoints: {
       xss: string;
       xs: string;
@@ -78,11 +102,10 @@ declare module '@emotion/react' {
       m: string;
       l: string;
     };
-    borders: Record<string, string>;
-    borderWidths: Record<string, string>;
-    borderStyles: Record<string, string>;
-    radii: Record<string, string>;
+    borders: Record<'sm', string>;
+    radii: Record<'sm', string>;
     shadows: Record<string, string>;
     zIndices: Record<string, string>;
+    transition: Record<'standard', string>;
   }
 }
