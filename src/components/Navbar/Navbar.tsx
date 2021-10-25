@@ -1,10 +1,10 @@
 /* @jsxImportSource @emotion/react */
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Button from '@/components/Button';
 import styled from '@emotion/styled';
-import { token, variant } from '@/utils';
-import { css } from '@emotion/react';
+import { token } from '@/utils';
 import { Menu } from 'react-feather';
+import { useRouter } from 'next/router';
 
 const Wrapper = styled.div`
   position: relative;
@@ -24,13 +24,16 @@ const NavbarRoot = styled.div`
 
 const Space = styled.div`
   width: calc(100% - ${token.space('lg')});
+  ${token.bp('m')} {
+    width: calc(100% - ${token.space('xl')});
+  }
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
 
 const BrandLogo = styled.img`
-  width: 9rem;
+  width: ${token.sizes('xxl')};
 `;
 
 const MobileDrawer = styled.div`
@@ -64,12 +67,41 @@ const NavLink = styled.a`
   font-weight: ${token.fontWeights('bold')};
 `;
 
+const Mobile = styled.div`
+  display: block;
+  ${token.bp('m')} {
+    display: none;
+  }
+`;
+
+const Desktop = styled.div<{ fullWidth?: boolean; rightAlign?: boolean }>`
+  display: none;
+  ${token.bp('m')} {
+    width: ${(props) => (props.fullWidth ? '100%' : 'auto')};
+    display: flex;
+    flex-direction: row;
+    justify-content: ${(props) => (props.rightAlign ? 'flex-end' : 'center')};
+    align-items: center;
+    &:not(:last-child) > * {
+      margin-right: ${token.space('md')};
+    }
+    &:not(:first-child) > * {
+      margin-left: ${token.space('md')};
+    }
+  }
+`;
+
+const Gutter = styled.div`
+  width: 100%;
+`;
+
 const Navbar = () => {
+  const router = useRouter();
   const [activeDrawer, setActiveDrawer] = useState(false);
 
   const handleResize = () => {
     const intBreakpoint = parseInt(
-      token.breakpoints('s').split('px').shift() as string,
+      (token.bp('m').split(':').pop() || '0').slice(0, -3),
       10,
     );
     if (window.innerWidth >= intBreakpoint) {
@@ -92,15 +124,31 @@ const Navbar = () => {
     <Wrapper>
       <NavbarRoot>
         <Space>
-          <BrandLogo src="BrandLogo.svg" />
-          <Button
-            variant="text"
-            color="grey"
-            size="icon"
-            onClick={handleOpenDrawer}
-          >
-            <Menu color="black" />
-          </Button>
+          <Gutter>
+            <NavLink href="/">
+              <BrandLogo src="BrandLogo.svg" />
+            </NavLink>
+          </Gutter>
+          <Mobile>
+            <Button
+              variant="text"
+              color="grey"
+              size="icon"
+              onClick={handleOpenDrawer}
+            >
+              <Menu color="black" />
+            </Button>
+          </Mobile>
+          <Desktop>
+            <NavLink href="/">Home</NavLink>
+            <NavLink href="/prices">Prices</NavLink>
+            <NavLink href="/portfolio">Portfolio</NavLink>
+            <NavLink href="/learn">Learn</NavLink>
+          </Desktop>
+          <Desktop fullWidth rightAlign>
+            <NavLink href="/signin">Sign in</NavLink>
+            <Button onClick={() => router.push('/signup')}>Sign up</Button>
+          </Desktop>
         </Space>
       </NavbarRoot>
       {activeDrawer && (
