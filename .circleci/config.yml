@@ -7,9 +7,13 @@ jobs:
     steps:
       - checkout
       - run:
-          name: NPM Install
+          name: NPM Install Frontend
           command: |
             npm install --save
+      - run:
+          name: NPM Install Backend
+          command: |
+            cd server && npm install --save && cd ..
       - run:
           name: Run Unit Tests
           command: |
