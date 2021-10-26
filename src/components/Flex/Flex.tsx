@@ -2,8 +2,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import { BoxProps, BoxStyles } from '@/components/Box';
 import { flexbox, FlexboxProps } from 'styled-system';
+import { BoxProps, BoxStyles } from '@/components/Box';
 
 export interface FlexProps extends BoxProps, FlexboxProps {
   verticalGap?: string | number;

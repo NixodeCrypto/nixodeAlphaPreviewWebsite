@@ -1,8 +1,8 @@
 /* @jsxImportSource @emotion/react */
 import React from 'react';
 import styled from '@emotion/styled';
-import { BoxProps, BoxStyles } from '@/components/Box';
 import { grid, GridProps as GridExtendProps } from 'styled-system';
+import { BoxProps, BoxStyles } from '@/components/Box';
 
 export interface GridProps extends BoxProps, GridExtendProps {}
 

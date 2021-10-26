@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
-import { Layout, Button, Flex } from '@/components';
 import { css } from '@emotion/react';
+import { Layout, Button, Flex } from '@/components';
 
 const Home = () => (
   <Layout>
