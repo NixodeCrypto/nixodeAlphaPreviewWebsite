@@ -1,9 +1,9 @@
 /* @jsxImportSource @emotion/react */
 import React from 'react';
 import styled from '@emotion/styled';
-import { token, variant as CSSVariant } from '@/utils';
 import { css } from '@emotion/react';
 import { transparentize } from 'polished';
+import { token, variant as CSSVariant } from '@/utils';
 
 interface IProps extends ButtonProps {
   color?: 'primary' | 'secondary' | 'accent' | 'grey';

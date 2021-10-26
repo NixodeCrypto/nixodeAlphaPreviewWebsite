@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="10" failures="0" errors="0" time="2.328">
-  <testsuite name="utils/variant" errors="0" failures="0" skipped="0" timestamp="2021-10-24T01:25:40" time="0.503" tests="5">
-    <testcase classname="utils/variant functions with string properties" name="utils/variant functions with string properties" time="0.148">
+<testsuites name="jest tests" tests="10" failures="0" errors="0" time="1.06">
+  <testsuite name="utils/token" errors="0" failures="0" skipped="0" timestamp="2021-10-26T01:30:09" time="0.299" tests="3">
+    <testcase classname="utils/token single property access in design system object" name="utils/token single property access in design system object" time="0.003">
+    </testcase>
+    <testcase classname="utils/token dot notation property access in design system object" name="utils/token dot notation property access in design system object" time="0.001">
+    </testcase>
+    <testcase classname="utils/token alias property access in design system object" name="utils/token alias property access in design system object" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="utils/variant" errors="0" failures="0" skipped="0" timestamp="2021-10-26T01:30:10" time="0.259" tests="5">
+    <testcase classname="utils/variant functions with string properties" name="utils/variant functions with string properties" time="0.131">
     </testcase>
     <testcase classname="utils/variant default variant works" name="utils/variant default variant works" time="0.005">
     </testcase>
@@ -9,21 +17,13 @@
     </testcase>
     <testcase classname="utils/variant &apos;all&apos; style property gets added to default variant" name="utils/variant &apos;all&apos; style property gets added to default variant" time="0.002">
     </testcase>
-    <testcase classname="utils/variant &apos;all&apos; styles can be overridden" name="utils/variant &apos;all&apos; styles can be overridden" time="0.004">
+    <testcase classname="utils/variant &apos;all&apos; styles can be overridden" name="utils/variant &apos;all&apos; styles can be overridden" time="0.003">
     </testcase>
   </testsuite>
-  <testsuite name="utils/token" errors="0" failures="0" skipped="0" timestamp="2021-10-24T01:25:41" time="0.066" tests="3">
-    <testcase classname="utils/token single property access in design system object" name="utils/token single property access in design system object" time="0.001">
+  <testsuite name="utils/colorSwatches" errors="0" failures="0" skipped="0" timestamp="2021-10-26T01:30:10" time="0.035" tests="2">
+    <testcase classname="utils/colorSwatches generates color palette from hex color" name="utils/colorSwatches generates color palette from hex color" time="0.003">
     </testcase>
-    <testcase classname="utils/token dot notation property access in design system object" name="utils/token dot notation property access in design system object" time="0.001">
-    </testcase>
-    <testcase classname="utils/token alias property access in design system object" name="utils/token alias property access in design system object" time="0.001">
-    </testcase>
-  </testsuite>
-  <testsuite name="utils/colorSwatches" errors="0" failures="0" skipped="0" timestamp="2021-10-24T01:25:41" time="1.3" tests="2">
-    <testcase classname="utils/colorSwatches generates color palette from hex color" name="utils/colorSwatches generates color palette from hex color" time="0.002">
-    </testcase>
-    <testcase classname="utils/colorSwatches generates color palette from rgb color" name="utils/colorSwatches generates color palette from rgb color" time="0.002">
+    <testcase classname="utils/colorSwatches generates color palette from rgb color" name="utils/colorSwatches generates color palette from rgb color" time="0.003">
     </testcase>
   </testsuite>
 </testsuites>
