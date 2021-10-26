@@ -90,9 +90,9 @@ export const GlobalTheme: Theme = {
   breakpoints: {
     xss: '0px',
     xs: '320px',
-    s: '640px',
-    m: '960px',
-    l: '1280px',
+    sm: '640px',
+    md: '960px',
+    lg: '1280px',
   },
   borders: {
     sm: `${rem(2)} solid`,

@@ -85,13 +85,7 @@ declare module '@emotion/react' {
       xl: string;
       xxl: string;
     };
-    breakpoints: {
-      xss: string;
-      xs: string;
-      s: string;
-      m: string;
-      l: string;
-    };
+    breakpoints: Record<'xss' | 'xs' | 'sm' | 'md' | 'lg', string>;
     borders: Record<'sm', string>;
     radii: Record<'sm', string>;
     shadows: Record<string, string>;

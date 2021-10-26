@@ -1,8 +1,6 @@
+import { Theme } from '@emotion/react';
 import { ColorSwatches } from '@/utils/colorSwatches';
 import { GlobalTheme } from '@/UI';
-import { Theme } from '@emotion/react';
-
-// Helper function for emotionjs
 
 interface FnTheme {
   space(key: keyof Theme['space']): string;

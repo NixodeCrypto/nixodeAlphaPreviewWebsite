@@ -1,10 +1,10 @@
 /* @jsxImportSource @emotion/react */
 import { useEffect, useState } from 'react';
-import Button from '@/components/Button';
 import styled from '@emotion/styled';
-import { token, mq, parseBreakpoint } from '@/utils';
 import { Menu } from 'react-feather';
 import { useRouter } from 'next/router';
+import { token, mq, parseBreakpoint } from '@/utils';
+import Button from '@/components/Button';
 
 const Wrapper = styled.div`
   position: fixed;
@@ -24,7 +24,7 @@ const NavbarRoot = styled.div`
 
 const Space = styled.div`
   width: calc(100% - ${token.space('lg')});
-  ${mq('m')} {
+  ${mq('md')} {
     width: calc(100% - ${token.space('xl')});
   }
   display: flex;
@@ -68,14 +68,14 @@ const NavLink = styled.a`
 
 const Mobile = styled.div`
   display: block;
-  ${mq('m')} {
+  ${mq('md')} {
     display: none;
   }
 `;
 
 const Desktop = styled.div<{ fullWidth?: boolean; rightAlign?: boolean }>`
   display: none;
-  ${mq('m')} {
+  ${mq('md')} {
     width: ${(props) => (props.fullWidth ? '100%' : 'auto')};
     display: flex;
     flex-direction: row;
@@ -99,7 +99,7 @@ const Navbar = () => {
   const [activeDrawer, setActiveDrawer] = useState(false);
 
   const handleResize = () => {
-    if (window.innerWidth >= parseBreakpoint('m')) {
+    if (window.innerWidth >= parseBreakpoint('md')) {
       setActiveDrawer(false);
     }
   };
