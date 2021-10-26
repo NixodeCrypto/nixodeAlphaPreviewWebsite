@@ -88,11 +88,11 @@ export const GlobalTheme: Theme = {
     xxl: rem(144),
   },
   breakpoints: {
-    xss: '@media (min-width: 0px)',
-    xs: '@media (min-width: 320px)',
-    s: '@media (min-width: 640px)',
-    m: '@media (min-width: 960px)',
-    l: '@media (min-width: 1280px)',
+    xss: '0px',
+    xs: '320px',
+    s: '640px',
+    m: '960px',
+    l: '1280px',
   },
   borders: {
     sm: `${rem(2)} solid`,

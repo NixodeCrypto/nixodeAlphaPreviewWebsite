@@ -7,14 +7,14 @@ import { Menu } from 'react-feather';
 import { useRouter } from 'next/router';
 
 const Wrapper = styled.div`
-  position: relative;
+  position: fixed;
+  z-index: ${token.zIndices('navbar')};
+  width: 100%;
+  background: white;
 `;
 
 const NavbarRoot = styled.div`
   height: ${token.space('xl')};
-  width: 100%;
-  position: fixed;
-  z-index: ${token.zIndices('navbar')};
   border-bottom: ${token.borders('sm')};
   border-bottom-color: ${token.colors('grey.50')};
   display: flex;
@@ -24,7 +24,7 @@ const NavbarRoot = styled.div`
 
 const Space = styled.div`
   width: calc(100% - ${token.space('lg')});
-  ${token.bp('m')} {
+  @media (min-width: ${token.bp('m')}) {
     width: calc(100% - ${token.space('xl')});
   }
   display: flex;
@@ -40,10 +40,9 @@ const MobileDrawer = styled.div`
   border-bottom: ${token.borders('sm')};
   border-bottom-color: ${token.colors('grey.50')};
   padding-left: ${token.space('sm')};
-  padding-top: ${token.space('sm')};
+  padding-top: ${token.space('md')};
   background: white;
   position: fixed;
-  margin-top: calc(${token.space('xl')} + ${token.borders('sm').split(' ')[0]});
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -69,14 +68,14 @@ const NavLink = styled.a`
 
 const Mobile = styled.div`
   display: block;
-  ${token.bp('m')} {
+  @media (min-width: ${token.bp('m')}) {
     display: none;
   }
 `;
 
 const Desktop = styled.div<{ fullWidth?: boolean; rightAlign?: boolean }>`
   display: none;
-  ${token.bp('m')} {
+  @media (min-width: ${token.bp('m')}) {
     width: ${(props) => (props.fullWidth ? '100%' : 'auto')};
     display: flex;
     flex-direction: row;
@@ -100,8 +99,9 @@ const Navbar = () => {
   const [activeDrawer, setActiveDrawer] = useState(false);
 
   const handleResize = () => {
+    // Get only number from breakpoint 'm'
     const intBreakpoint = parseInt(
-      (token.bp('m').split(':').pop() || '0').slice(0, -3),
+      token.bp('m').split('px').shift() as string,
       10,
     );
     if (window.innerWidth >= intBreakpoint) {
