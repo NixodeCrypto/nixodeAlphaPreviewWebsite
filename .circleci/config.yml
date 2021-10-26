@@ -3,13 +3,25 @@ version: 2.1
 orbs:
   node: circleci/node@4.7
 
+jobs:
+  build:
+    docker:
+    - image: circleci/node:10
+    steps:
+      - checkout
+      - run:
+          name: Build
+          command: |
+            npm run build
+      - store_test_results:
+          path: test-results
+      - store_artifacts:
+          path: test-results
+
 workflows:
   test_build:
     jobs:
       - node/test:
           version: '16.10'
           pkg-manager: npm
-      - build:
-          steps:
-            - run: npm run build
-
+      - build
