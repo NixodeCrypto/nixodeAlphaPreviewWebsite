@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import Button from '@/components/Button';
 import styled from '@emotion/styled';
-import { token } from '@/utils';
+import { token, mq, parseBreakpoint } from '@/utils';
 import { Menu } from 'react-feather';
 import { useRouter } from 'next/router';
 
@@ -24,7 +24,7 @@ const NavbarRoot = styled.div`
 
 const Space = styled.div`
   width: calc(100% - ${token.space('lg')});
-  @media (min-width: ${token.bp('m')}) {
+  ${mq('m')} {
     width: calc(100% - ${token.space('xl')});
   }
   display: flex;
@@ -68,14 +68,14 @@ const NavLink = styled.a`
 
 const Mobile = styled.div`
   display: block;
-  @media (min-width: ${token.bp('m')}) {
+  ${mq('m')} {
     display: none;
   }
 `;
 
 const Desktop = styled.div<{ fullWidth?: boolean; rightAlign?: boolean }>`
   display: none;
-  @media (min-width: ${token.bp('m')}) {
+  ${mq('m')} {
     width: ${(props) => (props.fullWidth ? '100%' : 'auto')};
     display: flex;
     flex-direction: row;
@@ -99,12 +99,7 @@ const Navbar = () => {
   const [activeDrawer, setActiveDrawer] = useState(false);
 
   const handleResize = () => {
-    // Get only number from breakpoint 'm'
-    const intBreakpoint = parseInt(
-      token.bp('m').split('px').shift() as string,
-      10,
-    );
-    if (window.innerWidth >= intBreakpoint) {
+    if (window.innerWidth >= parseBreakpoint('m')) {
       setActiveDrawer(false);
     }
   };
