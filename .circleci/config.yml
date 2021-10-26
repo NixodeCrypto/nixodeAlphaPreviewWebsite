@@ -1,14 +1,19 @@
 version: 2.1
 
-orbs:
-  node: circleci/node@4.7
-
 jobs:
-  build:
+  test_build:
     docker:
     - image: circleci/node:10
     steps:
       - checkout
+      - run:
+          name: NPM Install
+          command: |
+            npm install --save
+      - run:
+          name: Run Unit Tests
+          command: |
+            npm run test
       - run:
           name: Build
           command: |
@@ -21,7 +26,4 @@ jobs:
 workflows:
   test_build:
     jobs:
-      - node/test:
-          version: '16.10'
-          pkg-manager: npm
-      - build
+      - test_build
