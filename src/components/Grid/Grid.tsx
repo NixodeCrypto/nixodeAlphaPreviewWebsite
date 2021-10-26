@@ -2,7 +2,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { grid, GridProps as GridExtendProps } from 'styled-system';
-import { BoxProps, BoxStyles } from '@/components/Box';
+import { IProps as BoxProps, BoxStyles } from '@/components/Box';
 
 export interface GridProps extends BoxProps, GridExtendProps {}
 

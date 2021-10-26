@@ -3,14 +3,7 @@ import { ColorSwatches } from '@/utils/colorSwatches';
 
 declare module '@emotion/react' {
   export interface Theme {
-    space: {
-      xss: string;
-      xs: string;
-      sm: string;
-      md: string;
-      lg: string;
-      xl: string;
-    };
+    space: Record<'xss' | 'xs' | 'sm' | 'md' | 'lg' | 'xl', string>;
     fontSizes: {
       // Footer fs
       footer: string;
@@ -63,10 +56,7 @@ declare module '@emotion/react' {
       grey: ColorSwatches;
       blueGrey: ColorSwatches;
     };
-    fonts: {
-      title: string;
-      text: string;
-    };
+    fonts: Record<'title' | 'text', string>;
     fontWeights: {
       thin: number;
       light: number;

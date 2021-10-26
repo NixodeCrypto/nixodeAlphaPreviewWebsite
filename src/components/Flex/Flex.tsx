@@ -3,14 +3,14 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { flexbox, FlexboxProps } from 'styled-system';
-import { BoxProps, BoxStyles } from '@/components/Box';
+import { IProps as BoxProps, BoxStyles } from '@/components/Box';
 
-export interface FlexProps extends BoxProps, FlexboxProps {
+export interface IProps extends BoxProps, FlexboxProps {
   verticalGap?: string | number;
   horizontalGap?: string | number;
 }
 
-const FlexStyles = styled(BoxStyles)<FlexProps>`
+const FlexStyles = styled(BoxStyles)<IProps>`
   ${flexbox};
   ${(props) =>
     props.verticalGap &&
@@ -36,7 +36,7 @@ const FlexStyles = styled(BoxStyles)<FlexProps>`
 `;
 
 const Flex = React.forwardRef(
-  (props: FlexProps, ref: React.Ref<HTMLDivElement>): JSX.Element => {
+  (props: IProps, ref: React.Ref<HTMLDivElement>): JSX.Element => {
     const { children, verticalGap, horizontalGap, ...other } = props;
 
     return (

@@ -14,7 +14,7 @@ import {
   PositionProps,
 } from 'styled-system';
 
-export interface BoxProps
+export interface IProps
   extends DivProps,
     SpaceProps,
     LayoutProps,
@@ -23,7 +23,7 @@ export interface BoxProps
     PositionProps {}
 
 // Exporting Styles as they are used in Flex and Grid components
-export const BoxStyles = styled.div<BoxProps>`
+export const BoxStyles = styled.div<IProps>`
   ${space};
   ${layout};
   ${border};
@@ -32,7 +32,7 @@ export const BoxStyles = styled.div<BoxProps>`
 `;
 
 const Box = React.forwardRef(
-  (props: BoxProps, ref: React.Ref<HTMLDivElement>): JSX.Element => {
+  (props: IProps, ref: React.Ref<HTMLDivElement>): JSX.Element => {
     const { children, ...other } = props;
     return (
       <BoxStyles ref={ref} {...other}>

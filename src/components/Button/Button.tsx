@@ -5,7 +5,7 @@ import { css } from '@emotion/react';
 import { transparentize } from 'polished';
 import { token, variant as CSSVariant } from '@/utils';
 
-interface IProps extends ButtonProps {
+export interface IProps extends ButtonProps {
   color?: 'primary' | 'secondary' | 'accent' | 'grey';
   size?: 'sm' | 'md' | 'lg' | 'icon';
   maxWidth?: boolean;
@@ -31,7 +31,7 @@ const ButtonRoot = styled.button<IProps>`
         props.color === 'grey'
           ? css`
               background: ${token.colors(`${props.color}.100`)};
-              color: black;
+              color: ${token.colors(`${props.color}.800`)};
               &:hover {
                 background: ${token.colors(`${props.color}.200`)};
               }
