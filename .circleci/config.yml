@@ -1,33 +1,45 @@
 version: 2.1
 
 jobs:
-  test_build:
+  core:
+    working_directory: ~/nixodeWebsite
     docker:
     - image: circleci/node:current
     steps:
       - checkout
+      - restore_cache:
+          key: npm-cache-v1-{{ checksum "package-lock.json" }}
       - run:
-          name: NPM Install Frontend
-          command: |
-            npm install --save
+          name: NPM CI Frontend
+          command: npm ci
+      - save_cache:
+          key: npm-cache-v1-{{ checksum "package-lock.json" }}
+          paths:
+            - /home/circleci/.npm
       - run:
-          name: NPM Install Backend
-          command: |
-            cd server && npm install --save && cd ..
+          name: CD into Backend
+          command: cd ~/nixodeWebsite/server
+      - restore_cache:
+          key: npm-cache-v1-{{ checksum "package-lock.json" }}
+      - save_cache:
+          key: npm-cache-v1-{{ checksum "package-lock.json" }}
+          paths:
+            - /home/circleci/.npm
+      - run:
+          name: CD into Frontend
+          command: cd ~/nixodeWebsite
       - run:
           name: Run Unit Tests
-          command: |
-            npm run test
+          command: npm run test:ci
       - run:
           name: Build
-          command: |
-            npm run build
+          command: npm run build
       - store_test_results:
-          path: test-results
+          path: ~/nixodeWebsite/coverage
       - store_artifacts:
-          path: test-results
+          path: ~/nixodeWebsite/coverage
 
 workflows:
-  test_build:
+  main:
     jobs:
-      - test_build
+      - core

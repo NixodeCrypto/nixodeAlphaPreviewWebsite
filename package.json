@@ -14,9 +14,10 @@
     "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write",
     "postinstall": "husky install",
     "commit": "cz",
-    "test": "jest ---passWithNoTests --detectOpenHandles --runInBand --ci --reporters=default --reporters=jest-junit --coverage --coverageDirectory=coverage",
-    "test:watch": "jest --passWithNoTests --watchAll",
-    "test:update": "jest --updateSnapshot"
+    "test": "jest ---passWithNoTests --maxWorkers=50%",
+    "test:watch": "jest --passWithNoTests --watchAll --maxWorkers=25%",
+    "test:update": "jest --updateSnapshot --maxWorkers=50%",
+    "test:ci": "jest ---passWithNoTests --detectOpenHandles --runInBand --ci --reporters=default --reporters=jest-junit --coverage"
   },
   "lint-staged": {
     "./src/**/*.{ts,js,jsx,tsx}": [
