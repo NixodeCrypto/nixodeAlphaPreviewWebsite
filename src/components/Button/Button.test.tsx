@@ -1,4 +1,5 @@
 import renderer from 'react-test-renderer';
+import { cleanup, fireEvent, render } from '@testing-library/react';
 import { matchers } from '@emotion/jest';
 import { transparentize } from 'polished';
 import Button from '.';
@@ -6,8 +7,17 @@ import { GlobalTheme } from '@/UI';
 
 expect.extend(matchers);
 
+beforeEach(cleanup);
+
 describe('components/Button', () => {
   describe('standard', () => {
+    it('base functions', () => {
+      const mockFn = jest.fn();
+      const { getByText } = render(<Button onClick={mockFn}>Click Me</Button>);
+      const node = getByText('Click Me');
+      fireEvent.click(node);
+      expect(mockFn).toHaveBeenCalled();
+    });
     it('snapshot testing', () => {
       const tree = renderer.create(<Button />).toJSON();
       expect(tree).toMatchSnapshot();

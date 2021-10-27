@@ -3,9 +3,10 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { transparentize } from 'polished';
+import { space, SpaceProps } from 'styled-system';
 import { token, variant as CSSVariant } from '@/utils';
 
-export interface IProps extends ButtonProps {
+export interface IProps extends ButtonProps, SpaceProps {
   color?: 'primary' | 'secondary' | 'accent' | 'grey';
   size?: 'sm' | 'md' | 'lg' | 'icon';
   maxWidth?: boolean;
@@ -114,6 +115,7 @@ const ButtonRoot = styled.button<IProps>`
     css`
       width: 100%;
     `}
+  ${space};
 `;
 
 const Button = React.forwardRef(

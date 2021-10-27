@@ -3,6 +3,7 @@ const config = {
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'jsx'],
   testPathIgnorePatterns: ['<rootDir>[/\\\\](node_modules|.next)[/\\\\]'],
   transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(ts|tsx)$'],
+  setupFilesAfterEnv: ['<rootDir>/test.setup.ts'],
   testEnvironment: 'jsdom',
   transform: {
     '^.+\\.(js|jsx)$': 'babel-jest',

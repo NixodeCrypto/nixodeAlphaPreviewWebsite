@@ -2,6 +2,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import {
+  background,
+  BackgroundProps,
   space,
   SpaceProps,
   layout,
@@ -16,6 +18,7 @@ import {
 
 export interface IProps
   extends DivProps,
+    BackgroundProps,
     SpaceProps,
     LayoutProps,
     BorderProps,
@@ -24,6 +27,7 @@ export interface IProps
 
 // Exporting Styles as they are used in Flex and Grid components
 export const BoxStyles = styled.div<IProps>`
+  ${background};
   ${space};
   ${layout};
   ${border};
