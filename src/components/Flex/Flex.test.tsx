@@ -21,6 +21,9 @@ beforeEach(() => {
 });
 
 describe('components/Flex', () => {
+  it('matches snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
   describe('flex css properties', () => {
     it('align-items', () => {
       expect(wrapper).toHaveStyleRule('align-items', 'center');

@@ -26,6 +26,9 @@ beforeEach(() => {
 });
 
 describe('components/Box', () => {
+  it('matches snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
   it('background', () => {
     expect(wrapper).toHaveStyleRule('background', 'blue');
   });

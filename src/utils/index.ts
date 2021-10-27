@@ -3,5 +3,6 @@ import colorSwatches from '@/utils/colorSwatches';
 import token from '@/utils/token';
 import mq from '@/utils/mq';
 import parseBreakpoint from '@/utils/parseBreakpoint';
+import mountWithTheme from '@/utils/mountWithTheme';
 
-export { token, variant, colorSwatches, mq, parseBreakpoint };
+export { token, variant, colorSwatches, mq, parseBreakpoint, mountWithTheme };

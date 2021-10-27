@@ -21,6 +21,9 @@ beforeEach(() => {
 });
 
 describe('components/Grid', () => {
+  it('matches snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
   describe('grid css properties', () => {
     it('grid-template-rows', () => {
       expect(wrapper).toHaveStyleRule('grid-template-rows', '2rem');
