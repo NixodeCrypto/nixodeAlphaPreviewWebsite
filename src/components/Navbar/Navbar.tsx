@@ -1,103 +1,15 @@
 /* @jsxImportSource @emotion/react */
 import { useEffect, useState } from 'react';
-import styled from '@emotion/styled';
 import { Menu } from 'react-feather';
 import { useRouter } from 'next/router';
-
+import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import { token, mq, parseBreakpoint } from '@/utils';
+import { token, parseBreakpoint } from '@/utils';
 import Button from '@/components/Button';
 import Flex from '@/components/Flex';
 import Box from '@/components/Box';
 import Link from '@/components/Link';
-
-const Wrapper = styled.div`
-  position: fixed;
-  z-index: ${token.zIndices('navbar')};
-  width: 100%;
-  background: white;
-`;
-
-const NavbarRoot = styled.div`
-  height: ${token.space('xl')};
-  border-bottom: ${token.borders('sm')};
-  border-bottom-color: ${token.colors('grey.50')};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const Space = styled.div`
-  width: calc(100% - ${token.space('lg')});
-  ${mq('md')} {
-    width: calc(100% - ${token.space('xl')});
-  }
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const BrandLogo = styled.img`
-  width: ${token.sizes('xxl')};
-`;
-
-const MobileDrawer = styled.div`
-  border-bottom: ${token.borders('sm')};
-  border-bottom-color: ${token.colors('grey.50')};
-  padding-left: ${token.space('sm')};
-  padding-top: ${token.space('md')};
-  background: white;
-  position: fixed;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  & > * {
-    padding-bottom: ${token.space('lg')};
-  }
-`;
-
-const ButtonContainer = styled.div`
-  button:nth-of-type(1) {
-    margin-bottom: ${token.space('xs')};
-  }
-  max-width: 20rem;
-  width: calc(100% - ${token.sizes('sm')});
-`;
-
-const NavLink = styled.a`
-  font-family: ${token.fonts('text')};
-  color: black;
-  text-decoration: none;
-  font-weight: ${token.fontWeights('bold')};
-`;
-
-const Mobile = styled.div`
-  display: block;
-  ${mq('md')} {
-    display: none;
-  }
-`;
-
-const Desktop = styled.div<{ fullWidth?: boolean; rightAlign?: boolean }>`
-  display: none;
-  ${mq('md')} {
-    width: ${(props) => (props.fullWidth ? '100%' : 'auto')};
-    display: flex;
-    flex-direction: row;
-    justify-content: ${(props) => (props.rightAlign ? 'flex-end' : 'center')};
-    align-items: center;
-    &:not(:last-child) > * {
-      margin-right: ${token.space('md')};
-    }
-    &:not(:first-child) > * {
-      margin-left: ${token.space('md')};
-    }
-  }
-`;
-
-const Gutter = styled.div`
-  width: 100%;
-`;
+import BrandLogo from '@/components/BrandLogo';
 
 const Navbar = () => {
   const router = useRouter();
@@ -120,80 +32,24 @@ const Navbar = () => {
     };
   });
 
-  return (
-    <Wrapper>
-      <NavbarRoot>
-        <Space>
-          <Gutter>
-            <NavLink href="/">
-              <BrandLogo src="BrandLogo.svg" />
-            </NavLink>
-          </Gutter>
-          <Mobile>
-            <Button
-              variant="text"
-              color="grey"
-              size="icon"
-              onClick={handleOpenDrawer}
-            >
-              <Menu color="black" />
-            </Button>
-          </Mobile>
-          <Desktop>
-            <NavLink href="/">Home</NavLink>
-            <NavLink href="/prices">Prices</NavLink>
-            <NavLink href="/portfolio">Portfolio</NavLink>
-            <NavLink href="/learn">Learn</NavLink>
-          </Desktop>
-          <Desktop fullWidth rightAlign>
-            <NavLink href="/signin">Sign in</NavLink>
-            <Button onClick={() => router.push('/signup')}>Sign up</Button>
-          </Desktop>
-        </Space>
-      </NavbarRoot>
-      {activeDrawer && (
-        <MobileDrawer>
-          <NavLink href="/">Home</NavLink>
-          <NavLink href="/prices">Prices</NavLink>
-          <NavLink href="/portfolio">Portfolio</NavLink>
-          <NavLink href="/learn">Learn</NavLink>
-          <ButtonContainer>
-            <Button maxWidth size="lg">
-              Get started
-            </Button>
-            <Button maxWidth size="lg" variant="outlined">
-              Sign in
-            </Button>
-          </ButtonContainer>
-        </MobileDrawer>
-      )}
-    </Wrapper>
-  );
-};
-
-const NewNav = () => {
-  const router = useRouter();
-  const [activeDrawer, setActiveDrawer] = useState(false);
-
-  const handleResize = () => {
-    if (window.innerWidth >= parseBreakpoint('md')) {
-      setActiveDrawer(false);
+  const NavLink = styled(Link)`
+    padding-top: ${token.space('md')};
+    padding-bottom: ${token.space('md')};
+    &:hover {
+      text-decoration: solid underline;
+      text-decoration-thickness: 4.5px;
+      text-underline-offset: calc(${token.space('md')} - 3px);
+      text-decoration-color: ${token.colors('primary.500')};
     }
-  };
-
-  const handleOpenDrawer = () => {
-    setActiveDrawer(!activeDrawer);
-  };
-
-  useEffect(() => {
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  });
+  `;
 
   return (
-    <Box position="fixed" zIndex={9999} width="100%" background="white">
+    <Box
+      position="fixed"
+      zIndex={token.zIndices('navbar')}
+      width="100%"
+      background="white"
+    >
       <Flex
         justifyContent="center"
         alignItems="center"
@@ -211,7 +67,7 @@ const NewNav = () => {
         >
           <Box width="100%">
             <Link href="/">
-              <BrandLogo src="BrandLogo.svg" />
+              <BrandLogo />
             </Link>
           </Box>
           <Box display={{ xss: 'block', md: 'none' }}>
@@ -229,12 +85,12 @@ const NewNav = () => {
             flexDirection="row"
             justifyContent="center"
             alignItems="center"
-            horizontalGap={token.space('md')}
+            horizontalGap={token.space('lg')}
           >
-            <Link href="/">Home</Link>
-            <Link href="/prices">Prices</Link>
-            <Link href="/portfolio">Portfolio</Link>
-            <Link href="/learn">Learn</Link>
+            <NavLink href="/">Home</NavLink>
+            <NavLink href="/prices">Prices</NavLink>
+            <NavLink href="/portfolio">Portfolio</NavLink>
+            <NavLink href="/learn">Learn</NavLink>
           </Flex>
 
           <Flex
@@ -255,14 +111,16 @@ const NewNav = () => {
           borderBottom="sm"
           borderBottomColor="grey.50"
           pl="sm"
-          pt="md"
+          pt="xss"
           background="white"
           position="fixed"
           width="100%"
           flexDirection="column"
+          maxWidth={`calc(100% - ${token.sizes('sm')})`}
           css={css`
             & > * {
-              padding-bottom: ${token.space('lg')};
+              padding-top: ${token.space('sm')};
+              padding-bottom: ${token.space('sm')};
             }
           `}
         >
@@ -291,4 +149,5 @@ const NewNav = () => {
     </Box>
   );
 };
+
 export default Navbar;

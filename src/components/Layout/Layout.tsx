@@ -3,7 +3,9 @@ import { ThemeProvider, Global } from '@emotion/react';
 import { GlobalTheme, GlobalReset } from '@/UI';
 import Navbar from '@/components/Navbar';
 
-const Layout = (props: { children: JSX.Element }): JSX.Element => {
+const Layout = (props: {
+  children: JSX.Element | JSX.Element[];
+}): JSX.Element => {
   const { children } = props;
   return (
     <>

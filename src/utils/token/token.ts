@@ -17,7 +17,7 @@ interface FnTheme {
   borders(key: keyof Theme['borders']): string;
   radii(key: keyof Theme['radii']): string;
   shadows(key: keyof Theme['shadows']): string;
-  zIndices(key: keyof Theme['zIndices']): string;
+  zIndices(key: keyof Theme['zIndices']): number;
   transition(key: keyof Theme['transition']): string;
 }
 

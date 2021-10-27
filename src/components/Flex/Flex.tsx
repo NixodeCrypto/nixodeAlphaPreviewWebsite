@@ -16,22 +16,16 @@ const FlexStyles = styled(BoxStyles)<IProps>`
   ${(props) =>
     props.verticalGap &&
     css`
-      & > *:not(:first-of-type) {
-        margin-top: calc(${props.verticalGap} / 2);
-      }
-      & > *:not(:last-of-type) {
-        margin-top: calc(${props.verticalGap} / 2);
+      & > *:nth-child(n + 2) {
+        margin-top: calc(${props.verticalGap});
       }
     `}
 
   ${(props) =>
     props.horizontalGap &&
     css`
-      & > *:not(:first-of-type) {
-        margin-left: calc(${props.horizontalGap} / 2);
-      }
-      & > *:not(:last-of-type) {
-        margin-right: calc(${props.horizontalGap} / 2);
+      & > *:nth-child(n + 2) {
+        margin-left: calc(${props.horizontalGap});
       }
     `}
 `;
