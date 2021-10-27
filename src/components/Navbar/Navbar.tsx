@@ -3,8 +3,13 @@ import { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
 import { Menu } from 'react-feather';
 import { useRouter } from 'next/router';
+
+import { css } from '@emotion/react';
 import { token, mq, parseBreakpoint } from '@/utils';
 import Button from '@/components/Button';
+import Flex from '@/components/Flex';
+import Box from '@/components/Box';
+import Link from '@/components/Link';
 
 const Wrapper = styled.div`
   position: fixed;
@@ -166,4 +171,124 @@ const Navbar = () => {
   );
 };
 
+const NewNav = () => {
+  const router = useRouter();
+  const [activeDrawer, setActiveDrawer] = useState(false);
+
+  const handleResize = () => {
+    if (window.innerWidth >= parseBreakpoint('md')) {
+      setActiveDrawer(false);
+    }
+  };
+
+  const handleOpenDrawer = () => {
+    setActiveDrawer(!activeDrawer);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  });
+
+  return (
+    <Box position="fixed" zIndex={9999} width="100%" background="white">
+      <Flex
+        justifyContent="center"
+        alignItems="center"
+        borderBottom="sm"
+        borderColor="grey.50"
+        height="xl"
+      >
+        <Flex
+          width={{
+            xss: `calc(100% - ${token.space('lg')})`,
+            md: `calc(100% - ${token.space('xl')})`,
+          }}
+          justifyContent="space-between"
+          alignItems="center"
+        >
+          <Box width="100%">
+            <Link href="/">
+              <BrandLogo src="BrandLogo.svg" />
+            </Link>
+          </Box>
+          <Box display={{ xss: 'block', md: 'none' }}>
+            <Button
+              variant="text"
+              color="grey"
+              size="icon"
+              onClick={handleOpenDrawer}
+            >
+              <Menu color="black" />
+            </Button>
+          </Box>
+          <Flex
+            display={{ xss: 'none', md: 'flex' }}
+            flexDirection="row"
+            justifyContent="center"
+            alignItems="center"
+            horizontalGap={token.space('md')}
+          >
+            <Link href="/">Home</Link>
+            <Link href="/prices">Prices</Link>
+            <Link href="/portfolio">Portfolio</Link>
+            <Link href="/learn">Learn</Link>
+          </Flex>
+
+          <Flex
+            display={{ xss: 'none', md: 'flex' }}
+            width="100%"
+            flexDirection="row"
+            justifyContent="flex-end"
+            alignItems="center"
+            horizontalGap={token.space('md')}
+          >
+            <Link href="/signin">Sign in</Link>
+            <Button onClick={() => router.push('/signup')}>Sign up</Button>
+          </Flex>
+        </Flex>
+      </Flex>
+      {activeDrawer && (
+        <Flex
+          borderBottom="sm"
+          borderBottomColor="grey.50"
+          pl="sm"
+          pt="md"
+          background="white"
+          position="fixed"
+          width="100%"
+          flexDirection="column"
+          css={css`
+            & > * {
+              padding-bottom: ${token.space('lg')};
+            }
+          `}
+        >
+          <Link href="/">Home</Link>
+          <Link href="/prices">Prices</Link>
+          <Link href="/portfolio">Portfolio</Link>
+          <Link href="/learn">Learn</Link>
+          <Box
+            width={`calc(100% - ${token.sizes('sm')})`}
+            maxWidth="20rem"
+            css={css`
+              button:nth-of-type(1) {
+                margin-bottom: ${token.space('xs')};
+              }
+            `}
+          >
+            <Button maxWidth size="lg">
+              Get started
+            </Button>
+            <Button maxWidth size="lg" variant="outlined">
+              Sign in
+            </Button>
+          </Box>
+        </Flex>
+      )}
+    </Box>
+  );
+};
 export default Navbar;

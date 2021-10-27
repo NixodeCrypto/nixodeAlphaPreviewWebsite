@@ -11,14 +11,15 @@ export interface IProps extends BoxProps, FlexboxProps {
 }
 
 const FlexStyles = styled(BoxStyles)<IProps>`
+  display: flex;
   ${flexbox};
   ${(props) =>
     props.verticalGap &&
     css`
-      & > *:not(:first-child) {
+      & > *:not(:first-of-type) {
         margin-top: calc(${props.verticalGap} / 2);
       }
-      & > *:not(:last-child) {
+      & > *:not(:last-of-type) {
         margin-top: calc(${props.verticalGap} / 2);
       }
     `}
@@ -26,10 +27,10 @@ const FlexStyles = styled(BoxStyles)<IProps>`
   ${(props) =>
     props.horizontalGap &&
     css`
-      & > *:not(:first-child) {
+      & > *:not(:first-of-type) {
         margin-left: calc(${props.horizontalGap} / 2);
       }
-      & > *:not(:last-child) {
+      & > *:not(:last-of-type) {
         margin-right: calc(${props.horizontalGap} / 2);
       }
     `}

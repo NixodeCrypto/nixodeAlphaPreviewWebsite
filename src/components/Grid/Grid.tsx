@@ -7,6 +7,7 @@ import { IProps as BoxProps, BoxStyles } from '@/components/Box';
 export interface GridProps extends BoxProps, GridExtendProps {}
 
 const GridStyles = styled(BoxStyles)<GridProps>`
+  display: grid;
   ${grid};
 `;
 

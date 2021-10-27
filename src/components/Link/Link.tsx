@@ -21,10 +21,12 @@ const LinkStyles = styled.a<IProps>`
 `;
 
 const Link = (props: IProps): JSX.Element => {
-  const { href, className, size, ...other } = props;
+  const { children, href, className, size, ...other } = props;
   return (
     <NextLink href={href as string} passHref {...other}>
-      <LinkStyles size={size} className={className} />
+      <LinkStyles size={size} className={className}>
+        {children}
+      </LinkStyles>
     </NextLink>
   );
 };

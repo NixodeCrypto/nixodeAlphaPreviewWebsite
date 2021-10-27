@@ -25,6 +25,9 @@ describe('components/Grid', () => {
     expect(wrapper).toMatchSnapshot();
   });
   describe('grid css properties', () => {
+    it('display', () => {
+      expect(wrapper).toHaveStyleRule('display', 'grid');
+    });
     it('grid-template-rows', () => {
       expect(wrapper).toHaveStyleRule('grid-template-rows', '2rem');
     });

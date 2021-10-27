@@ -7,9 +7,11 @@ const Layout = (props: { children: JSX.Element }): JSX.Element => {
   const { children } = props;
   return (
     <>
-      <Navbar />
       <Global styles={GlobalReset} />
-      <ThemeProvider theme={GlobalTheme}>{children}</ThemeProvider>
+      <ThemeProvider theme={GlobalTheme}>
+        <Navbar />
+        {children}
+      </ThemeProvider>
     </>
   );
 };

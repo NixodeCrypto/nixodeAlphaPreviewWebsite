@@ -25,6 +25,9 @@ describe('components/Flex', () => {
     expect(wrapper).toMatchSnapshot();
   });
   describe('flex css properties', () => {
+    it('display', () => {
+      expect(wrapper).toHaveStyleRule('display', 'flex');
+    });
     it('align-items', () => {
       expect(wrapper).toHaveStyleRule('align-items', 'center');
     });
