@@ -1,13 +1,7 @@
-import { cleanup } from '@testing-library/react';
-import { matchers } from '@emotion/jest';
 import { transparentize } from 'polished';
 import Button from '.';
 import { GlobalTheme } from '@/UI';
 import { mountWithTheme } from '@/utils';
-
-expect.extend(matchers);
-
-beforeEach(cleanup);
 
 describe('components/Button', () => {
   describe('standard', () => {

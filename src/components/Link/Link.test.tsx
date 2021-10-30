@@ -1,9 +1,6 @@
-import { matchers } from '@emotion/jest';
 import { mount } from 'enzyme';
 import { GlobalTheme } from '@/UI';
 import Link from '.';
-
-expect.extend(matchers);
 
 describe('components/Link', () => {
   it('matches snapshot', () => {

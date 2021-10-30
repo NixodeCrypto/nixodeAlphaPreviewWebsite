@@ -15,6 +15,7 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "jsxImportSource": "@emotion/react",
+    "types": ["cypress"],
     "paths": {
       "@/*": ["./src/*"],
       "@/public/*": [ "./public/*"]

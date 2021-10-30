@@ -1,14 +1,11 @@
-import { matchers } from '@emotion/jest';
-import { MountRendererProps } from 'enzyme';
+import { ReactWrapper } from 'enzyme';
 import Box from '.';
 import { GlobalTheme } from '@/UI';
 import mountWithTheme from '@/utils/mountWithTheme';
 
-expect.extend(matchers);
+let wrapper: ReactWrapper;
 
-let wrapper: MountRendererProps;
-
-beforeEach(() => {
+beforeAll(() => {
   wrapper = mountWithTheme(
     <Box
       m="20px"

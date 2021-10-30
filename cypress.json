@@ -1,0 +1,8 @@
+{
+  "projectId": "ij2ztg",
+  "component": {
+    "testFiles": "**/*.cy.{js,jsx,ts,tsx}",
+    "componentFolder": "src/components"
+  },
+  "ignoreTestFiles": "**/node_modules/**/*{feature,spec.js}"
+}

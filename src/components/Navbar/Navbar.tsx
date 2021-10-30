@@ -86,6 +86,7 @@ const Navbar = () => {
             justifyContent="center"
             alignItems="center"
             horizontalGap={token.space('lg')}
+            data-testid="desktopLinkContainer"
           >
             <NavLink href="/">Home</NavLink>
             <NavLink href="/prices">Prices</NavLink>
