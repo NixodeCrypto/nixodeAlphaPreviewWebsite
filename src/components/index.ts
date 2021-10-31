@@ -5,5 +5,21 @@ import Flex from '@/components/Flex';
 import Box from '@/components/Box';
 import Grid from '@/components/Grid';
 import BrandLogo from '@/components/BrandLogo';
+import Header from '@/components/Header';
+import Body from '@/components/Body';
+import Caption from '@/components/Caption';
+import Input from '@/components/Input';
 
-export { Button, Layout, Flex, Navbar, Box, Grid, BrandLogo };
+export {
+  Button,
+  Layout,
+  Flex,
+  Navbar,
+  Box,
+  Grid,
+  BrandLogo,
+  Header,
+  Body,
+  Caption,
+  Input,
+};

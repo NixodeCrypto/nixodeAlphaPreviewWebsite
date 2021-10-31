@@ -18,10 +18,13 @@ const ButtonRoot = styled.button<IProps>`
   font-family: ${token.fonts('text')};
   font-weight: ${token.fontWeights('semiBold')};
   cursor: pointer;
-  border: 0;
+  border: ${token.borders('sm')};
+  border-color: transparent;
   border-radius: ${token.radii('sm')};
   transition: ${token.transition('standard')};
   background: transparent;
+  white-space: nowrap;
+
   ${(props) =>
     props.color &&
     CSSVariant(props.variant, {
@@ -31,22 +34,28 @@ const ButtonRoot = styled.button<IProps>`
       solid:
         props.color === 'grey'
           ? css`
+              border-color: ${token.colors(`${props.color}.100`)};
               background: ${token.colors(`${props.color}.100`)};
               color: ${token.colors(`${props.color}.800`)};
               &:hover {
+                border-color: ${token.colors(`${props.color}.200`)};
                 background: ${token.colors(`${props.color}.200`)};
               }
               &:active {
+                border-color: ${token.colors(`${props.color}.300`)};
                 background: ${token.colors(`${props.color}.300`)};
               }
             `
           : css`
+              border-color: ${token.colors(`${props.color}.500`)};
               background: ${token.colors(`${props.color}.500`)};
               color: white;
               &:hover {
+                border-color: ${token.colors(`${props.color}.600`)};
                 background: ${token.colors(`${props.color}.600`)};
               }
               &:active {
+                border-color: ${token.colors(`${props.color}.700`)};
                 background: ${token.colors(`${props.color}.700`)};
               }
             `,
@@ -84,6 +93,7 @@ const ButtonRoot = styled.button<IProps>`
         }
       `,
     })}
+
   ${(props) =>
     CSSVariant(props.size, {
       all: css`

@@ -14,6 +14,7 @@ export interface IProps
 }
 
 const HeaderRoot = styled.h1<IProps>`
+  font-family: ${token.fonts('title')};
   ${(props) =>
     variant(props.as, {
       h1: css`

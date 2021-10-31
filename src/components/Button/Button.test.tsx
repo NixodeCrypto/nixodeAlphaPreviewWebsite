@@ -165,7 +165,10 @@ describe('components/Button', () => {
   describe('variants', () => {
     it('solid variant', () => {
       const wrapper = mountWithTheme(<Button variant="solid" />);
-      expect(wrapper).toHaveStyleRule('border', '0');
+      expect(wrapper).toHaveStyleRule(
+        'border-color',
+        GlobalTheme.colors.primary[500],
+      );
 
       expect(wrapper).toHaveStyleRule(
         'background',
@@ -175,6 +178,8 @@ describe('components/Button', () => {
     it('text variant', () => {
       const wrapper = mountWithTheme(<Button variant="text" />);
       expect(wrapper).toHaveStyleRule('background', 'transparent');
+      expect(wrapper).toHaveStyleRule('border-color', 'transparent');
+
       expect(wrapper).toHaveStyleRule(
         'background',
         transparentize(0.9, GlobalTheme.colors.primary[500]),
