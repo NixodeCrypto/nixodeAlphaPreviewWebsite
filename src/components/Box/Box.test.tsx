@@ -50,12 +50,4 @@ describe('components/Box', () => {
     expect(wrapper).toHaveStyleRule('margin-right', GlobalTheme.space.sm);
     expect(wrapper).toHaveStyleRule('margin-left', GlobalTheme.space.sm);
   });
-  it('breakpoints', () => {
-    expect(wrapper).toHaveStyleRule('padding-right', '10px', {
-      media: `(min-width: ${GlobalTheme.breakpoints.sm})`,
-    });
-    expect(wrapper).toHaveStyleRule('padding-right', '20px', {
-      media: `(min-width: ${GlobalTheme.breakpoints.md})`,
-    });
-  });
 });
