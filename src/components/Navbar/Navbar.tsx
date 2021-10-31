@@ -70,7 +70,10 @@ const Navbar = () => {
               <BrandLogo />
             </Link>
           </Box>
-          <Box display={{ xss: 'block', md: 'none' }}>
+          <Box
+            display={{ xss: 'block', md: 'none' }}
+            data-testid="mobile-drawer-btn"
+          >
             <Button
               variant="text"
               color="grey"

@@ -1,8 +1,12 @@
 {
   "projectId": "ij2ztg",
+  "baseUrl": "http://localhost:3000",
+  "integrationFolder": "src/pageTests",
   "component": {
     "testFiles": "**/*.cy.{js,jsx,ts,tsx}",
     "componentFolder": "src/components"
   },
-  "ignoreTestFiles": "**/node_modules/**/*{feature,spec.js}"
+  "ignoreTestFiles": "**/node_modules/**/*{feature,spec.js}",
+  "viewportWidth": 1400,
+  "viewportHeight": 900
 }
