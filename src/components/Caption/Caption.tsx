@@ -9,29 +9,32 @@ export interface IProps
     SpaceProps,
     Omit<ColorProps, 'color'> {
   color?: string;
+  xs?: boolean;
 }
 
-const BodyRoot = styled.p<IProps>`
-  font-size: ${token.fs('bodySm')};
+const CaptionRoot = styled.p<IProps>`
+  font-size: ${(props) =>
+    props.xs ? token.fs('footer') : token.fs('captionSm')};
   ${mq('sm')} {
-    font-size: ${token.fs('bodyLg')};
+    font-size: ${(props) =>
+      props.xs ? token.fs('footer') : token.fs('captionLg')};
   }
   line-height: 140%;
   ${space};
   ${color};
 `;
 
-const Body = React.forwardRef(
+const Caption = React.forwardRef(
   (props: IProps, ref: React.Ref<HTMLParagraphElement>): JSX.Element => {
-    const { children, ...other } = props;
+    const { children, xs, ...other } = props;
 
     return (
-      <BodyRoot ref={ref} {...other}>
+      <CaptionRoot ref={ref} xs={xs} {...other}>
         {children}
-      </BodyRoot>
+      </CaptionRoot>
     );
   },
 );
 
-Body.displayName = 'Body';
-export default Body;
+Caption.displayName = 'Caption';
+export default Caption;
