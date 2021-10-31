@@ -1,11 +1,11 @@
 /* @jsxImportSource @emotion/react */
 import NextLink from 'next/link';
 import styled from '@emotion/styled';
-import { space, SpaceProps } from 'styled-system';
+import { space, SpaceProps, color, ColorProps } from 'styled-system';
 import { token } from '@/utils';
 
-interface IProps extends LinkProps, SpaceProps {
-  size?: 'sm' | undefined;
+interface IProps extends Omit<LinkProps, 'color'>, SpaceProps, ColorProps {
+  size?: 'sm';
 }
 
 const LinkStyles = styled.a<IProps>`
@@ -18,6 +18,7 @@ const LinkStyles = styled.a<IProps>`
       ? token.fontSizes('bodySm')
       : token.fontSizes('bodyLg')};
   ${space};
+  ${color};
 `;
 
 const Link = (props: IProps): JSX.Element => {
