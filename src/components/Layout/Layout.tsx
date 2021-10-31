@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar';
 import Box from '@/components/Box';
 
 const Layout = (props: {
-  children: JSX.Element | JSX.Element[];
+  children?: JSX.Element | JSX.Element[];
   nonStandardLayout?: boolean;
 }): JSX.Element => {
   const { children, nonStandardLayout = false } = props;
