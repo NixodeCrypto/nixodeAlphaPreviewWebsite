@@ -69,6 +69,8 @@ declare module '@emotion/react' {
     lineHeights: Record<string, string>;
     letterSpacings: Record<string, string>;
     sizes: {
+      xss: string;
+      xs: string;
       sm: string;
       md: string;
       lg: string;

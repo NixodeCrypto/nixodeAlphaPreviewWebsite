@@ -1,17 +1,26 @@
 /* @jsxImportSource @emotion/react */
 import React from 'react';
 import styled from '@emotion/styled';
-import { space, SpaceProps, color, ColorProps } from 'styled-system';
+import {
+  space,
+  SpaceProps,
+  color,
+  ColorProps,
+  typography,
+  TypographyProps,
+} from 'styled-system';
 import { token, mq } from '@/utils';
 
 export interface IProps
   extends Omit<PProps, 'color'>,
     SpaceProps,
-    Omit<ColorProps, 'color'> {
+    Omit<ColorProps, 'color'>,
+    TypographyProps {
   color?: string;
 }
 
 const BodyRoot = styled.p<IProps>`
+  font-family: ${token.fonts('text')};
   font-size: ${token.fs('bodySm')};
   ${mq('sm')} {
     font-size: ${token.fs('bodyLg')};
@@ -19,6 +28,7 @@ const BodyRoot = styled.p<IProps>`
   line-height: 140%;
   ${space};
   ${color};
+  ${typography}
 `;
 
 const Body = React.forwardRef(

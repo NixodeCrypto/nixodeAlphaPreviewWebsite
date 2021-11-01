@@ -3,13 +3,19 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { space, SpaceProps } from 'styled-system';
+import { AlertCircle } from 'react-feather';
 import { token, variant as CSSVariant } from '@/utils';
+import Box from '@/components/Box';
+import Flex from '@/components/Flex';
+import Caption from '@/components/Caption';
 
 export interface IProps extends Omit<InputProps, 'size'>, SpaceProps {
   size?: 'sm' | 'md' | 'lg';
   maxWidth?: boolean;
   variant?: 'outlined';
   label?: string;
+  error?: boolean;
+  errorHelperLabel?: string;
 }
 
 const InputRoot = styled.input<IProps>`
@@ -57,7 +63,7 @@ const InputRoot = styled.input<IProps>`
     }
   }
   font-family: ${token.fonts('text')};
-  font-weight: ${token.fontWeights('semiBold')};
+  font-weight: ${token.fontWeights('medium')};
   border-radius: ${token.radii('sm')};
   ${(props) =>
     CSSVariant(props.size, {
@@ -80,13 +86,86 @@ const InputRoot = styled.input<IProps>`
     css`
       width: 100%;
     `}
+
+  ${(props) =>
+    props.error &&
+    css`
+      &::placeholder {
+        color: ${token.colors('red.500')};
+      }
+
+      &:-ms-input-placeholder {
+        color: ${token.colors('red.500')};
+      }
+
+      &::-ms-input-placeholder {
+        color: ${token.colors('red.500')};
+      }
+
+      border-color: ${token.colors('red.500')};
+      &:hover {
+        border-color: ${token.colors('red.500')};
+      }
+      &:focus {
+        border-color: ${token.colors('red.500')};
+        &::placeholder {
+          color: ${token.colors('red.500')};
+        }
+
+        &:-ms-input-placeholder {
+          color: ${token.colors('red.500')};
+        }
+
+        &::-ms-input-placeholder {
+          color: ${token.colors('red.500')};
+        }
+      }
+    `}
+
     ${space};
 `;
 
 const Input = React.forwardRef(
   (props: IProps, ref: React.Ref<HTMLInputElement>): JSX.Element => {
-    const { label, variant = 'outlined', size = 'md', ...other } = props;
+    const {
+      label,
+      variant = 'outlined',
+      size = 'md',
+      error = false,
+      errorHelperLabel = 'Error',
+      ...other
+    } = props;
 
+    if (error) {
+      return (
+        <Box position="relative">
+          <InputRoot
+            variant={variant}
+            size={size as any}
+            ref={ref}
+            placeholder={label}
+            error={error}
+            {...other}
+          />
+          {error && (
+            <Flex
+              alignItems="center"
+              horizontalGap={token.space('xss')}
+              height="sm"
+            >
+              <AlertCircle
+                size={token.sizes('xss')}
+                color={token.colors('red.500')}
+                strokeWidth="3px"
+              />
+              <Caption color="red.500" fontWeight="semiBold">
+                {errorHelperLabel}
+              </Caption>
+            </Flex>
+          )}
+        </Box>
+      );
+    }
     return (
       <InputRoot
         variant={variant}
@@ -101,21 +180,3 @@ const Input = React.forwardRef(
 
 Input.displayName = 'Input';
 export default Input;
-
-/*
- *
-      all: css`
-        font-size: ${token.fontSizes('bodyLg')};
-      `,
-      sm: css`
-        height: calc(${token.sizes('sm')} - ${heightEqualizer});
-        font-size: ${token.fontSizes('bodySm')};
-      `,
-      md: css`
-        height: calc(${token.sizes('md')} - ${heightEqualizer});
-      `,
-      lg: css`
-        height: calc(${token.sizes('md')} - ${heightEqualizer});
-        padding: 0.42rem;
-      `,
- * */

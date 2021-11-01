@@ -1,18 +1,27 @@
 /* @jsxImportSource @emotion/react */
 import React from 'react';
 import styled from '@emotion/styled';
-import { space, SpaceProps, color, ColorProps } from 'styled-system';
+import {
+  space,
+  SpaceProps,
+  color,
+  ColorProps,
+  typography,
+  TypographyProps,
+} from 'styled-system';
 import { token, mq } from '@/utils';
 
 export interface IProps
   extends Omit<PProps, 'color'>,
     SpaceProps,
-    Omit<ColorProps, 'color'> {
+    Omit<ColorProps, 'color'>,
+    TypographyProps {
   color?: string;
   xs?: boolean;
 }
 
 const CaptionRoot = styled.p<IProps>`
+  font-family: ${token.fonts('text')};
   font-size: ${(props) =>
     props.xs ? token.fs('footer') : token.fs('captionSm')};
   ${mq('sm')} {
@@ -22,6 +31,7 @@ const CaptionRoot = styled.p<IProps>`
   line-height: 140%;
   ${space};
   ${color};
+  ${typography};
 `;
 
 const Caption = React.forwardRef(

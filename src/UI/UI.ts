@@ -81,6 +81,8 @@ export const GlobalTheme: Theme = {
   lineHeights: {},
   letterSpacings: {},
   sizes: {
+    xss: rem(14),
+    xs: rem(19),
     sm: rem(28),
     md: rem(37),
     lg: rem(46),

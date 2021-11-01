@@ -11,7 +11,7 @@ describe('components/Button', () => {
       wrapper.simulate('click');
       expect(mockFn).toHaveBeenCalled();
     });
-    it('snapshot testing', () => {
+    it('matches snapshot', () => {
       const wrapper = mountWithTheme(<Button />);
       expect(wrapper).toMatchSnapshot();
     });
