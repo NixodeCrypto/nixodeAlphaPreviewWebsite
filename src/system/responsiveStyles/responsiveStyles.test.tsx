@@ -1,71 +1,55 @@
 /* @jsxImportSource @emotion/react */
-import styled from '@emotion/styled';
 import responsiveStyles from '.';
-import { mountWithTheme, mq } from '@/utils';
+import { GlobalTheme } from '@/UI';
+import { mq } from '@/utils';
 
 describe('system/responsiveStyles', () => {
-  it('creates responsive styles css object based with a single scale', () => {
-    const StyledComponent = styled.div<{
-      width?: Record<string, string | number>;
-    }>`
-      ${(props) => props.width && responsiveStyles(props.width, 'width')}
-    `;
-    const wrapper = mountWithTheme(
-      <StyledComponent
-        width={{ xss: '12px', xs: '16px', md: '19px', lg: '22px' }}
-      />,
-    );
-
-    expect(wrapper).toHaveStyleRule('width', '12px', {
-      media: mq('xss', true),
-    });
-    expect(wrapper).toHaveStyleRule('width', '16px', {
-      media: mq('xs', true),
-    });
-    expect(wrapper).toHaveStyleRule('width', '19px', {
-      media: mq('md', true),
-    });
-    expect(wrapper).toHaveStyleRule('width', '22px', {
-      media: mq('lg', true),
+  it('creates responsive style object from single scale', () => {
+    const resObj = { xss: '1rem', xs: '2rem', md: '3rem' };
+    const scale = 'width';
+    expect(responsiveStyles(resObj, scale)).toStrictEqual({
+      [mq('xss')]: {
+        width: '1rem',
+      },
+      [mq('xs')]: {
+        width: '2rem',
+      },
+      [mq('md')]: {
+        width: '3rem',
+      },
     });
   });
-
-  it('creates responsive styles css object based on multiple scales', () => {
-    const StyledComponent = styled.div<{
-      size?: Record<string, string | number>;
-    }>`
-      ${(props) =>
-        props.size && responsiveStyles(props.size, ['width', 'height'])}
-    `;
-    const wrapper = mountWithTheme(
-      <StyledComponent
-        size={{ xss: '12px', xs: '16px', md: '19px', lg: '22px' }}
-      />,
-    );
-
-    expect(wrapper).toHaveStyleRule('width', '12px', {
-      media: mq('xss', true),
+  it('creates responsive style object from multiple scales', () => {
+    const resObj = { xss: '1rem', xs: '2rem', md: '3rem' };
+    const scale = ['width', 'height'];
+    expect(responsiveStyles(resObj, scale)).toStrictEqual({
+      [mq('xss')]: {
+        width: '1rem',
+        height: '1rem',
+      },
+      [mq('xs')]: {
+        width: '2rem',
+        height: '2rem',
+      },
+      [mq('md')]: {
+        width: '3rem',
+        height: '3rem',
+      },
     });
-    expect(wrapper).toHaveStyleRule('height', '12px', {
-      media: mq('xss', true),
-    });
-    expect(wrapper).toHaveStyleRule('width', '16px', {
-      media: mq('xs', true),
-    });
-    expect(wrapper).toHaveStyleRule('height', '16px', {
-      media: mq('xs', true),
-    });
-    expect(wrapper).toHaveStyleRule('width', '19px', {
-      media: mq('md', true),
-    });
-    expect(wrapper).toHaveStyleRule('height', '19px', {
-      media: mq('md', true),
-    });
-    expect(wrapper).toHaveStyleRule('width', '22px', {
-      media: mq('lg', true),
-    });
-    expect(wrapper).toHaveStyleRule('height', '22px', {
-      media: mq('lg', true),
+  });
+  it('creates responsive style object with theme values', () => {
+    const resObj = { xss: 'sm', xs: 'md', md: 'lg' };
+    const scale = 'padding';
+    expect(responsiveStyles(resObj, scale)).toStrictEqual({
+      [mq('xss')]: {
+        padding: GlobalTheme.space.sm,
+      },
+      [mq('xs')]: {
+        padding: GlobalTheme.space.md,
+      },
+      [mq('md')]: {
+        padding: GlobalTheme.space.lg,
+      },
     });
   });
 });

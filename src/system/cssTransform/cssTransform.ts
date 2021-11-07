@@ -102,21 +102,28 @@ const scales: Record<string, string> = {
   stroke: 'colors',
 };
 
-const cssTransform = (prop: string, value: string | number): any => {
+const cssTransform = (
+  prop: string,
+  value: string | number,
+): string | Record<any, any> => {
   if (Object.prototype.hasOwnProperty.call(aliases, prop)) {
     return cssTransform(aliases[prop], value);
   }
 
   if (Object.prototype.hasOwnProperty.call(multiples, prop)) {
     let cssObj = {};
+
+    // using index position 0's theme type as the keys of each theme property in GlobalTheme are not equal
+    const cachedThemeVar = strToObj(
+      value.toString(),
+      GlobalTheme[scales[multiples[prop][0]] as keyof Theme],
+      true,
+    );
+
     for (let i = 0; i < multiples[prop].length; i += 1) {
       cssObj = {
         ...cssObj,
-        [multiples[prop][i]]:
-          strToObj(
-            value.toString(),
-            GlobalTheme[scales[multiples[prop][i]] as keyof Theme],
-          ) ?? value.toString(),
+        [multiples[prop][i]]: cachedThemeVar ?? value.toString(),
       };
     }
     return cssObj;
@@ -124,8 +131,11 @@ const cssTransform = (prop: string, value: string | number): any => {
 
   return {
     [prop]:
-      strToObj(value.toString(), GlobalTheme[scales[prop] as keyof Theme]) ??
-      value.toString(),
+      strToObj(
+        value.toString(),
+        GlobalTheme[scales[prop] as keyof Theme],
+        true,
+      ) ?? value.toString(),
   };
 };
 

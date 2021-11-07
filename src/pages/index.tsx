@@ -4,8 +4,8 @@ import { token } from '@/utils';
 import responsiveStyles from '@/system/responsiveStyles/responsiveStyles';
 
 const Home = () => {
-  const a = { xss: '1rem', xs: '2rem', md: '3rem', lg: '4rem' };
-  const scale = 'width';
+  const a = { xss: 'sm', xs: 'md', md: '3rem', lg: 'lg' };
+  const scale = ['height', 'width', 'paddingRight'];
 
   console.log(responsiveStyles(a, scale));
   return (
