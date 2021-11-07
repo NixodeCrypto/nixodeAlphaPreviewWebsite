@@ -1,7 +1,7 @@
 import { ReactWrapper } from 'enzyme';
 import Grid from '.';
 import { GlobalTheme } from '@/UI';
-import mountWithTheme from '@/utils/mountWithTheme';
+import { mountWithTheme } from '@/utils';
 
 let wrapper: ReactWrapper;
 

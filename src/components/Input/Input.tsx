@@ -4,7 +4,6 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { space, SpaceProps } from 'styled-system';
 import { AlertCircle } from 'react-feather';
-import { layoutWithoutSize, LayoutWithoutSizeProps } from '@/system/overwrites';
 import { token, variant as CSSVariant } from '@/utils';
 import Box from '@/components/Box';
 import Flex from '@/components/Flex';
@@ -12,8 +11,7 @@ import Caption from '@/components/Caption';
 
 export interface IProps
   extends Omit<InputProps, 'width' | 'height' | 'size'>,
-    SpaceProps,
-    LayoutWithoutSizeProps {
+    SpaceProps {
   width?: any;
   height?: any;
   size?: 'sm' | 'md' | 'lg';
@@ -123,7 +121,6 @@ const InputRoot = styled.input<IProps>`
     `}
 
   ${space};
-  ${layoutWithoutSize};
 `;
 
 const Input = React.forwardRef(

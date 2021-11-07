@@ -4,5 +4,14 @@ import token from '@/utils/token';
 import mq from '@/utils/mq';
 import parseBreakpoint from '@/utils/parseBreakpoint';
 import mountWithTheme from '@/utils/mountWithTheme';
+import strToObj from '@/utils/strToObj';
 
-export { token, variant, colorSwatches, mq, parseBreakpoint, mountWithTheme };
+export {
+  token,
+  variant,
+  colorSwatches,
+  mq,
+  parseBreakpoint,
+  mountWithTheme,
+  strToObj,
+};

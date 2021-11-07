@@ -1,5 +1,6 @@
 import { Theme } from '@emotion/react';
 import { ColorSwatches } from '@/utils/colorSwatches';
+import strToObj from '@/utils/strToObj';
 import { GlobalTheme } from '@/UI';
 
 interface FnTheme {
@@ -31,8 +32,7 @@ const token: FnTheme = (() => {
   const tokenEntries = Object.entries(GlobalTheme);
   for (let i = 0; i < tokenEntries.length; i += 1) {
     const tokenVal = { ...tokenEntries[i][1] };
-    tokenEntries[i][1] = (key: string) =>
-      key.split('.').reduce((o: any, j) => o[j], tokenVal);
+    tokenEntries[i][1] = (key: string) => strToObj(key, tokenVal);
   }
 
   for (let i = 0; i < tokenEntries.length; i += 1) {
