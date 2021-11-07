@@ -4,14 +4,19 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { space, SpaceProps } from 'styled-system';
 import { AlertCircle } from 'react-feather';
+import { layoutWithoutSize, LayoutWithoutSizeProps } from '@/system/overwrites';
 import { token, variant as CSSVariant } from '@/utils';
 import Box from '@/components/Box';
 import Flex from '@/components/Flex';
 import Caption from '@/components/Caption';
 
-export interface IProps extends Omit<InputProps, 'size'>, SpaceProps {
+export interface IProps
+  extends Omit<InputProps, 'width' | 'height' | 'size'>,
+    SpaceProps,
+    LayoutWithoutSizeProps {
+  width?: any;
+  height?: any;
   size?: 'sm' | 'md' | 'lg';
-  maxWidth?: boolean;
   variant?: 'outlined';
   label?: string;
   error?: boolean;
@@ -81,11 +86,6 @@ const InputRoot = styled.input<IProps>`
         padding: calc(${token.space('md')} / 1.61);
       `,
     })}
-  ${(props) =>
-    props.maxWidth &&
-    css`
-      width: 100%;
-    `}
 
   ${(props) =>
     props.error &&
@@ -122,7 +122,8 @@ const InputRoot = styled.input<IProps>`
       }
     `}
 
-    ${space};
+  ${space};
+  ${layoutWithoutSize};
 `;
 
 const Input = React.forwardRef(
