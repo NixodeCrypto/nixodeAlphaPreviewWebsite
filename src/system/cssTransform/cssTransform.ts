@@ -30,6 +30,7 @@ const multiples: Record<string, string[]> = {
 
 const scales: Record<string, string> = {
   color: 'colors',
+  background: 'colors',
   backgroundColor: 'colors',
   borderColor: 'colors',
   margin: 'space',

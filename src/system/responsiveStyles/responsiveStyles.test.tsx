@@ -52,4 +52,23 @@ describe('system/responsiveStyles', () => {
       },
     });
   });
+  it('creates responsive style object with strToObj values', () => {
+    const resObj = {
+      xss: 'secondary.500',
+      xs: 'primary.500',
+      md: 'accent.400',
+    };
+    const scale = 'color';
+    expect(responsiveStyles(resObj, scale)).toStrictEqual({
+      [mq('xss')]: {
+        color: GlobalTheme.colors.secondary['500'],
+      },
+      [mq('xs')]: {
+        color: GlobalTheme.colors.primary['500'],
+      },
+      [mq('md')]: {
+        color: GlobalTheme.colors.accent['400'],
+      },
+    });
+  });
 });

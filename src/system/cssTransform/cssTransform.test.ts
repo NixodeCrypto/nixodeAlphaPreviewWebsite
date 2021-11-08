@@ -30,4 +30,9 @@ describe('system/cssTransform', () => {
       paddingLeft: '1rem',
     });
   });
+  it('can access strToObj values', () => {
+    expect(cssTransform('color', 'primary.500')).toStrictEqual({
+      color: GlobalTheme.colors.primary['500'],
+    });
+  });
 });
