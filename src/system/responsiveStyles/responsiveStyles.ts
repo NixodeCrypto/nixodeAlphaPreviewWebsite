@@ -12,7 +12,7 @@ const arrayComposer = (scale: string[], responsiveInput: string) => {
 };
 
 const responsiveStyles = (
-  responsiveInput: Record<string, string | number> | string,
+  responsiveInput: Record<string, string> | string,
   scale: string[] | string,
 ): Record<string, string> => {
   // if input is a string
