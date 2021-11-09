@@ -31,4 +31,67 @@ describe('system/compose', () => {
       },
     });
   });
+  it('alias scales and multiple scales', () => {
+    const config = {
+      px: true,
+      my: true,
+      marginX: true,
+    };
+
+    const props = {
+      px: {
+        xss: '1rem',
+        md: '3rem',
+      },
+      my: {
+        md: '2rem',
+        lg: '4rem',
+      },
+      marginX: {
+        sm: '2rem',
+      },
+    };
+
+    expect(compose(props, config)).toStrictEqual({
+      [mq('xss')]: {
+        paddingRight: '1rem',
+        paddingLeft: '1rem',
+      },
+      [mq('sm')]: {
+        marginRight: '2rem',
+        marginLeft: '2rem',
+      },
+      [mq('md')]: {
+        paddingRight: '3rem',
+        paddingLeft: '3rem',
+        marginTop: '2rem',
+        marginBottom: '2rem',
+      },
+      [mq('lg')]: {
+        marginTop: '4rem',
+        marginBottom: '4rem',
+      },
+    });
+  });
+  it('responsive scales and singular values', () => {
+    const config = {
+      pr: true,
+      pl: true,
+    };
+
+    const props = {
+      pr: '1rem',
+      pl: { xs: '1rem', md: '2rem' },
+    };
+
+    expect(compose(props, config)).toStrictEqual({
+      paddingRight: '1rem',
+      [mq('xs')]: {
+        paddingLeft: '1rem',
+      },
+      [mq('md')]: {
+        paddingLeft: '2rem',
+      },
+    });
+  });
 });

@@ -106,7 +106,7 @@ const scales: Record<string, string> = {
 const cssTransform = (
   prop: string,
   value: string | number,
-): string | Record<any, any> => {
+): string | Record<string, any> => {
   if (Object.prototype.hasOwnProperty.call(aliases, prop)) {
     return cssTransform(aliases[prop], value);
   }

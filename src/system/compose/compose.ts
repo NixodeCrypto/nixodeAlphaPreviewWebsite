@@ -16,7 +16,6 @@ const compose = (
       ]);
     }
   }
-  console.log(CSSObj);
   return CSSObj;
 };
 

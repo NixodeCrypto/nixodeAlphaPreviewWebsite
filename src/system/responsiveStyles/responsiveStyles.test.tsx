@@ -71,4 +71,30 @@ describe('system/responsiveStyles', () => {
       },
     });
   });
+  it('creates responsive style object with alias scales', () => {
+    const resObj = { xss: 'sm', xs: 'md', md: 'lg' };
+    const scale = 'px';
+    expect(responsiveStyles(resObj, scale)).toStrictEqual({
+      [mq('xss')]: {
+        paddingRight: GlobalTheme.space.sm,
+        paddingLeft: GlobalTheme.space.sm,
+      },
+      [mq('xs')]: {
+        paddingRight: GlobalTheme.space.md,
+        paddingLeft: GlobalTheme.space.md,
+      },
+      [mq('md')]: {
+        paddingRight: GlobalTheme.space.lg,
+        paddingLeft: GlobalTheme.space.lg,
+      },
+    });
+  });
+  it('creates style object with no responsiveness', () => {
+    const resObj = '1rem';
+    const scale = 'px';
+    expect(responsiveStyles(resObj, scale)).toStrictEqual({
+      paddingRight: '1rem',
+      paddingLeft: '1rem',
+    });
+  });
 });
