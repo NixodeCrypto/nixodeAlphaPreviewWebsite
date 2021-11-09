@@ -1,35 +1,45 @@
 import { Theme } from '@emotion/react';
 import { GlobalTheme } from '@/UI';
-import { strToObj } from '@/utils';
+import { strToObj, shallowFlatten } from '@/utils';
 
 // BASED ON STYLED-SYSTEM
 
 export type SystemProp = Record<string, string | boolean>;
 
-const aliases: Record<string, string> = {
-  bg: 'backgroundColor',
-  m: 'margin',
-  mt: 'marginTop',
-  mr: 'marginRight',
-  mb: 'marginBottom',
-  ml: 'marginLeft',
-  mx: 'marginX',
-  my: 'marginY',
-  p: 'padding',
-  pt: 'paddingTop',
-  pr: 'paddingRight',
-  pb: 'paddingBottom',
-  pl: 'paddingLeft',
-  px: 'paddingX',
-  py: 'paddingY',
+export const aliases: Record<string, Record<string, string>> = {
+  color: {
+    bg: 'backgroundColor',
+  },
+  space: {
+    m: 'margin',
+    mt: 'marginTop',
+    mr: 'marginRight',
+    mb: 'marginBottom',
+    ml: 'marginLeft',
+    mx: 'marginX',
+    my: 'marginY',
+    p: 'padding',
+    pt: 'paddingTop',
+    pr: 'paddingRight',
+    pb: 'paddingBottom',
+    pl: 'paddingLeft',
+    px: 'paddingX',
+    py: 'paddingY',
+  },
 };
 
-const multiples: Record<string, string[]> = {
-  marginX: ['marginLeft', 'marginRight'],
-  marginY: ['marginTop', 'marginBottom'],
-  paddingX: ['paddingLeft', 'paddingRight'],
-  paddingY: ['paddingTop', 'paddingBottom'],
+const flattenedAliases = shallowFlatten(aliases);
+
+export const multiples: Record<string, Record<string, string[]>> = {
+  space: {
+    marginX: ['marginLeft', 'marginRight'],
+    marginY: ['marginTop', 'marginBottom'],
+    paddingX: ['paddingLeft', 'paddingRight'],
+    paddingY: ['paddingTop', 'paddingBottom'],
+  },
 };
+
+const flattenedMultiples = shallowFlatten(multiples);
 
 export const space: SystemProp = {
   margin: 'space',
@@ -185,24 +195,24 @@ const cssTransform = (
   prop: string,
   value: string | number,
 ): string | Record<string, any> => {
-  if (Object.prototype.hasOwnProperty.call(aliases, prop)) {
-    return cssTransform(aliases[prop], value);
+  if (Object.prototype.hasOwnProperty.call(flattenedAliases, prop)) {
+    return cssTransform(flattenedAliases[prop], value);
   }
 
-  if (Object.prototype.hasOwnProperty.call(multiples, prop)) {
+  if (Object.prototype.hasOwnProperty.call(flattenedMultiples, prop)) {
     let cssObj = {};
 
     // using index position 0's theme type as the keys of each theme property in GlobalTheme are not equal
     const cachedThemeVar = strToObj(
       value.toString(),
-      GlobalTheme[scales[multiples[prop][0]] as keyof Theme],
+      GlobalTheme[scales[flattenedMultiples[prop][0]] as keyof Theme],
       true,
     );
 
-    for (let i = 0; i < multiples[prop].length; i += 1) {
+    for (let i = 0; i < flattenedMultiples[prop].length; i += 1) {
       cssObj = {
         ...cssObj,
-        [multiples[prop][i]]: cachedThemeVar ?? value.toString(),
+        [flattenedMultiples[prop][i]]: cachedThemeVar ?? value.toString(),
       };
     }
     return cssObj;

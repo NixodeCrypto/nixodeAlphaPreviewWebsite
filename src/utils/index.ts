@@ -5,6 +5,7 @@ import mq from '@/utils/mq';
 import parseBreakpoint from '@/utils/parseBreakpoint';
 import mountWithTheme from '@/utils/mountWithTheme';
 import strToObj from '@/utils/strToObj';
+import shallowFlatten from '@/utils/shallowFlatten';
 
 export {
   token,
@@ -14,4 +15,5 @@ export {
   parseBreakpoint,
   mountWithTheme,
   strToObj,
+  shallowFlatten,
 };
