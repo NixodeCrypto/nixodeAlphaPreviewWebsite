@@ -35,4 +35,9 @@ describe('system/cssTransform', () => {
       color: GlobalTheme.colors.primary['500'],
     });
   });
+  it('alias can access theme values', () => {
+    expect(cssTransform('bg', 'primary.500')).toStrictEqual({
+      backgroundColor: GlobalTheme.colors.primary['500'],
+    });
+  });
 });

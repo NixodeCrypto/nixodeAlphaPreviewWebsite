@@ -58,16 +58,16 @@ describe('system/responsiveStyles', () => {
       xs: 'primary.500',
       md: 'accent.400',
     };
-    const scale = 'color';
+    const scale = 'backgroundColor';
     expect(responsiveStyles(resObj, scale)).toStrictEqual({
       [mq('xss')]: {
-        color: GlobalTheme.colors.secondary['500'],
+        backgroundColor: GlobalTheme.colors.secondary['500'],
       },
       [mq('xs')]: {
-        color: GlobalTheme.colors.primary['500'],
+        backgroundColor: GlobalTheme.colors.primary['500'],
       },
       [mq('md')]: {
-        color: GlobalTheme.colors.accent['400'],
+        backgroundColor: GlobalTheme.colors.accent['400'],
       },
     });
   });

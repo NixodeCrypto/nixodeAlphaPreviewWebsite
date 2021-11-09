@@ -2,7 +2,10 @@ import { Theme } from '@emotion/react';
 import { GlobalTheme } from '@/UI';
 import { strToObj } from '@/utils';
 
-// based on styled-system
+// BASED ON STYLED-SYSTEM
+
+export type SystemProp = Record<string, string | boolean>;
+
 const aliases: Record<string, string> = {
   bg: 'backgroundColor',
   m: 'margin',
@@ -28,11 +31,7 @@ const multiples: Record<string, string[]> = {
   paddingY: ['paddingTop', 'paddingBottom'],
 };
 
-const scales: Record<string, string> = {
-  color: 'colors',
-  background: 'colors',
-  backgroundColor: 'colors',
-  borderColor: 'colors',
+export const space: SystemProp = {
   margin: 'space',
   marginTop: 'space',
   marginRight: 'space',
@@ -47,21 +46,81 @@ const scales: Record<string, string> = {
   paddingLeft: 'space',
   paddingX: 'space',
   paddingY: 'space',
-  top: 'space',
-  right: 'space',
-  bottom: 'space',
-  left: 'space',
-  gridGap: 'space',
-  gridColumnGap: 'space',
-  gridRowGap: 'space',
-  gap: 'space',
-  columnGap: 'space',
-  rowGap: 'space',
+};
+
+export const color: SystemProp = {
+  color: 'colors',
+  backgroundColor: 'colors',
+  opacity: true,
+};
+
+export const typography: SystemProp = {
   fontFamily: 'fonts',
   fontSize: 'fontSizes',
   fontWeight: 'fontWeights',
   lineHeight: 'lineHeights',
   letterSpacing: 'letterSpacings',
+  textAlign: true,
+  fontStyle: true,
+};
+
+export const layout: SystemProp = {
+  width: 'sizes',
+  minWidth: 'sizes',
+  maxWidth: 'sizes',
+  height: 'sizes',
+  minHeight: 'sizes',
+  maxHeight: 'sizes',
+  display: true,
+  verticalAlign: true,
+  overflow: true,
+  overflowX: true,
+  overflowY: true,
+};
+
+export const flexbox: SystemProp = {
+  flexBasis: 'sizes',
+  alignItems: true,
+  alignContent: true,
+  justifyItems: true,
+  justifyContent: true,
+  flexWrap: true,
+  flexDirection: true,
+  flex: true,
+  flexGrow: true,
+  flexShrink: true,
+  justifySelf: true,
+  alignSelf: true,
+  order: true,
+};
+
+export const grid: SystemProp = {
+  gridGap: 'space',
+  gridColumnGap: 'space',
+  gridRowGap: 'space',
+  columnGap: 'space',
+  rowGap: 'space',
+  gap: 'space',
+  gridColumn: true,
+  gridRow: true,
+  gridArea: true,
+  gridAutoFlow: true,
+  gridAutoRows: true,
+  gridAutoColumns: true,
+  gridTemplateRows: true,
+  gridTemplateColumns: true,
+  gridTemplateAreas: true,
+};
+
+export const background: SystemProp = {
+  background: true,
+  backgroundImage: true,
+  backgroundSize: true,
+  backgroundPosition: true,
+  backgroundRepeat: true,
+};
+
+export const border: SystemProp = {
   border: 'borders',
   borderTop: 'borders',
   borderRight: 'borders',
@@ -86,21 +145,40 @@ const scales: Record<string, string> = {
   borderRightWidth: 'borderWidths',
   borderRightColor: 'colors',
   borderRightStyle: 'borderStyles',
-  outlineColor: 'colors',
+  borderColor: 'colors',
+};
+
+export const position: SystemProp = {
+  position: true,
+  zIndex: 'zIndices',
+  top: 'space',
+  right: 'space',
+  bottom: 'space',
+  left: 'space',
+};
+
+export const shadow: SystemProp = {
   boxShadow: 'shadows',
   textShadow: 'shadows',
-  zIndex: 'zIndices',
-  width: 'sizes',
-  minWidth: 'sizes',
-  maxWidth: 'sizes',
-  height: 'sizes',
-  minHeight: 'sizes',
-  maxHeight: 'sizes',
-  flexBasis: 'sizes',
-  size: 'sizes',
-  // svg
+};
+
+export const svg: SystemProp = {
   fill: 'colors',
   stroke: 'colors',
+};
+
+const scales: SystemProp = {
+  ...space,
+  ...color,
+  ...typography,
+  ...layout,
+  ...flexbox,
+  ...grid,
+  ...background,
+  ...border,
+  ...position,
+  ...shadow,
+  ...svg,
 };
 
 const cssTransform = (
