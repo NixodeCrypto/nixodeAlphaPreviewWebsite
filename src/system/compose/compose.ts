@@ -2,8 +2,8 @@
 import merge from 'deepmerge';
 import responsiveStyles from '@/system/responsiveStyles';
 
-const compose = (
-  props: Record<string, any>,
+const compose = <T>(
+  props: Record<string, T | string>,
   config: Record<string, boolean | string>,
 ) => {
   let CSSObj = {};
@@ -12,7 +12,7 @@ const compose = (
     if (Object.prototype.hasOwnProperty.call(props, configKeys[i])) {
       CSSObj = merge.all([
         CSSObj,
-        responsiveStyles(props[configKeys[i]], configKeys[i]),
+        responsiveStyles(props[configKeys[i]] as string, configKeys[i]),
       ]);
     }
   }

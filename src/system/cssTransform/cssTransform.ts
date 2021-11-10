@@ -4,7 +4,12 @@ import { strToObj, shallowFlatten } from '@/utils';
 
 // BASED ON STYLED-SYSTEM
 
-export type SystemProp = Record<string, string | boolean>;
+export type ComposeSystemProp<T> = Record<
+  keyof T,
+  string | Partial<Record<keyof Theme['breakpoints'], string>>
+>;
+
+type InternalSystemProp = Record<string, string | boolean>;
 
 export const aliases: Record<string, Record<string, string>> = {
   color: {
@@ -41,7 +46,7 @@ export const multiples: Record<string, Record<string, string[]>> = {
 
 const flattenedMultiples = shallowFlatten(multiples);
 
-export const space: SystemProp = {
+export const space: InternalSystemProp = {
   margin: 'space',
   marginTop: 'space',
   marginRight: 'space',
@@ -58,13 +63,13 @@ export const space: SystemProp = {
   paddingY: 'space',
 };
 
-export const color: SystemProp = {
+export const color: InternalSystemProp = {
   color: 'colors',
   backgroundColor: 'colors',
   opacity: true,
 };
 
-export const typography: SystemProp = {
+export const typography: InternalSystemProp = {
   fontFamily: 'fonts',
   fontSize: 'fontSizes',
   fontWeight: 'fontWeights',
@@ -74,7 +79,7 @@ export const typography: SystemProp = {
   fontStyle: true,
 };
 
-export const layout: SystemProp = {
+export const layout: InternalSystemProp = {
   width: 'sizes',
   minWidth: 'sizes',
   maxWidth: 'sizes',
@@ -88,7 +93,7 @@ export const layout: SystemProp = {
   overflowY: true,
 };
 
-export const flexbox: SystemProp = {
+export const flexbox: InternalSystemProp = {
   flexBasis: 'sizes',
   alignItems: true,
   alignContent: true,
@@ -104,7 +109,7 @@ export const flexbox: SystemProp = {
   order: true,
 };
 
-export const grid: SystemProp = {
+export const grid: InternalSystemProp = {
   gridGap: 'space',
   gridColumnGap: 'space',
   gridRowGap: 'space',
@@ -122,7 +127,7 @@ export const grid: SystemProp = {
   gridTemplateAreas: true,
 };
 
-export const background: SystemProp = {
+export const background: InternalSystemProp = {
   background: true,
   backgroundImage: true,
   backgroundSize: true,
@@ -130,7 +135,7 @@ export const background: SystemProp = {
   backgroundRepeat: true,
 };
 
-export const border: SystemProp = {
+export const border: InternalSystemProp = {
   border: 'borders',
   borderTop: 'borders',
   borderRight: 'borders',
@@ -158,7 +163,7 @@ export const border: SystemProp = {
   borderColor: 'colors',
 };
 
-export const position: SystemProp = {
+export const position: InternalSystemProp = {
   position: true,
   zIndex: 'zIndices',
   top: 'space',
@@ -167,17 +172,17 @@ export const position: SystemProp = {
   left: 'space',
 };
 
-export const shadow: SystemProp = {
+export const shadow: InternalSystemProp = {
   boxShadow: 'shadows',
   textShadow: 'shadows',
 };
 
-export const svg: SystemProp = {
+export const svg: InternalSystemProp = {
   fill: 'colors',
   stroke: 'colors',
 };
 
-const scales: SystemProp = {
+const scales: InternalSystemProp = {
   ...space,
   ...color,
   ...typography,
