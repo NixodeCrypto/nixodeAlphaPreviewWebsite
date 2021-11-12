@@ -1,17 +1,50 @@
 /* @jsxImportSource @emotion/react */
 import React from 'react';
 import styled from '@emotion/styled';
-import { css } from '@emotion/react';
+import { Theme, css } from '@emotion/react';
 import { transparentize } from 'polished';
-import { space, SpaceProps, variant as CSSVariant } from '@/system';
+import {
+  space,
+  SpaceProps,
+  layout,
+  LayoutProps,
+  variant as CSSVariant,
+} from '@/system';
+import { ColorSwatches } from '@/utils/colorSwatches';
 import { token } from '@/utils';
 
-export interface IProps extends ButtonProps, SpaceProps {
+export interface IProps extends ButtonProps, SpaceProps, LayoutProps {
   color?: 'primary' | 'secondary' | 'accent' | 'grey';
   size?: 'sm' | 'md' | 'lg' | 'icon';
-  maxWidth?: boolean;
   variant?: 'solid' | 'text' | 'outlined';
 }
+
+const solidGreyComposer = (color: keyof Theme['colors']) => {
+  const tokenColorPicks =
+    color === 'grey'
+      ? ['100', '200', '300', '800']
+      : ['500', '600', '700', 'white'];
+
+  for (let i = 0; i < tokenColorPicks.length; i += 1) {
+    tokenColorPicks[i] =
+      token.colors(
+        `${color}.${tokenColorPicks[i]}` as `${keyof Theme['colors']}.${keyof ColorSwatches}`,
+      ) ?? tokenColorPicks[i];
+  }
+
+  return css`
+              border-color: ${tokenColorPicks[0]};
+              background: ${tokenColorPicks[0]};
+              color: ${tokenColorPicks[3]};
+              &:hover {
+                border-color: ${tokenColorPicks[1]};
+                background: ${tokenColorPicks[1]};
+              }
+              &:active {
+                border-color: ${tokenColorPicks[2]};
+                background: ${tokenColorPicks[2]};
+  `;
+};
 
 const ButtonRoot = styled.button<IProps>`
   position: relative;
@@ -22,8 +55,12 @@ const ButtonRoot = styled.button<IProps>`
   border-color: transparent;
   border-radius: ${token.radii('sm')};
   transition: ${token.transition('standard')};
-  background: transparent;
   white-space: nowrap;
+  box-sizing: border-box;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   ${(props) =>
     props.color &&
@@ -31,34 +68,7 @@ const ButtonRoot = styled.button<IProps>`
       all: css`
         color: ${token.colors(`${props.color}.500`)};
       `,
-      solid:
-        props.color === 'grey'
-          ? css`
-              border-color: ${token.colors(`${props.color}.100`)};
-              background: ${token.colors(`${props.color}.100`)};
-              color: ${token.colors(`${props.color}.800`)};
-              &:hover {
-                border-color: ${token.colors(`${props.color}.200`)};
-                background: ${token.colors(`${props.color}.200`)};
-              }
-              &:active {
-                border-color: ${token.colors(`${props.color}.300`)};
-                background: ${token.colors(`${props.color}.300`)};
-              }
-            `
-          : css`
-              border-color: ${token.colors(`${props.color}.500`)};
-              background: ${token.colors(`${props.color}.500`)};
-              color: white;
-              &:hover {
-                border-color: ${token.colors(`${props.color}.600`)};
-                background: ${token.colors(`${props.color}.600`)};
-              }
-              &:active {
-                border-color: ${token.colors(`${props.color}.700`)};
-                background: ${token.colors(`${props.color}.700`)};
-              }
-            `,
+      solid: solidGreyComposer(props.color),
       text: css`
         &:hover {
           background: ${transparentize(
@@ -97,9 +107,6 @@ const ButtonRoot = styled.button<IProps>`
   ${(props) =>
     CSSVariant(props.size, {
       all: css`
-        display: flex;
-        justify-content: center;
-        align-items: center;
         font-size: ${token.fontSizes('bodyLg')};
       `,
       icon: css`
@@ -120,12 +127,8 @@ const ButtonRoot = styled.button<IProps>`
       `,
     })}
 
-  ${(props) =>
-    props.maxWidth &&
-    css`
-      width: 100%;
-    `}
   ${space};
+  ${layout};
 `;
 
 const Button = React.forwardRef(
@@ -136,7 +139,6 @@ const Button = React.forwardRef(
       color = 'primary',
       variant = 'solid',
       size = 'md',
-      maxWidth = false,
       ...other
     } = props;
 
@@ -147,7 +149,6 @@ const Button = React.forwardRef(
         size={size}
         ref={ref}
         variant={variant}
-        maxWidth={maxWidth}
         {...other}
       >
         {children}

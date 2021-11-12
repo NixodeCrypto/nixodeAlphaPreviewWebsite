@@ -282,11 +282,4 @@ describe('components/Button', () => {
       );
     });
   });
-
-  describe('maxWidth', () => {
-    it('makes width 100%', () => {
-      const wrapper = mountWithTheme(<Button maxWidth />);
-      expect(wrapper).toHaveStyleRule('width', '100%');
-    });
-  });
 });

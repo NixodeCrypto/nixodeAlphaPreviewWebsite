@@ -115,7 +115,6 @@ const Navbar = () => {
           position="fixed"
           width="100%"
           flexDirection="column"
-          maxWidth={`calc(100% - ${token.sizes('sm')})`}
           css={css`
             & > * {
               padding-top: ${token.space('sm')};
@@ -136,10 +135,10 @@ const Navbar = () => {
               }
             `}
           >
-            <Button maxWidth size="lg">
+            <Button width="100%" size="lg">
               Get started
             </Button>
-            <Button maxWidth size="lg" variant="outlined">
+            <Button width="100%" size="lg" variant="outlined">
               Sign in
             </Button>
           </Box>
