@@ -4,7 +4,7 @@ import responsiveStyles from '@/system/responsiveStyles';
 
 const compose = <T>(
   props: Record<string, T | string>,
-  config: Record<string, boolean | string>,
+  config: Record<string, boolean | string | string[]>,
 ) => {
   let CSSObj = {};
   const configKeys = Object.keys(config);

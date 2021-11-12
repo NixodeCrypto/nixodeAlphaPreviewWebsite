@@ -24,7 +24,7 @@ jobs:
           command: npm run test:ci
       - run:
           name: Build
-          command: npm run build
+          command: npm run build:ci
       - store_test_results:
           path: ~/nixodeWebsite/coverage
       - store_artifacts:
