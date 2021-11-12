@@ -10,7 +10,7 @@ beforeAll(() => {
     <Flex
       alignItems="center"
       justifyContent="center"
-      flexGrow={1}
+      flexGrow="1"
       flexDirection="column"
       px="sm"
     />,

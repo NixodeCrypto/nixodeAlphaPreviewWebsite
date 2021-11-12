@@ -14,7 +14,7 @@ import {
   ShadowProps,
   position,
   PositionProps,
-} from 'styled-system';
+} from '@/system';
 
 export interface IProps
   extends DivProps,

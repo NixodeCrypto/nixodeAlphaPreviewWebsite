@@ -2,18 +2,14 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import { space, SpaceProps } from 'styled-system';
 import { AlertCircle } from 'react-feather';
-import { token, variant as CSSVariant } from '@/utils';
+import { space, SpaceProps, variant as CSSVariant } from '@/system';
+import { token } from '@/utils';
 import Box from '@/components/Box';
 import Flex from '@/components/Flex';
 import Caption from '@/components/Caption';
 
-export interface IProps
-  extends Omit<InputProps, 'width' | 'height' | 'size'>,
-    SpaceProps {
-  width?: any;
-  height?: any;
+export interface IProps extends Omit<InputProps, 'size'>, SpaceProps {
   size?: 'sm' | 'md' | 'lg';
   variant?: 'outlined';
   label?: string;

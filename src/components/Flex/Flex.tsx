@@ -2,7 +2,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import { flexbox, FlexboxProps } from 'styled-system';
+import { flexbox, FlexboxProps } from '@/system';
 import { IProps as BoxProps, BoxStyles } from '@/components/Box';
 
 export interface IProps extends BoxProps, FlexboxProps {

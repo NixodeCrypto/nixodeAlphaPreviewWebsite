@@ -44,12 +44,7 @@ const Navbar = () => {
   `;
 
   return (
-    <Box
-      position="fixed"
-      zIndex={token.zIndices('navbar')}
-      width="100%"
-      background="white"
-    >
+    <Box position="fixed" zIndex="navbar" width="100%" background="white">
       <Flex
         justifyContent="center"
         alignItems="center"

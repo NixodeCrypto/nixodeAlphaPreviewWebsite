@@ -8,15 +8,14 @@ import {
   ColorProps,
   typography,
   TypographyProps,
-} from 'styled-system';
+} from '@/system';
 import { token, mq } from '@/utils';
 
 export interface IProps
-  extends Omit<PProps, 'color'>,
+  extends PProps,
     SpaceProps,
-    Omit<ColorProps, 'color'>,
+    ColorProps,
     TypographyProps {
-  color?: string;
   xs?: boolean;
 }
 

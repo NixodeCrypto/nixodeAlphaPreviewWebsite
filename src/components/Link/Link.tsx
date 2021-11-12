@@ -1,10 +1,10 @@
 /* @jsxImportSource @emotion/react */
 import NextLink from 'next/link';
 import styled from '@emotion/styled';
-import { space, SpaceProps, color, ColorProps } from 'styled-system';
+import { space, SpaceProps, color, ColorProps } from '@/system';
 import { token } from '@/utils';
 
-interface IProps extends Omit<LinkProps, 'color'>, SpaceProps, ColorProps {
+interface IProps extends LinkProps, SpaceProps, ColorProps {
   size?: 'sm';
 }
 

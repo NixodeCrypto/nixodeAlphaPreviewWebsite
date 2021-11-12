@@ -6,7 +6,7 @@ import { strToObj, shallowFlatten } from '@/utils';
 
 export type ComposeSystemProp<T> = Record<
   keyof T,
-  string | Partial<Record<keyof Theme['breakpoints'], string>>
+  string | number | object | undefined | boolean | null | Array<unknown>
 >;
 
 type InternalSystemProp = Record<string, string | boolean>;

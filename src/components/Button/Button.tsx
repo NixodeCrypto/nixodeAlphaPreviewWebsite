@@ -3,8 +3,8 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { transparentize } from 'polished';
-import { space, SpaceProps } from 'styled-system';
-import { token, variant as CSSVariant } from '@/utils';
+import { space, SpaceProps, variant as CSSVariant } from '@/system';
+import { token } from '@/utils';
 
 export interface IProps extends ButtonProps, SpaceProps {
   color?: 'primary' | 'secondary' | 'accent' | 'grey';
