@@ -102,7 +102,9 @@ export const GlobalTheme: Theme = {
   radii: {
     sm: rem(4),
   },
-  shadows: {},
+  shadows: {
+    focus: '0 0 0 3px rgba(66,153,225,0.3)',
+  },
   zIndices: {
     navbar: 9999,
   },

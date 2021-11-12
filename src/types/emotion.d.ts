@@ -80,7 +80,7 @@ declare module '@emotion/react' {
     breakpoints: Record<'xss' | 'xs' | 'sm' | 'md' | 'lg', string>;
     borders: Record<'sm', string>;
     radii: Record<'sm', string>;
-    shadows: Record<string, string>;
+    shadows: Record<'focus', string>;
     zIndices: Record<'navbar', number>;
     transition: Record<'standard', string>;
   }

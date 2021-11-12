@@ -17,6 +17,7 @@ const LinkStyles = styled.a<IProps>`
     props.size === 'sm'
       ? token.fontSizes('bodySm')
       : token.fontSizes('bodyLg')};
+
   ${space};
   ${color};
 `;

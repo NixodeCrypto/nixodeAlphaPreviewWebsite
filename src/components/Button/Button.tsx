@@ -62,6 +62,11 @@ const ButtonRoot = styled.button<IProps>`
   justify-content: center;
   align-items: center;
 
+  &:focus {
+    box-shadow: ${token.shadows('focus')};
+    outline: 0;
+  }
+
   ${(props) =>
     props.color &&
     CSSVariant(props.variant, {

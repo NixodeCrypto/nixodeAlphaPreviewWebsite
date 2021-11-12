@@ -282,4 +282,13 @@ describe('components/Button', () => {
       );
     });
   });
+
+  describe('a11y', () => {
+    it('focus state', () => {
+      const wrapper = mountWithTheme(<Button />);
+      expect(wrapper).toHaveStyleRule('box-shadow', GlobalTheme.shadows.focus, {
+        target: ':focus',
+      });
+    });
+  });
 });
