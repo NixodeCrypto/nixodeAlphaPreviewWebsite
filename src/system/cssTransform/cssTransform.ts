@@ -9,7 +9,7 @@ export type ComposeSystemProp<T> = Record<
   string | number | object | undefined | boolean | null | Array<unknown>
 >;
 
-type InternalSystemProp = Record<string, string | boolean>;
+type InternalSystemProp = Record<string, string | boolean | Array<string>>;
 
 export const aliases: Record<string, Record<string, string>> = {
   color: {
@@ -83,6 +83,7 @@ export const layout: InternalSystemProp = {
   width: 'sizes',
   minWidth: 'sizes',
   maxWidth: 'sizes',
+  screenMaxWidth: ['maxWidth', 'breakpoints'],
   height: 'sizes',
   minHeight: 'sizes',
   maxHeight: 'sizes',
@@ -200,6 +201,17 @@ const cssTransform = (
   prop: string,
   value: string | number,
 ): string | Record<string, any> => {
+  if (Array.isArray(scales[prop])) {
+    return {
+      [(scales[prop] as string)[0]]:
+        strToObj(
+          value.toString(),
+          GlobalTheme[(scales[prop] as string)[1] as keyof Theme],
+          true,
+        ) ?? value.toString(),
+    };
+  }
+
   if (Object.prototype.hasOwnProperty.call(flattenedAliases, prop)) {
     return cssTransform(flattenedAliases[prop], value);
   }

@@ -94,4 +94,22 @@ describe('system/compose', () => {
       },
     });
   });
+  it('cssTransform prop array scales', () => {
+    const config = {
+      screenMaxWidth: true,
+    };
+
+    const props = {
+      screenMaxWidth: { xs: '1rem', md: 'sm' },
+    };
+
+    expect(compose(props, config)).toStrictEqual({
+      [mq('xs')]: {
+        maxWidth: '1rem',
+      },
+      [mq('md')]: {
+        maxWidth: GlobalTheme.breakpoints.sm,
+      },
+    });
+  });
 });

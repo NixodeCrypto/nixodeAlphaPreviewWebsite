@@ -40,4 +40,9 @@ describe('system/cssTransform', () => {
       backgroundColor: GlobalTheme.colors.primary['500'],
     });
   });
+  it('prop array aliases', () => {
+    expect(cssTransform('screenMaxWidth', 'lg')).toStrictEqual({
+      maxWidth: GlobalTheme.breakpoints.lg,
+    });
+  });
 });

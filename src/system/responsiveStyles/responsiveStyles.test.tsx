@@ -97,4 +97,16 @@ describe('system/responsiveStyles', () => {
       paddingLeft: '1rem',
     });
   });
+  it('creates responsive style object with property alias scale', () => {
+    const resObj = { xss: '1rem', md: 'sm' };
+    const scale = 'screenMaxWidth';
+    expect(responsiveStyles(resObj, scale)).toStrictEqual({
+      [mq('xss')]: {
+        maxWidth: '1rem',
+      },
+      [mq('md')]: {
+        maxWidth: GlobalTheme.breakpoints.sm,
+      },
+    });
+  });
 });
