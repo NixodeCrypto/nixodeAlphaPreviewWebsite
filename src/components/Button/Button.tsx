@@ -33,16 +33,16 @@ const solidGreyComposer = (color: keyof Theme['colors']) => {
   }
 
   return css`
-              border-color: ${tokenColorPicks[0]};
-              background: ${tokenColorPicks[0]};
-              color: ${tokenColorPicks[3]};
-              &:hover {
-                border-color: ${tokenColorPicks[1]};
-                background: ${tokenColorPicks[1]};
-              }
-              &:active {
-                border-color: ${tokenColorPicks[2]};
-                background: ${tokenColorPicks[2]};
+    border-color: ${tokenColorPicks[0]};
+    background: ${tokenColorPicks[0]};
+    color: ${tokenColorPicks[3]};
+    &:hover {
+      border-color: ${tokenColorPicks[1]};
+      background: ${tokenColorPicks[1]};
+    }
+    &:active {
+      border-color: ${tokenColorPicks[2]};
+      background: ${tokenColorPicks[2]};
   `;
 };
 
