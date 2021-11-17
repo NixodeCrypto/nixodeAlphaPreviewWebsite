@@ -10,10 +10,7 @@ export type ComposeSystemProp<T> = Record<
   string | number | object | undefined | boolean | null | Array<unknown>
 >;
 
-type InternalSystemProp = Record<
-  string,
-  string | boolean | Array<string | ((prop: string) => Record<string, any>)>
->;
+type InternalSystemProp = Record<string, string | boolean | Array<any>>;
 
 export const aliases: Record<string, Record<string, string>> = {
   color: {
