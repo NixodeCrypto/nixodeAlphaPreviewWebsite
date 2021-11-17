@@ -109,4 +109,20 @@ describe('system/responsiveStyles', () => {
       },
     });
   });
+  it('creates responsive style object with custom fn transformer', () => {
+    const resObj = { xss: '1rem', md: 'md' };
+    const scale = 'verticalGap';
+    expect(responsiveStyles(resObj, scale)).toStrictEqual({
+      [mq('xss')]: {
+        '* + *': {
+          marginTop: '1rem',
+        },
+      },
+      [mq('md')]: {
+        '* + *': {
+          marginTop: GlobalTheme.space.md,
+        },
+      },
+    });
+  });
 });

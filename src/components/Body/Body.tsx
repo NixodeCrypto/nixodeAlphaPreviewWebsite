@@ -26,7 +26,7 @@ const BodyRoot = styled.p<IProps>`
   line-height: 140%;
   ${space};
   ${color};
-  ${typography}
+  ${typography};
 `;
 
 const Body = React.forwardRef(

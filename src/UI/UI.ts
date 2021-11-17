@@ -88,6 +88,7 @@ export const GlobalTheme: Theme = {
     lg: rem(46),
     xl: rem(64),
     xxl: rem(144),
+    max: '100%',
   },
   breakpoints: {
     xss: '0px',
@@ -126,7 +127,7 @@ export const GlobalReset = css`
   }
   h1 {
     font-size: 2em;
-    margin: 0.67em 0;
+    margin: 0 0;
   }
   hr {
     box-sizing: content-box; /* 1 */

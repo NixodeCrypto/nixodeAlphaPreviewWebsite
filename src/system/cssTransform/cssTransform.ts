@@ -1,3 +1,4 @@
+/* @jsxImportSource @emotion/react */
 import { Theme } from '@emotion/react';
 import { GlobalTheme } from '@/UI';
 import { strToObj, shallowFlatten } from '@/utils';
@@ -9,7 +10,10 @@ export type ComposeSystemProp<T> = Record<
   string | number | object | undefined | boolean | null | Array<unknown>
 >;
 
-type InternalSystemProp = Record<string, string | boolean | Array<string>>;
+type InternalSystemProp = Record<
+  string,
+  string | boolean | Array<string | ((prop: string) => Record<string, any>)>
+>;
 
 export const aliases: Record<string, Record<string, string>> = {
   color: {
@@ -108,6 +112,14 @@ export const flexbox: InternalSystemProp = {
   justifySelf: true,
   alignSelf: true,
   order: true,
+  verticalGap: [
+    'space',
+    (prop: string) => ({
+      '* + *': {
+        marginTop: prop,
+      },
+    }),
+  ],
 };
 
 export const grid: InternalSystemProp = {
@@ -202,14 +214,23 @@ const cssTransform = (
   value: string | number,
 ): string | Record<string, any> => {
   if (Array.isArray(scales[prop])) {
-    return {
-      [(scales[prop] as string)[0]]:
-        strToObj(
-          value.toString(),
-          GlobalTheme[(scales[prop] as string)[1] as keyof Theme],
-          true,
-        ) ?? value.toString(),
-    };
+    if (typeof (scales[prop] as string[])[1] === 'string') {
+      return {
+        [(scales[prop] as string[])[0]]:
+          strToObj(
+            value.toString(),
+            GlobalTheme[(scales[prop] as string)[1] as keyof Theme],
+            true,
+          ) ?? value.toString(),
+      };
+    }
+    return (scales[prop] as any)[1](
+      strToObj(
+        value.toString(),
+        GlobalTheme[(scales[prop] as string)[0] as keyof Theme],
+        true,
+      ) ?? value.toString(),
+    );
   }
 
   if (Object.prototype.hasOwnProperty.call(flattenedAliases, prop)) {

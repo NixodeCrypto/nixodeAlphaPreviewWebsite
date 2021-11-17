@@ -12,7 +12,7 @@ describe('system/cssTransform', () => {
       paddingTop: GlobalTheme.space.sm,
     });
   });
-  it('can access theme baed on multiples array', () => {
+  it('can access theme based on multiples array', () => {
     expect(cssTransform('paddingX', 'sm')).toStrictEqual({
       paddingRight: GlobalTheme.space.sm,
       paddingLeft: GlobalTheme.space.sm,
@@ -43,6 +43,13 @@ describe('system/cssTransform', () => {
   it('prop array aliases', () => {
     expect(cssTransform('screenMaxWidth', 'lg')).toStrictEqual({
       maxWidth: GlobalTheme.breakpoints.lg,
+    });
+  });
+  it('custom fn transformer', () => {
+    expect(cssTransform('verticalGap', 'sm')).toStrictEqual({
+      '* + *': {
+        marginTop: GlobalTheme.space.sm,
+      },
     });
   });
 });

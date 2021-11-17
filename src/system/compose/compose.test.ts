@@ -112,4 +112,29 @@ describe('system/compose', () => {
       },
     });
   });
+  it('cssTransform custom fn transformer', () => {
+    const config = {
+      px: true,
+      verticalGap: true,
+    };
+
+    const props = {
+      px: { xs: '1rem' },
+      verticalGap: { xs: 'sm', md: 'lg' },
+    };
+    expect(compose(props, config)).toStrictEqual({
+      [mq('xs')]: {
+        paddingRight: '1rem',
+        paddingLeft: '1rem',
+        '* + *': {
+          marginTop: GlobalTheme.space.sm,
+        },
+      },
+      [mq('md')]: {
+        '* + *': {
+          marginTop: GlobalTheme.space.lg,
+        },
+      },
+    });
+  });
 });
