@@ -117,6 +117,14 @@ export const flexbox: InternalSystemProp = {
       },
     }),
   ],
+  horizontalGap: [
+    'space',
+    (prop: string) => ({
+      '* + *': {
+        marginLeft: prop,
+      },
+    }),
+  ],
 };
 
 export const grid: InternalSystemProp = {

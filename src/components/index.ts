@@ -9,6 +9,7 @@ import Header from '@/components/Header';
 import Body from '@/components/Body';
 import Caption from '@/components/Caption';
 import Input from '@/components/Input';
+import Image from '@/components/Image';
 
 export {
   Button,
@@ -22,4 +23,5 @@ export {
   Body,
   Caption,
   Input,
+  Image,
 };

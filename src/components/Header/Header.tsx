@@ -2,10 +2,22 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import { space, SpaceProps, color, ColorProps, variant } from '@/system';
+import {
+  space,
+  SpaceProps,
+  color,
+  ColorProps,
+  typography,
+  TypographyProps,
+  variant,
+} from '@/system';
 import { token, mq } from '@/utils';
 
-export interface IProps extends HeadingProps, SpaceProps, ColorProps {
+export interface IProps
+  extends HeadingProps,
+    SpaceProps,
+    ColorProps,
+    TypographyProps {
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
@@ -57,6 +69,7 @@ const HeaderRoot = styled.h1<IProps>`
   line-height: 140%;
   ${space};
   ${color};
+  ${typography};
 `;
 
 const Header = React.forwardRef(

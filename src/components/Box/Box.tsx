@@ -14,6 +14,8 @@ import {
   ShadowProps,
   position,
   PositionProps,
+  typography,
+  TypographyProps,
 } from '@/system';
 
 export interface IProps
@@ -23,7 +25,8 @@ export interface IProps
     LayoutProps,
     BorderProps,
     ShadowProps,
-    PositionProps {}
+    PositionProps,
+    TypographyProps {}
 
 // Exporting Styles as they are used in Flex and Grid components
 export const BoxStyles = styled.div<IProps>`
@@ -33,6 +36,7 @@ export const BoxStyles = styled.div<IProps>`
   ${border};
   ${shadow};
   ${position};
+  ${typography};
 `;
 
 const Box = React.forwardRef(

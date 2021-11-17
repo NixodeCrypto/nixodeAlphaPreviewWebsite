@@ -83,7 +83,7 @@ const Navbar = () => {
             flexDirection="row"
             justifyContent="center"
             alignItems="center"
-            horizontalGap={token.space('lg')}
+            horizontalGap="lg"
             data-testid="desktopLinkContainer"
           >
             <NavLink href="/">Home</NavLink>
@@ -98,7 +98,7 @@ const Navbar = () => {
             flexDirection="row"
             justifyContent="flex-end"
             alignItems="center"
-            horizontalGap={token.space('md')}
+            horizontalGap="md"
           >
             <Link href="/signin">Sign in</Link>
             <Button onClick={() => router.push('/signup')}>Sign up</Button>
