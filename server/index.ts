@@ -6,6 +6,8 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import mongoose, { ConnectOptions } from 'mongoose';
 import indexRouter from '@/routes/index';
+import apiRouter from '@/routes/api';
+import '@/cronjobs/crypto';
 
 dotenv.config();
 
@@ -46,9 +48,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // cross-origin requests
 app.use(cors());
-
 // route prefixes
 app.use('/', indexRouter);
+app.use('/', apiRouter);
 
 app.listen(PORT);
 
