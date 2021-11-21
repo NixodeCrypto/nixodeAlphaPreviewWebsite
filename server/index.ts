@@ -1,12 +1,15 @@
-import express, { Response } from 'express';
+require('module-alias/register');
+import express from 'express';
 import cookieParser from 'cookie-parser';
 import path from 'path';
-import winston from 'winston';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import mongoose, { ConnectOptions } from 'mongoose';
+import indexRouter from '@/routes/index';
 
 dotenv.config();
+
+const PORT = process.env.PORT || 7000;
 
 // DB Connect
 const MONGODB_URL = process.env.MONGODB_URL;
@@ -21,20 +24,32 @@ mongoose
   .then(() => {
     // do not show the log when environment = "test"
     if (process.env.NODE_ENV !== 'test') {
-      console.log('Connected to %s', MONGODB_URL);
-      console.log('App is running ... \n');
+      console.log('Connected to MongoDB');
+      console.log(`App is running on port ${PORT}... \n`);
       console.log('Press CTRL + C to stop the process. \n');
+    }
+  })
+  .catch((err) => {
+    // do not show the log when environment = "test"
+    if (process.env.NODE_ENV !== 'test') {
+      console.log('App Starting Error:', err.message);
+      process.exit(1);
     }
   });
 
-const PORT = process.env.PORT || 7000;
-
 const app = express();
 
-app.get('/', (_, res: Response) => {
-  res.send('Hello World');
-});
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.listen(PORT, () => {
-  console.log(`App started on port: ${PORT}`);
-});
+// cross-origin requests
+app.use(cors());
+
+// route prefixes
+app.use('/', indexRouter);
+
+app.listen(PORT);
+
+export default app;

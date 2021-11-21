@@ -6,6 +6,14 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-    "outDir": "./build"
-  }
+    "outDir": "./build",
+    "baseUrl": ".",
+    "resolveJsonModule": true,
+    "paths": {
+      "@/*": ["./*"],
+      "@/public": ["./public/*"]
+    }
+  },
+  "include": ["./package.json", ".env", "**/*.ts"],
+  "exclude": ["node_modules"]
 }
