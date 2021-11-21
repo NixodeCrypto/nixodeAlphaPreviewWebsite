@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  frontend(core):
+  frontend-core:
     working_directory: ~/nixodeWebsite
     docker:
     - image: circleci/node:current
@@ -26,7 +26,7 @@ jobs:
           path: ~/nixodeWebsite/coverage
       - store_artifacts:
           path: ~/nixodeWebsite/coverage
-  backend(core):
+  backend-core:
     working_directory: ~/nixodeWebsite/server
     docker:
     - image: circleci/node:current
@@ -50,5 +50,5 @@ jobs:
 workflows:
   main:
     jobs:
-      - frontend(core)
-      - backend(core)
+      - frontend-core
+      - backend-core
