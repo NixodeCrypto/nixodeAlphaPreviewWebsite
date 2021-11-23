@@ -3,6 +3,6 @@ import CryptoController from '@/controllers/crypto';
 
 const router = express.Router();
 
-router.post('/getAllCoins', CryptoController.getAllCoins as Application);
+router.get('/getAllCoins', CryptoController.getAllCoins as Application);
 
 export default router;

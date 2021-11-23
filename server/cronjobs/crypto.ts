@@ -2,13 +2,25 @@ import cron from 'node-cron';
 import axios from 'axios';
 import Ticker from '@/models/Ticker';
 
-cron.schedule('*/2 * * * *', () => {
+cron.schedule('* * * * *', () => {
   axios
     .get(`${process.env.COIN_API}/tickers`)
     .then((res) => {
-      Ticker.insertMany(res.data).catch((err) => {
-        console.log(err);
-      });
+      const bulkData = res.data.map((item: any) => ({
+        replaceOne: {
+          upsert: true,
+          filter: {
+            id: item.id,
+          },
+          replacement: item,
+        },
+      }));
+
+      try {
+        Ticker.bulkWrite(bulkData);
+      } catch (e) {
+        console.log(e);
+      }
     })
     .catch((err) => {
       console.log(err);
