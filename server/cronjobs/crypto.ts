@@ -6,15 +6,17 @@ cron.schedule('* * * * *', () => {
   axios
     .get(`${process.env.COIN_API}/tickers`)
     .then((res) => {
-      const bulkData = res.data.map((item: any) => ({
-        replaceOne: {
-          upsert: true,
-          filter: {
-            id: item.id,
+      const bulkData = res.data.map(
+        (item: Record<string, string | object>) => ({
+          replaceOne: {
+            upsert: true,
+            filter: {
+              id: item.id,
+            },
+            replacement: item,
           },
-          replacement: item,
-        },
-      }));
+        }),
+      );
 
       try {
         Ticker.bulkWrite(bulkData);
