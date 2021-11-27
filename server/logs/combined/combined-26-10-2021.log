@@ -1,0 +1,222 @@
+2021-11-26 18:04:10 [[32minfo[39m]: Connected to MongoDB 
+2021-11-26 18:04:10 [[32minfo[39m]: App is running on port 7000 
+2021-11-26 18:04:34 [[32minfo[39m]: Connected to MongoDB 
+2021-11-26 18:04:34 [[32minfo[39m]: App is running on port 7000 
+2021-11-26 18:05:00 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 18:05:28 [[32minfo[39m]: Connected to MongoDB 
+2021-11-26 18:05:28 [[32minfo[39m]: App is running on port 7000 
+2021-11-26 18:05:48 [[32minfo[39m]: Connected to MongoDB 
+2021-11-26 18:05:57 [[32minfo[39m]: Connected to MongoDB 
+2021-11-26 18:06:47 [[32minfo[39m]: Connected to MongoDB 
+2021-11-26 18:06:47 [[32minfo[39m]: App is running on port 7000 
+2021-11-26 18:07:00 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 18:08:28 [[32minfo[39m]: Connected to MongoDB 
+2021-11-26 18:08:28 [[32minfo[39m]: App is running on port 7000 
+2021-11-26 18:08:40 [[31merror[39m]: uncaughtException: Not found.
+Route not found: Not found.
+    at Api404Error.BaseError [as constructor] (/Users/herilsaha/nixodeWebsite/server/utils/baseError.ts:17:11)
+    at new Api404Error (/Users/herilsaha/nixodeWebsite/server/utils/apiErrors.ts:11:5)
+    at /Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:57:17
+    at step (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:33:23)
+    at Object.throw (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:14:53)
+    at rejected (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:6:65)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+  "error": {
+    "name": "Route not found",
+    "statusCode": 404,
+    "isOperational": true
+  },
+  "stack": "Route not found: Not found.\n    at Api404Error.BaseError [as constructor] (/Users/herilsaha/nixodeWebsite/server/utils/baseError.ts:17:11)\n    at new Api404Error (/Users/herilsaha/nixodeWebsite/server/utils/apiErrors.ts:11:5)\n    at /Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:57:17\n    at step (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:33:23)\n    at Object.throw (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:14:53)\n    at rejected (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:6:65)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)",
+  "exception": true,
+  "date": "Fri Nov 26 2021 11:08:40 GMT-0700 (Mountain Standard Time)",
+  "process": {
+    "pid": 70334,
+    "uid": 501,
+    "gid": 20,
+    "cwd": "/Users/herilsaha/nixodeWebsite/server",
+    "execPath": "/usr/local/Cellar/node/17.0.1/bin/node",
+    "version": "v17.0.1",
+    "argv": [
+      "/Users/herilsaha/nixodeWebsite/server/node_modules/.bin/ts-node",
+      "/Users/herilsaha/nixodeWebsite/server/index.ts"
+    ],
+    "memoryUsage": {
+      "rss": 293601280,
+      "heapTotal": 223776768,
+      "heapUsed": 218754376,
+      "external": 21259151,
+      "arrayBuffers": 18407467
+    }
+  },
+  "os": {
+    "loadavg": [
+      4.99951171875,
+      3.8369140625,
+      3.59619140625
+    ],
+    "uptime": 926349
+  },
+  "trace": [
+    {
+      "column": 11,
+      "file": "/Users/herilsaha/nixodeWebsite/server/utils/baseError.ts",
+      "function": "Api404Error.BaseError [as constructor]",
+      "line": 17,
+      "method": "BaseError [as constructor]",
+      "native": false
+    },
+    {
+      "column": 5,
+      "file": "/Users/herilsaha/nixodeWebsite/server/utils/apiErrors.ts",
+      "function": "new Api404Error",
+      "line": 11,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 17,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": null,
+      "line": 57,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 23,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": "step",
+      "line": 33,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 53,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": "Object.throw",
+      "line": 14,
+      "method": "throw",
+      "native": false
+    },
+    {
+      "column": 65,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": "rejected",
+      "line": 6,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 5,
+      "file": "node:internal/process/task_queues",
+      "function": "processTicksAndRejections",
+      "line": 96,
+      "method": null,
+      "native": false
+    }
+  ]
+}
+2021-11-26 18:09:31 [[32minfo[39m]: Connected to MongoDB 
+2021-11-26 18:09:31 [[32minfo[39m]: App is running on port 7000 
+2021-11-26 18:09:34 [[31merror[39m]: uncaughtException: Not found.
+Route not found: Not found.
+    at Api404Error.BaseError [as constructor] (/Users/herilsaha/nixodeWebsite/server/utils/baseError.ts:17:11)
+    at new Api404Error (/Users/herilsaha/nixodeWebsite/server/utils/apiErrors.ts:11:5)
+    at /Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:57:17
+    at step (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:33:23)
+    at Object.throw (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:14:53)
+    at rejected (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:6:65)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+  "error": {
+    "name": "Route not found",
+    "statusCode": 404,
+    "isOperational": true
+  },
+  "stack": "Route not found: Not found.\n    at Api404Error.BaseError [as constructor] (/Users/herilsaha/nixodeWebsite/server/utils/baseError.ts:17:11)\n    at new Api404Error (/Users/herilsaha/nixodeWebsite/server/utils/apiErrors.ts:11:5)\n    at /Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:57:17\n    at step (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:33:23)\n    at Object.throw (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:14:53)\n    at rejected (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:6:65)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)",
+  "exception": true,
+  "date": "Fri Nov 26 2021 11:09:34 GMT-0700 (Mountain Standard Time)",
+  "process": {
+    "pid": 70381,
+    "uid": 501,
+    "gid": 20,
+    "cwd": "/Users/herilsaha/nixodeWebsite/server",
+    "execPath": "/usr/local/Cellar/node/17.0.1/bin/node",
+    "version": "v17.0.1",
+    "argv": [
+      "/Users/herilsaha/nixodeWebsite/server/node_modules/.bin/ts-node",
+      "/Users/herilsaha/nixodeWebsite/server/index.ts"
+    ],
+    "memoryUsage": {
+      "rss": 338292736,
+      "heapTotal": 271626240,
+      "heapUsed": 243603792,
+      "external": 21346913,
+      "arrayBuffers": 18493306
+    }
+  },
+  "os": {
+    "loadavg": [
+      2.94921875,
+      3.45849609375,
+      3.46875
+    ],
+    "uptime": 926403
+  },
+  "trace": [
+    {
+      "column": 11,
+      "file": "/Users/herilsaha/nixodeWebsite/server/utils/baseError.ts",
+      "function": "Api404Error.BaseError [as constructor]",
+      "line": 17,
+      "method": "BaseError [as constructor]",
+      "native": false
+    },
+    {
+      "column": 5,
+      "file": "/Users/herilsaha/nixodeWebsite/server/utils/apiErrors.ts",
+      "function": "new Api404Error",
+      "line": 11,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 17,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": null,
+      "line": 57,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 23,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": "step",
+      "line": 33,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 53,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": "Object.throw",
+      "line": 14,
+      "method": "throw",
+      "native": false
+    },
+    {
+      "column": 65,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": "rejected",
+      "line": 6,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 5,
+      "file": "node:internal/process/task_queues",
+      "function": "processTicksAndRejections",
+      "line": 96,
+      "method": null,
+      "native": false
+    }
+  ]
+}

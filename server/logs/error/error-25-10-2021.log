@@ -1,0 +1,431 @@
+2021-11-25 18:01:04 [[31merror[39m]: error message 
+2021-11-25 18:03:11 [[31merror[39m]: error message 
+2021-11-25 18:04:08 [error]: error message 
+2021-11-25 18:15:01 [[31merror[39m]: error message 
+2021-11-25 18:15:25 [[31merror[39m]: error message 
+2021-11-25 18:16:23 [[31merror[39m]: error message 
+2021-11-25 18:23:30 [[31merror[39m]: error message 
+2021-11-25 18:24:00 [[31merror[39m]: error message 
+2021-11-25 18:30:45 [error]: error message 
+2021-11-25 21:15:29 [error]: error message 
+2021-11-25 21:16:01 [error]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcronjobs/crypto.ts[0m:[93m24[0m:[93m9[0m - [91merror[0m[90m TS2304: [0mCannot find name 'logger'.
+
+[7m24[0m         logger.error('Failed cron Scheduled Job');
+[7m  [0m [91m        ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcronjobs/crypto.ts[0m:[93m24[0m:[93m9[0m - [91merror[0m[90m TS2304: [0mCannot find name 'logger'.
+
+[7m24[0m         logger.error('Failed cron Scheduled Job');
+[7m  [0m [91m        ~~~~~~[0m
+
+    at createTSError (/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:744:12)
+    at reportTSError (/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:748:19)
+    at getOutput (/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:935:36)
+    at Object.compile (/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1237:30)
+    at Module.m._compile (/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1364:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1147:10)
+    at Object.require.extensions.<computed> [as .ts] (/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1368:12)
+    at Module.load (node:internal/modules/cjs/loader:975:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:999:19) {
+  "error": {
+    "diagnosticText": "\u001b[96mcronjobs/crypto.ts\u001b[0m:\u001b[93m24\u001b[0m:\u001b[93m9\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS2304: \u001b[0mCannot find name 'logger'.\n\n\u001b[7m24\u001b[0m         logger.error('Failed cron Scheduled Job');\n\u001b[7m  \u001b[0m \u001b[91m        ~~~~~~\u001b[0m\n",
+    "diagnosticCodes": [
+      2304
+    ]
+  },
+  "stack": "TSError: ⨯ Unable to compile TypeScript:\n\u001b[96mcronjobs/crypto.ts\u001b[0m:\u001b[93m24\u001b[0m:\u001b[93m9\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS2304: \u001b[0mCannot find name 'logger'.\n\n\u001b[7m24\u001b[0m         logger.error('Failed cron Scheduled Job');\n\u001b[7m  \u001b[0m \u001b[91m        ~~~~~~\u001b[0m\n\n    at createTSError (/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:744:12)\n    at reportTSError (/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:748:19)\n    at getOutput (/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:935:36)\n    at Object.compile (/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1237:30)\n    at Module.m._compile (/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1364:30)\n    at Module._extensions..js (node:internal/modules/cjs/loader:1147:10)\n    at Object.require.extensions.<computed> [as .ts] (/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1368:12)\n    at Module.load (node:internal/modules/cjs/loader:975:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n    at Module.require (node:internal/modules/cjs/loader:999:19)",
+  "exception": true,
+  "date": "Thu Nov 25 2021 14:16:01 GMT-0700 (Mountain Standard Time)",
+  "process": {
+    "pid": 62682,
+    "uid": 501,
+    "gid": 20,
+    "cwd": "/Users/herilsaha/nixodeWebsite/server",
+    "execPath": "/usr/local/Cellar/node/17.0.1/bin/node",
+    "version": "v17.0.1",
+    "argv": [
+      "/Users/herilsaha/nixodeWebsite/server/node_modules/.bin/ts-node",
+      "/Users/herilsaha/nixodeWebsite/server/index.ts"
+    ],
+    "memoryUsage": {
+      "rss": 322744320,
+      "heapTotal": 265641984,
+      "heapUsed": 242667152,
+      "external": 22140665,
+      "arrayBuffers": 18878847
+    }
+  },
+  "os": {
+    "loadavg": [
+      5.208984375,
+      3.18701171875,
+      2.7001953125
+    ],
+    "uptime": 851191
+  },
+  "trace": [
+    {
+      "column": 12,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "createTSError",
+      "line": 744,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 19,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "reportTSError",
+      "line": 748,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 36,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "getOutput",
+      "line": 935,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 30,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "Object.compile",
+      "line": 1237,
+      "method": "compile",
+      "native": false
+    },
+    {
+      "column": 30,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "Module.m._compile",
+      "line": 1364,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._extensions..js",
+      "line": 1147,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "Object.require.extensions.<computed> [as .ts]",
+      "line": 1368,
+      "method": "ts]",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 975,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._load",
+      "line": 822,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 19,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.require",
+      "line": 999,
+      "method": "require",
+      "native": false
+    }
+  ]
+}
+2021-11-25 21:16:13 [error]: error message 
+2021-11-25 21:16:38 [error]: error message 
+2021-11-25 21:16:59 [error]: error message 
+2021-11-25 21:17:15 [error]: error message 
+2021-11-25 21:17:58 [error]: error message 
+2021-11-25 21:21:24 [[31merror[39m]: error message 
+2021-11-25 21:34:06 [[31merror[39m]: uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:371:5)
+    at ServerResponse.setHeader (node:_http_outgoing:576:11)
+    at ServerResponse.header (/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/response.js:771:10)
+    at ServerResponse.send (/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/response.js:170:12)
+    at ServerResponse.json (/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/response.js:267:15)
+    at ServerResponse.send (/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/response.js:158:21)
+    at /Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:92:32
+    at step (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:33:23)
+    at Object.next (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:14:53)
+    at fulfilled (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:5:58) {
+  "error": {
+    "code": "ERR_HTTP_HEADERS_SENT"
+  },
+  "stack": "Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client\n    at new NodeError (node:internal/errors:371:5)\n    at ServerResponse.setHeader (node:_http_outgoing:576:11)\n    at ServerResponse.header (/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/response.js:771:10)\n    at ServerResponse.send (/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/response.js:170:12)\n    at ServerResponse.json (/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/response.js:267:15)\n    at ServerResponse.send (/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/response.js:158:21)\n    at /Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:92:32\n    at step (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:33:23)\n    at Object.next (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:14:53)\n    at fulfilled (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:5:58)",
+  "exception": true,
+  "date": "Thu Nov 25 2021 14:34:06 GMT-0700 (Mountain Standard Time)",
+  "process": {
+    "pid": 64787,
+    "uid": 501,
+    "gid": 20,
+    "cwd": "/Users/herilsaha/nixodeWebsite/server",
+    "execPath": "/usr/local/Cellar/node/17.0.1/bin/node",
+    "version": "v17.0.1",
+    "argv": [
+      "/Users/herilsaha/nixodeWebsite/server/node_modules/.bin/ts-node",
+      "/Users/herilsaha/nixodeWebsite/server/index.ts"
+    ],
+    "memoryUsage": {
+      "rss": 407547904,
+      "heapTotal": 346722304,
+      "heapUsed": 314947456,
+      "external": 27231315,
+      "arrayBuffers": 24379631
+    }
+  },
+  "os": {
+    "loadavg": [
+      5.5302734375,
+      5.26513671875,
+      4.345703125
+    ],
+    "uptime": 852276
+  },
+  "trace": [
+    {
+      "column": 5,
+      "file": "node:internal/errors",
+      "function": "new NodeError",
+      "line": 371,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 11,
+      "file": "node:_http_outgoing",
+      "function": "ServerResponse.setHeader",
+      "line": 576,
+      "method": "setHeader",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/response.js",
+      "function": "ServerResponse.header",
+      "line": 771,
+      "method": "header",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/response.js",
+      "function": "ServerResponse.send",
+      "line": 170,
+      "method": "send",
+      "native": false
+    },
+    {
+      "column": 15,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/response.js",
+      "function": "ServerResponse.json",
+      "line": 267,
+      "method": "json",
+      "native": false
+    },
+    {
+      "column": 21,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/response.js",
+      "function": "ServerResponse.send",
+      "line": 158,
+      "method": "send",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": null,
+      "line": 92,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 23,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": "step",
+      "line": 33,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 53,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": "Object.next",
+      "line": 14,
+      "method": "next",
+      "native": false
+    },
+    {
+      "column": 58,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": "fulfilled",
+      "line": 5,
+      "method": null,
+      "native": false
+    }
+  ]
+}
+2021-11-26 02:58:32 [[31merror[39m]: uncaughtException: connection 10 to 13.71.184.100:27017 closed
+MongoBulkWriteError: connection 10 to 13.71.184.100:27017 closed
+    at resultHandler (/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/bulk/common.ts:600:9)
+    at /Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/utils.ts:610:9
+    at /Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/operations/execute_operation.ts:109:9
+    at callbackWithRetry (/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/operations/execute_operation.ts:164:14)
+    at /Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/cmap/connection_pool.ts:467:13
+    at Object.handleOperationResult [as cb] (/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/sdam/server.ts:600:5)
+    at Connection.handleIssue (/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/cmap/connection.ts:308:12)
+    at TLSSocket.<anonymous> (/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/cmap/connection.ts:232:35)
+    at TLSSocket.emit (node:events:390:28)
+    at TLSSocket.emit (node:domain:475:12) {
+  "error": {
+    "writeErrors": [],
+    "result": {
+      "ok": 1,
+      "writeErrors": [],
+      "writeConcernErrors": [],
+      "insertedIds": [],
+      "nInserted": 0,
+      "nUpserted": 0,
+      "nMatched": 1998,
+      "nModified": 1998,
+      "nRemoved": 0,
+      "upserted": [],
+      "opTime": {
+        "ts": {
+          "$timestamp": "7034703178654285916"
+        },
+        "t": 74
+      }
+    }
+  },
+  "stack": "MongoBulkWriteError: connection 10 to 13.71.184.100:27017 closed\n    at resultHandler (/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/bulk/common.ts:600:9)\n    at /Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/utils.ts:610:9\n    at /Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/operations/execute_operation.ts:109:9\n    at callbackWithRetry (/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/operations/execute_operation.ts:164:14)\n    at /Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/cmap/connection_pool.ts:467:13\n    at Object.handleOperationResult [as cb] (/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/sdam/server.ts:600:5)\n    at Connection.handleIssue (/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/cmap/connection.ts:308:12)\n    at TLSSocket.<anonymous> (/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/cmap/connection.ts:232:35)\n    at TLSSocket.emit (node:events:390:28)\n    at TLSSocket.emit (node:domain:475:12)",
+  "exception": true,
+  "date": "Thu Nov 25 2021 19:58:32 GMT-0700 (Mountain Standard Time)",
+  "process": {
+    "pid": 65189,
+    "uid": 501,
+    "gid": 20,
+    "cwd": "/Users/herilsaha/nixodeWebsite/server",
+    "execPath": "/usr/local/Cellar/node/17.0.1/bin/node",
+    "version": "v17.0.1",
+    "argv": [
+      "/Users/herilsaha/nixodeWebsite/server/node_modules/.bin/ts-node",
+      "/Users/herilsaha/nixodeWebsite/server/index.ts"
+    ],
+    "memoryUsage": {
+      "rss": 338735104,
+      "heapTotal": 281186304,
+      "heapUsed": 235087880,
+      "external": 23458100,
+      "arrayBuffers": 18640336
+    }
+  },
+  "os": {
+    "loadavg": [
+      2.08935546875,
+      2.16357421875,
+      2.27490234375
+    ],
+    "uptime": 871740
+  },
+  "trace": [
+    {
+      "column": 9,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/bulk/common.ts",
+      "function": "resultHandler",
+      "line": 600,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 9,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/utils.ts",
+      "function": null,
+      "line": 610,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 9,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/operations/execute_operation.ts",
+      "function": null,
+      "line": 109,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/operations/execute_operation.ts",
+      "function": "callbackWithRetry",
+      "line": 164,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 13,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/cmap/connection_pool.ts",
+      "function": null,
+      "line": 467,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 5,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/sdam/server.ts",
+      "function": "Object.handleOperationResult [as cb]",
+      "line": 600,
+      "method": "handleOperationResult [as cb]",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/cmap/connection.ts",
+      "function": "Connection.handleIssue",
+      "line": 308,
+      "method": "handleIssue",
+      "native": false
+    },
+    {
+      "column": 35,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/cmap/connection.ts",
+      "function": null,
+      "line": 232,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 28,
+      "file": "node:events",
+      "function": "TLSSocket.emit",
+      "line": 390,
+      "method": "emit",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:domain",
+      "function": "TLSSocket.emit",
+      "line": 475,
+      "method": "emit",
+      "native": false
+    }
+  ]
+}

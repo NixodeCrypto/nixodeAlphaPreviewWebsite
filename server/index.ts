@@ -1,15 +1,16 @@
 require('module-alias/register');
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
 import express from 'express';
 import cookieParser from 'cookie-parser';
 import path from 'path';
-import dotenv from 'dotenv';
 import cors from 'cors';
 import mongoose, { ConnectOptions } from 'mongoose';
 import indexRouter from '@/routes/index';
 import apiRouter from '@/routes/api';
+import logger from '@/utils/winston';
 import '@/cronjobs/crypto';
-
-dotenv.config();
 
 const PORT = process.env.PORT || 7000;
 
@@ -26,15 +27,14 @@ mongoose
   .then(() => {
     // do not show the log when environment = "test"
     if (process.env.NODE_ENV !== 'test') {
-      console.log('Connected to MongoDB');
-      console.log(`App is running on port ${PORT}... \n`);
-      console.log('Press CTRL + C to stop the process. \n');
+      logger.info('Connected to MongoDB');
+      logger.info(`App is running on port ${PORT}`);
     }
   })
   .catch((err) => {
     // do not show the log when environment = "test"
     if (process.env.NODE_ENV !== 'test') {
-      console.log('App Starting Error:', err.message);
+      logger.error(`App Starting Error: ${err.message}`);
       process.exit(1);
     }
   });

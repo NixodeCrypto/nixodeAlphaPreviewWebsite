@@ -1,0 +1,700 @@
+2021-11-25 18:01:04 [[32minfo[39m]: Connected to MongoDB 
+2021-11-25 18:01:04 [[32minfo[39m]: App is running on port 7000 
+2021-11-25 18:01:04 [[33mwarn[39m]: warning message 
+2021-11-25 18:01:04 [[31merror[39m]: error message 
+2021-11-25 18:01:04 [[34mdebug[39m]: console debug message 
+2021-11-25 18:03:11 [[32minfo[39m]: Connected to MongoDB 
+2021-11-25 18:03:11 [[32minfo[39m]: App is running on port 7000 
+2021-11-25 18:03:11 [[33mwarn[39m]: warning message 
+2021-11-25 18:03:11 [[31merror[39m]: error message 
+2021-11-25 18:03:11 [[34mdebug[39m]: console debug message 
+2021-11-25 18:04:08 [info]: Connected to MongoDB 
+2021-11-25 18:04:08 [info]: App is running on port 7000 
+2021-11-25 18:04:08 [warn]: warning message 
+2021-11-25 18:04:08 [error]: error message 
+2021-11-25 18:04:08 [debug]: console debug message 
+2021-11-25 18:15:01 [[32minfo[39m]: Connected to MongoDB 
+2021-11-25 18:15:01 [[32minfo[39m]: App is running on port 7000 
+2021-11-25 18:15:01 [[33mwarn[39m]: warning message 
+2021-11-25 18:15:01 [[31merror[39m]: error message 
+2021-11-25 18:15:01 [[34mdebug[39m]: console debug message 
+2021-11-25 18:15:25 [[32minfo[39m]: Connected to MongoDB 
+2021-11-25 18:15:25 [[32minfo[39m]: App is running on port 7000 
+2021-11-25 18:15:25 [[33mwarn[39m]: warning message 
+2021-11-25 18:15:25 [[31merror[39m]: error message 
+2021-11-25 18:15:25 [[34mdebug[39m]: console debug message 
+2021-11-25 18:16:23 [[32minfo[39m]: Connected to MongoDB 
+2021-11-25 18:16:23 [[32minfo[39m]: App is running on port 7000 
+2021-11-25 18:16:23 [[33mwarn[39m]: warning message 
+2021-11-25 18:16:23 [[31merror[39m]: error message 
+2021-11-25 18:16:23 [[34mdebug[39m]: console debug message 
+2021-11-25 18:23:30 [[32minfo[39m]: Connected to MongoDB 
+2021-11-25 18:23:30 [[32minfo[39m]: App is running on port 7000 
+2021-11-25 18:23:30 [[33mwarn[39m]: warning message 
+2021-11-25 18:23:30 [[31merror[39m]: error message 
+2021-11-25 18:23:30 [[34mdebug[39m]: console debug message 
+2021-11-25 18:24:00 [[32minfo[39m]: Connected to MongoDB 
+2021-11-25 18:24:00 [[32minfo[39m]: App is running on port 7000 
+2021-11-25 18:24:00 [[33mwarn[39m]: warning message 
+2021-11-25 18:24:00 [[31merror[39m]: error message 
+2021-11-25 18:24:00 [[34mdebug[39m]: console debug message 
+2021-11-25 18:30:45 [info]: Connected to MongoDB 
+2021-11-25 18:30:45 [info]: App is running on port 7000 
+2021-11-25 18:30:45 [warn]: warning message 
+2021-11-25 18:30:45 [error]: error message 
+2021-11-25 18:30:45 [debug]: console debug message 
+2021-11-25 21:15:29 [info]: Connected to MongoDB 
+2021-11-25 21:15:29 [info]: App is running on port 7000 
+2021-11-25 21:15:29 [warn]: warning message 
+2021-11-25 21:15:29 [error]: error message 
+2021-11-25 21:15:29 [debug]: console debug message 
+2021-11-25 21:16:01 [error]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mcronjobs/crypto.ts[0m:[93m24[0m:[93m9[0m - [91merror[0m[90m TS2304: [0mCannot find name 'logger'.
+
+[7m24[0m         logger.error('Failed cron Scheduled Job');
+[7m  [0m [91m        ~~~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mcronjobs/crypto.ts[0m:[93m24[0m:[93m9[0m - [91merror[0m[90m TS2304: [0mCannot find name 'logger'.
+
+[7m24[0m         logger.error('Failed cron Scheduled Job');
+[7m  [0m [91m        ~~~~~~[0m
+
+    at createTSError (/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:744:12)
+    at reportTSError (/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:748:19)
+    at getOutput (/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:935:36)
+    at Object.compile (/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1237:30)
+    at Module.m._compile (/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1364:30)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1147:10)
+    at Object.require.extensions.<computed> [as .ts] (/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1368:12)
+    at Module.load (node:internal/modules/cjs/loader:975:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Module.require (node:internal/modules/cjs/loader:999:19) {
+  "error": {
+    "diagnosticText": "\u001b[96mcronjobs/crypto.ts\u001b[0m:\u001b[93m24\u001b[0m:\u001b[93m9\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS2304: \u001b[0mCannot find name 'logger'.\n\n\u001b[7m24\u001b[0m         logger.error('Failed cron Scheduled Job');\n\u001b[7m  \u001b[0m \u001b[91m        ~~~~~~\u001b[0m\n",
+    "diagnosticCodes": [
+      2304
+    ]
+  },
+  "stack": "TSError: ⨯ Unable to compile TypeScript:\n\u001b[96mcronjobs/crypto.ts\u001b[0m:\u001b[93m24\u001b[0m:\u001b[93m9\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS2304: \u001b[0mCannot find name 'logger'.\n\n\u001b[7m24\u001b[0m         logger.error('Failed cron Scheduled Job');\n\u001b[7m  \u001b[0m \u001b[91m        ~~~~~~\u001b[0m\n\n    at createTSError (/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:744:12)\n    at reportTSError (/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:748:19)\n    at getOutput (/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:935:36)\n    at Object.compile (/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1237:30)\n    at Module.m._compile (/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1364:30)\n    at Module._extensions..js (node:internal/modules/cjs/loader:1147:10)\n    at Object.require.extensions.<computed> [as .ts] (/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1368:12)\n    at Module.load (node:internal/modules/cjs/loader:975:32)\n    at Function.Module._load (node:internal/modules/cjs/loader:822:12)\n    at Module.require (node:internal/modules/cjs/loader:999:19)",
+  "exception": true,
+  "date": "Thu Nov 25 2021 14:16:01 GMT-0700 (Mountain Standard Time)",
+  "process": {
+    "pid": 62682,
+    "uid": 501,
+    "gid": 20,
+    "cwd": "/Users/herilsaha/nixodeWebsite/server",
+    "execPath": "/usr/local/Cellar/node/17.0.1/bin/node",
+    "version": "v17.0.1",
+    "argv": [
+      "/Users/herilsaha/nixodeWebsite/server/node_modules/.bin/ts-node",
+      "/Users/herilsaha/nixodeWebsite/server/index.ts"
+    ],
+    "memoryUsage": {
+      "rss": 322744320,
+      "heapTotal": 265641984,
+      "heapUsed": 242667152,
+      "external": 22140665,
+      "arrayBuffers": 18878847
+    }
+  },
+  "os": {
+    "loadavg": [
+      5.208984375,
+      3.18701171875,
+      2.7001953125
+    ],
+    "uptime": 851191
+  },
+  "trace": [
+    {
+      "column": 12,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "createTSError",
+      "line": 744,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 19,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "reportTSError",
+      "line": 748,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 36,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "getOutput",
+      "line": 935,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 30,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "Object.compile",
+      "line": 1237,
+      "method": "compile",
+      "native": false
+    },
+    {
+      "column": 30,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "Module.m._compile",
+      "line": 1364,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._extensions..js",
+      "line": 1147,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "Object.require.extensions.<computed> [as .ts]",
+      "line": 1368,
+      "method": "ts]",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.load",
+      "line": 975,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._load",
+      "line": 822,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 19,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.require",
+      "line": 999,
+      "method": "require",
+      "native": false
+    }
+  ]
+}
+2021-11-25 21:16:13 [info]: Connected to MongoDB 
+2021-11-25 21:16:13 [info]: App is running on port 7000 
+2021-11-25 21:16:13 [warn]: warning message 
+2021-11-25 21:16:13 [error]: error message 
+2021-11-25 21:16:13 [debug]: console debug message 
+2021-11-25 21:16:38 [info]: Connected to MongoDB 
+2021-11-25 21:16:38 [info]: App is running on port 7000 
+2021-11-25 21:16:38 [warn]: warning message 
+2021-11-25 21:16:38 [error]: error message 
+2021-11-25 21:16:38 [debug]: console debug message 
+2021-11-25 21:16:59 [info]: Connected to MongoDB 
+2021-11-25 21:16:59 [info]: App is running on port 7000 
+2021-11-25 21:16:59 [warn]: warning message 
+2021-11-25 21:16:59 [error]: error message 
+2021-11-25 21:16:59 [debug]: console debug message 
+2021-11-25 21:17:15 [info]: Connected to MongoDB 
+2021-11-25 21:17:15 [info]: App is running on port 7000 
+2021-11-25 21:17:15 [warn]: warning message 
+2021-11-25 21:17:15 [error]: error message 
+2021-11-25 21:17:15 [debug]: console debug message 
+2021-11-25 21:17:58 [info]: Connected to MongoDB 
+2021-11-25 21:17:58 [info]: App is running on port 7000 
+2021-11-25 21:17:58 [warn]: warning message 
+2021-11-25 21:17:58 [error]: error message 
+2021-11-25 21:17:58 [debug]: console debug message 
+2021-11-25 21:18:01 [info]: Wrote New Ticker Data 
+2021-11-25 21:19:00 [info]: Wrote New Ticker Data 
+2021-11-25 21:20:00 [info]: Wrote New Ticker Data 
+2021-11-25 21:21:01 [info]: Wrote New Ticker Data 
+2021-11-25 21:21:24 [[32minfo[39m]: Connected to MongoDB 
+2021-11-25 21:21:24 [[32minfo[39m]: App is running on port 7000 
+2021-11-25 21:21:24 [[33mwarn[39m]: warning message 
+2021-11-25 21:21:24 [[31merror[39m]: error message 
+2021-11-25 21:21:24 [[34mdebug[39m]: console debug message 
+2021-11-25 21:21:47 [[32minfo[39m]: Connected to MongoDB 
+2021-11-25 21:21:47 [[32minfo[39m]: App is running on port 7000 
+2021-11-25 21:22:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 21:23:14 [[32minfo[39m]: Connected to MongoDB 
+2021-11-25 21:23:14 [[32minfo[39m]: App is running on port 7000 
+2021-11-25 21:23:30 [[32minfo[39m]: Connected to MongoDB 
+2021-11-25 21:23:30 [[32minfo[39m]: App is running on port 7000 
+2021-11-25 21:23:49 [[32minfo[39m]: Connected to MongoDB 
+2021-11-25 21:23:49 [[32minfo[39m]: App is running on port 7000 
+2021-11-25 21:23:58 [[32minfo[39m]: Connected to MongoDB 
+2021-11-25 21:23:58 [[32minfo[39m]: App is running on port 7000 
+2021-11-25 21:24:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 21:24:42 [[32minfo[39m]: Connected to MongoDB 
+2021-11-25 21:24:42 [[32minfo[39m]: App is running on port 7000 
+2021-11-25 21:25:14 [[32minfo[39m]: Connected to MongoDB 
+2021-11-25 21:25:14 [[32minfo[39m]: App is running on port 7000 
+2021-11-25 21:25:53 [[32minfo[39m]: Connected to MongoDB 
+2021-11-25 21:25:53 [[32minfo[39m]: App is running on port 7000 
+2021-11-25 21:26:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 21:26:30 [[32minfo[39m]: Connected to MongoDB 
+2021-11-25 21:26:30 [[32minfo[39m]: App is running on port 7000 
+2021-11-25 21:27:25 [[32minfo[39m]: Connected to MongoDB 
+2021-11-25 21:27:25 [[32minfo[39m]: App is running on port 7000 
+2021-11-25 21:27:35 [[32minfo[39m]: Connected to MongoDB 
+2021-11-25 21:27:35 [[32minfo[39m]: App is running on port 7000 
+2021-11-25 21:28:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 21:29:09 [[32minfo[39m]: Connected to MongoDB 
+2021-11-25 21:29:09 [[32minfo[39m]: App is running on port 7000 
+2021-11-25 21:30:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 21:30:21 [[32minfo[39m]: Connected to MongoDB 
+2021-11-25 21:30:21 [[32minfo[39m]: App is running on port 7000 
+2021-11-25 21:30:45 [[32minfo[39m]: Connected to MongoDB 
+2021-11-25 21:30:45 [[32minfo[39m]: App is running on port 7000 
+2021-11-25 21:31:14 [[32minfo[39m]: Connected to MongoDB 
+2021-11-25 21:31:14 [[32minfo[39m]: App is running on port 7000 
+2021-11-25 21:32:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 21:32:45 [[32minfo[39m]: Connected to MongoDB 
+2021-11-25 21:32:45 [[32minfo[39m]: App is running on port 7000 
+2021-11-25 21:33:29 [[32minfo[39m]: Connected to MongoDB 
+2021-11-25 21:33:29 [[32minfo[39m]: App is running on port 7000 
+2021-11-25 21:33:38 [[32minfo[39m]: Connected to MongoDB 
+2021-11-25 21:33:38 [[32minfo[39m]: App is running on port 7000 
+2021-11-25 21:34:02 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 21:34:06 [[31merror[39m]: uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:371:5)
+    at ServerResponse.setHeader (node:_http_outgoing:576:11)
+    at ServerResponse.header (/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/response.js:771:10)
+    at ServerResponse.send (/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/response.js:170:12)
+    at ServerResponse.json (/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/response.js:267:15)
+    at ServerResponse.send (/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/response.js:158:21)
+    at /Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:92:32
+    at step (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:33:23)
+    at Object.next (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:14:53)
+    at fulfilled (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:5:58) {
+  "error": {
+    "code": "ERR_HTTP_HEADERS_SENT"
+  },
+  "stack": "Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client\n    at new NodeError (node:internal/errors:371:5)\n    at ServerResponse.setHeader (node:_http_outgoing:576:11)\n    at ServerResponse.header (/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/response.js:771:10)\n    at ServerResponse.send (/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/response.js:170:12)\n    at ServerResponse.json (/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/response.js:267:15)\n    at ServerResponse.send (/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/response.js:158:21)\n    at /Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:92:32\n    at step (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:33:23)\n    at Object.next (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:14:53)\n    at fulfilled (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:5:58)",
+  "exception": true,
+  "date": "Thu Nov 25 2021 14:34:06 GMT-0700 (Mountain Standard Time)",
+  "process": {
+    "pid": 64787,
+    "uid": 501,
+    "gid": 20,
+    "cwd": "/Users/herilsaha/nixodeWebsite/server",
+    "execPath": "/usr/local/Cellar/node/17.0.1/bin/node",
+    "version": "v17.0.1",
+    "argv": [
+      "/Users/herilsaha/nixodeWebsite/server/node_modules/.bin/ts-node",
+      "/Users/herilsaha/nixodeWebsite/server/index.ts"
+    ],
+    "memoryUsage": {
+      "rss": 407547904,
+      "heapTotal": 346722304,
+      "heapUsed": 314947456,
+      "external": 27231315,
+      "arrayBuffers": 24379631
+    }
+  },
+  "os": {
+    "loadavg": [
+      5.5302734375,
+      5.26513671875,
+      4.345703125
+    ],
+    "uptime": 852276
+  },
+  "trace": [
+    {
+      "column": 5,
+      "file": "node:internal/errors",
+      "function": "new NodeError",
+      "line": 371,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 11,
+      "file": "node:_http_outgoing",
+      "function": "ServerResponse.setHeader",
+      "line": 576,
+      "method": "setHeader",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/response.js",
+      "function": "ServerResponse.header",
+      "line": 771,
+      "method": "header",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/response.js",
+      "function": "ServerResponse.send",
+      "line": 170,
+      "method": "send",
+      "native": false
+    },
+    {
+      "column": 15,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/response.js",
+      "function": "ServerResponse.json",
+      "line": 267,
+      "method": "json",
+      "native": false
+    },
+    {
+      "column": 21,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/response.js",
+      "function": "ServerResponse.send",
+      "line": 158,
+      "method": "send",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": null,
+      "line": 92,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 23,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": "step",
+      "line": 33,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 53,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": "Object.next",
+      "line": 14,
+      "method": "next",
+      "native": false
+    },
+    {
+      "column": 58,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": "fulfilled",
+      "line": 5,
+      "method": null,
+      "native": false
+    }
+  ]
+}
+2021-11-25 21:36:54 [[32minfo[39m]: Connected to MongoDB 
+2021-11-25 21:36:54 [[32minfo[39m]: App is running on port 7000 
+2021-11-25 21:37:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 21:38:00 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 21:39:00 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 21:40:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 21:41:08 [[32minfo[39m]: Connected to MongoDB 
+2021-11-25 21:41:08 [[32minfo[39m]: App is running on port 7000 
+2021-11-25 21:42:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 21:43:00 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 21:44:00 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 21:45:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 21:46:00 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 22:51:03 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 22:52:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 22:53:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 22:54:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 22:55:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 22:56:00 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 22:57:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 22:58:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 22:59:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:01:02 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:02:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:03:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:04:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:05:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:06:02 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:07:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:08:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:09:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:10:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:11:02 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:12:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:13:02 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:14:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:15:02 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:16:02 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:17:02 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:18:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:19:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:20:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:21:03 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:22:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:23:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:24:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:25:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:26:03 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:27:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:28:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:29:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:30:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:31:03 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:32:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:33:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:34:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:35:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:36:03 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:37:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:38:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:39:00 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:40:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:41:04 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:42:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:43:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:44:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:45:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:46:04 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:47:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:48:00 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:49:02 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:50:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:51:03 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:52:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:53:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:54:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:55:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:56:03 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:57:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:58:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-25 23:59:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:00:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:01:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:02:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:08:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:09:02 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:10:02 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:11:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:12:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:13:02 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:14:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:15:00 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:16:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:17:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:18:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:19:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:20:02 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:21:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:22:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:23:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:24:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:25:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:26:02 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:27:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:28:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:29:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:30:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:31:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:32:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:33:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:34:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:45:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:46:02 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:47:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:48:02 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:49:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:50:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:51:02 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:52:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:53:02 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:54:02 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:55:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:56:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:57:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:58:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 00:59:02 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 01:00:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 01:01:02 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 01:02:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 01:03:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 01:04:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 01:05:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 01:06:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 01:07:02 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 01:08:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 01:09:00 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 01:10:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 01:11:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 01:12:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 01:16:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 01:17:02 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 01:18:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 01:19:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 01:20:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 01:21:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 01:22:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 01:23:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 01:24:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 01:25:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 01:26:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 01:57:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 02:05:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 02:06:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 02:07:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 02:08:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 02:09:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 02:10:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 02:41:01 [[32minfo[39m]: Wrote New Ticker Data 
+2021-11-26 02:58:32 [[31merror[39m]: uncaughtException: connection 10 to 13.71.184.100:27017 closed
+MongoBulkWriteError: connection 10 to 13.71.184.100:27017 closed
+    at resultHandler (/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/bulk/common.ts:600:9)
+    at /Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/utils.ts:610:9
+    at /Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/operations/execute_operation.ts:109:9
+    at callbackWithRetry (/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/operations/execute_operation.ts:164:14)
+    at /Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/cmap/connection_pool.ts:467:13
+    at Object.handleOperationResult [as cb] (/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/sdam/server.ts:600:5)
+    at Connection.handleIssue (/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/cmap/connection.ts:308:12)
+    at TLSSocket.<anonymous> (/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/cmap/connection.ts:232:35)
+    at TLSSocket.emit (node:events:390:28)
+    at TLSSocket.emit (node:domain:475:12) {
+  "error": {
+    "writeErrors": [],
+    "result": {
+      "ok": 1,
+      "writeErrors": [],
+      "writeConcernErrors": [],
+      "insertedIds": [],
+      "nInserted": 0,
+      "nUpserted": 0,
+      "nMatched": 1998,
+      "nModified": 1998,
+      "nRemoved": 0,
+      "upserted": [],
+      "opTime": {
+        "ts": {
+          "$timestamp": "7034703178654285916"
+        },
+        "t": 74
+      }
+    }
+  },
+  "stack": "MongoBulkWriteError: connection 10 to 13.71.184.100:27017 closed\n    at resultHandler (/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/bulk/common.ts:600:9)\n    at /Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/utils.ts:610:9\n    at /Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/operations/execute_operation.ts:109:9\n    at callbackWithRetry (/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/operations/execute_operation.ts:164:14)\n    at /Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/cmap/connection_pool.ts:467:13\n    at Object.handleOperationResult [as cb] (/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/sdam/server.ts:600:5)\n    at Connection.handleIssue (/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/cmap/connection.ts:308:12)\n    at TLSSocket.<anonymous> (/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/cmap/connection.ts:232:35)\n    at TLSSocket.emit (node:events:390:28)\n    at TLSSocket.emit (node:domain:475:12)",
+  "exception": true,
+  "date": "Thu Nov 25 2021 19:58:32 GMT-0700 (Mountain Standard Time)",
+  "process": {
+    "pid": 65189,
+    "uid": 501,
+    "gid": 20,
+    "cwd": "/Users/herilsaha/nixodeWebsite/server",
+    "execPath": "/usr/local/Cellar/node/17.0.1/bin/node",
+    "version": "v17.0.1",
+    "argv": [
+      "/Users/herilsaha/nixodeWebsite/server/node_modules/.bin/ts-node",
+      "/Users/herilsaha/nixodeWebsite/server/index.ts"
+    ],
+    "memoryUsage": {
+      "rss": 338735104,
+      "heapTotal": 281186304,
+      "heapUsed": 235087880,
+      "external": 23458100,
+      "arrayBuffers": 18640336
+    }
+  },
+  "os": {
+    "loadavg": [
+      2.08935546875,
+      2.16357421875,
+      2.27490234375
+    ],
+    "uptime": 871740
+  },
+  "trace": [
+    {
+      "column": 9,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/bulk/common.ts",
+      "function": "resultHandler",
+      "line": 600,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 9,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/utils.ts",
+      "function": null,
+      "line": 610,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 9,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/operations/execute_operation.ts",
+      "function": null,
+      "line": 109,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/operations/execute_operation.ts",
+      "function": "callbackWithRetry",
+      "line": 164,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 13,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/cmap/connection_pool.ts",
+      "function": null,
+      "line": 467,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 5,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/sdam/server.ts",
+      "function": "Object.handleOperationResult [as cb]",
+      "line": 600,
+      "method": "handleOperationResult [as cb]",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/cmap/connection.ts",
+      "function": "Connection.handleIssue",
+      "line": 308,
+      "method": "handleIssue",
+      "native": false
+    },
+    {
+      "column": 35,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/mongodb/src/cmap/connection.ts",
+      "function": null,
+      "line": 232,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 28,
+      "file": "node:events",
+      "function": "TLSSocket.emit",
+      "line": 390,
+      "method": "emit",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "node:domain",
+      "function": "TLSSocket.emit",
+      "line": 475,
+      "method": "emit",
+      "native": false
+    }
+  ]
+}

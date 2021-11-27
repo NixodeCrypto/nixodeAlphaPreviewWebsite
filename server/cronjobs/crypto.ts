@@ -1,8 +1,10 @@
 import cron from 'node-cron';
 import axios from 'axios';
 import Ticker from '@/models/Ticker';
+import logger from '@/utils/winston';
+import { TICKER_DATA_TTL } from '@/constants/TTL';
 
-cron.schedule('* * * * *', () => {
+cron.schedule(TICKER_DATA_TTL.cron, () => {
   axios
     .get(`${process.env.COIN_API}/tickers`)
     .then((res) => {
@@ -19,12 +21,13 @@ cron.schedule('* * * * *', () => {
       );
 
       try {
+        logger.info('Wrote New Ticker Data');
         Ticker.bulkWrite(bulkData);
       } catch (e) {
-        console.log(e);
+        logger.error('MongoDB: Failed Obtaining New Ticker Data');
       }
     })
-    .catch((err) => {
-      console.log(err);
+    .catch(() => {
+      logger.error('Failed Request to Crypto API Servers');
     });
 });
