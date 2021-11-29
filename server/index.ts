@@ -1,7 +1,5 @@
-require('module-alias/register');
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config();
-}
+import 'module-alias/register';
+import '@/services/environmentSetup';
 import express from 'express';
 import cookieParser from 'cookie-parser';
 import path from 'path';
@@ -10,6 +8,7 @@ import mongoose, { ConnectOptions } from 'mongoose';
 import indexRouter from '@/routes/index';
 import apiRouter from '@/routes/api';
 import logger from '@/utils/winston';
+import errorHandler from '@/middleware/errorHandler';
 import '@/cronjobs/crypto';
 
 const PORT = process.env.PORT || 7000;
@@ -48,6 +47,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // cross-origin requests
 app.use(cors());
+
 // route prefixes
 app.use('/', indexRouter);
 app.use('/', apiRouter);

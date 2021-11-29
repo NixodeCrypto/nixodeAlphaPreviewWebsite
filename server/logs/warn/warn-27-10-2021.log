@@ -1,0 +1,755 @@
+2021-11-27 07:23:15 [[31merror[39m]: uncaughtException: app.use() requires a middleware function
+TypeError: app.use() requires a middleware function
+    at Function.use (/home/herilsaha/nixodeWebsite/server/node_modules/express/lib/application.js:210:11)
+    at Object.<anonymous> (/home/herilsaha/nixodeWebsite/server/index.ts:52:5)
+    at Module._compile (internal/modules/cjs/loader.js:1085:14)
+    at Module.m._compile (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1365:23)
+    at Module._extensions..js (internal/modules/cjs/loader.js:1114:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1368:12)
+    at Module.load (internal/modules/cjs/loader.js:950:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:790:12)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:76:12)
+    at main (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/bin.ts:331:12) {
+  "error": {},
+  "stack": "TypeError: app.use() requires a middleware function\n    at Function.use (/home/herilsaha/nixodeWebsite/server/node_modules/express/lib/application.js:210:11)\n    at Object.<anonymous> (/home/herilsaha/nixodeWebsite/server/index.ts:52:5)\n    at Module._compile (internal/modules/cjs/loader.js:1085:14)\n    at Module.m._compile (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1365:23)\n    at Module._extensions..js (internal/modules/cjs/loader.js:1114:10)\n    at Object.require.extensions.<computed> [as .ts] (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1368:12)\n    at Module.load (internal/modules/cjs/loader.js:950:32)\n    at Function.Module._load (internal/modules/cjs/loader.js:790:12)\n    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:76:12)\n    at main (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/bin.ts:331:12)",
+  "exception": true,
+  "date": "Sat Nov 27 2021 00:23:15 GMT-0700 (Mountain Standard Time)",
+  "process": {
+    "pid": 4533,
+    "uid": 1000,
+    "gid": 1000,
+    "cwd": "/home/herilsaha/nixodeWebsite/server",
+    "execPath": "/home/herilsaha/.nvm/versions/node/v14.18.1/bin/node",
+    "version": "v14.18.1",
+    "argv": [
+      "/home/herilsaha/nixodeWebsite/server/node_modules/.bin/ts-node",
+      "/home/herilsaha/nixodeWebsite/server/index.ts"
+    ],
+    "memoryUsage": {
+      "rss": 355217408,
+      "heapTotal": 262692864,
+      "heapUsed": 242391848,
+      "external": 27767112,
+      "arrayBuffers": 19937324
+    }
+  },
+  "os": {
+    "loadavg": [
+      0.5,
+      0.11,
+      0.04
+    ],
+    "uptime": 9073.95
+  },
+  "trace": [
+    {
+      "column": 11,
+      "file": "/home/herilsaha/nixodeWebsite/server/node_modules/express/lib/application.js",
+      "function": "Function.use",
+      "line": 210,
+      "method": "use",
+      "native": false
+    },
+    {
+      "column": 5,
+      "file": "/home/herilsaha/nixodeWebsite/server/index.ts",
+      "function": null,
+      "line": 52,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "internal/modules/cjs/loader.js",
+      "function": "Module._compile",
+      "line": 1085,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 23,
+      "file": "/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "Module.m._compile",
+      "line": 1365,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "internal/modules/cjs/loader.js",
+      "function": "Module._extensions..js",
+      "line": 1114,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "Object.require.extensions.<computed> [as .ts]",
+      "line": 1368,
+      "method": "ts]",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "internal/modules/cjs/loader.js",
+      "function": "Module.load",
+      "line": 950,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "internal/modules/cjs/loader.js",
+      "function": "Module._load",
+      "line": 790,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "internal/modules/run_main.js",
+      "function": "Function.executeUserEntryPoint [as runMain]",
+      "line": 76,
+      "method": "executeUserEntryPoint [as runMain]",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/bin.ts",
+      "function": "main",
+      "line": 331,
+      "method": null,
+      "native": false
+    }
+  ]
+}
+2021-11-27 07:37:58 [[31merror[39m]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mmiddleware/errorHandler.ts[0m:[93m6[0m:[93m3[0m - [91merror[0m[90m TS2349: [0mThis expression is not callable.
+  Type 'Response<any, Record<string, any>, number>' has no call signatures.
+
+[7m6[0m   next();
+[7m [0m [91m  ~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mmiddleware/errorHandler.ts[0m:[93m6[0m:[93m3[0m - [91merror[0m[90m TS2349: [0mThis expression is not callable.
+  Type 'Response<any, Record<string, any>, number>' has no call signatures.
+
+[7m6[0m   next();
+[7m [0m [91m  ~~~~[0m
+
+    at createTSError (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:744:12)
+    at reportTSError (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:748:19)
+    at getOutput (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:935:36)
+    at Object.compile (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1237:30)
+    at Module.m._compile (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1364:30)
+    at Module._extensions..js (internal/modules/cjs/loader.js:1114:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1368:12)
+    at Module.load (internal/modules/cjs/loader.js:950:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:790:12)
+    at Module.require (internal/modules/cjs/loader.js:974:19) {
+  "error": {
+    "diagnosticText": "\u001b[96mmiddleware/errorHandler.ts\u001b[0m:\u001b[93m6\u001b[0m:\u001b[93m3\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS2349: \u001b[0mThis expression is not callable.\n  Type 'Response<any, Record<string, any>, number>' has no call signatures.\n\n\u001b[7m6\u001b[0m   next();\n\u001b[7m \u001b[0m \u001b[91m  ~~~~\u001b[0m\n",
+    "diagnosticCodes": [
+      2349
+    ]
+  },
+  "stack": "TSError: ⨯ Unable to compile TypeScript:\n\u001b[96mmiddleware/errorHandler.ts\u001b[0m:\u001b[93m6\u001b[0m:\u001b[93m3\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS2349: \u001b[0mThis expression is not callable.\n  Type 'Response<any, Record<string, any>, number>' has no call signatures.\n\n\u001b[7m6\u001b[0m   next();\n\u001b[7m \u001b[0m \u001b[91m  ~~~~\u001b[0m\n\n    at createTSError (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:744:12)\n    at reportTSError (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:748:19)\n    at getOutput (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:935:36)\n    at Object.compile (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1237:30)\n    at Module.m._compile (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1364:30)\n    at Module._extensions..js (internal/modules/cjs/loader.js:1114:10)\n    at Object.require.extensions.<computed> [as .ts] (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1368:12)\n    at Module.load (internal/modules/cjs/loader.js:950:32)\n    at Function.Module._load (internal/modules/cjs/loader.js:790:12)\n    at Module.require (internal/modules/cjs/loader.js:974:19)",
+  "exception": true,
+  "date": "Sat Nov 27 2021 00:37:58 GMT-0700 (Mountain Standard Time)",
+  "process": {
+    "pid": 8753,
+    "uid": 1000,
+    "gid": 1000,
+    "cwd": "/home/herilsaha/nixodeWebsite/server",
+    "execPath": "/home/herilsaha/.nvm/versions/node/v14.18.1/bin/node",
+    "version": "v14.18.1",
+    "argv": [
+      "/home/herilsaha/nixodeWebsite/server/node_modules/.bin/ts-node",
+      "/home/herilsaha/nixodeWebsite/server/index.ts"
+    ],
+    "memoryUsage": {
+      "rss": 348635136,
+      "heapTotal": 261799936,
+      "heapUsed": 238546568,
+      "external": 25685245,
+      "arrayBuffers": 19526065
+    }
+  },
+  "os": {
+    "loadavg": [
+      1.17,
+      0.79,
+      0.46
+    ],
+    "uptime": 9957.28
+  },
+  "trace": [
+    {
+      "column": 12,
+      "file": "/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "createTSError",
+      "line": 744,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 19,
+      "file": "/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "reportTSError",
+      "line": 748,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 36,
+      "file": "/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "getOutput",
+      "line": 935,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 30,
+      "file": "/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "Object.compile",
+      "line": 1237,
+      "method": "compile",
+      "native": false
+    },
+    {
+      "column": 30,
+      "file": "/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "Module.m._compile",
+      "line": 1364,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "internal/modules/cjs/loader.js",
+      "function": "Module._extensions..js",
+      "line": 1114,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "Object.require.extensions.<computed> [as .ts]",
+      "line": 1368,
+      "method": "ts]",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "internal/modules/cjs/loader.js",
+      "function": "Module.load",
+      "line": 950,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "internal/modules/cjs/loader.js",
+      "function": "Module._load",
+      "line": 790,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 19,
+      "file": "internal/modules/cjs/loader.js",
+      "function": "Module.require",
+      "line": 974,
+      "method": "require",
+      "native": false
+    }
+  ]
+}
+2021-11-27 07:38:07 [[31merror[39m]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mmiddleware/errorHandler.ts[0m:[93m3[0m:[93m23[0m - [91merror[0m[90m TS7006: [0mParameter 'req' implicitly has an 'any' type.
+
+[7m3[0m const errorHandler = (req, res, next) => {
+[7m [0m [91m                      ~~~[0m
+[96mmiddleware/errorHandler.ts[0m:[93m3[0m:[93m28[0m - [91merror[0m[90m TS7006: [0mParameter 'res' implicitly has an 'any' type.
+
+[7m3[0m const errorHandler = (req, res, next) => {
+[7m [0m [91m                           ~~~[0m
+[96mmiddleware/errorHandler.ts[0m:[93m3[0m:[93m33[0m - [91merror[0m[90m TS7006: [0mParameter 'next' implicitly has an 'any' type.
+
+[7m3[0m const errorHandler = (req, res, next) => {
+[7m [0m [91m                                ~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mmiddleware/errorHandler.ts[0m:[93m3[0m:[93m23[0m - [91merror[0m[90m TS7006: [0mParameter 'req' implicitly has an 'any' type.
+
+[7m3[0m const errorHandler = (req, res, next) => {
+[7m [0m [91m                      ~~~[0m
+[96mmiddleware/errorHandler.ts[0m:[93m3[0m:[93m28[0m - [91merror[0m[90m TS7006: [0mParameter 'res' implicitly has an 'any' type.
+
+[7m3[0m const errorHandler = (req, res, next) => {
+[7m [0m [91m                           ~~~[0m
+[96mmiddleware/errorHandler.ts[0m:[93m3[0m:[93m33[0m - [91merror[0m[90m TS7006: [0mParameter 'next' implicitly has an 'any' type.
+
+[7m3[0m const errorHandler = (req, res, next) => {
+[7m [0m [91m                                ~~~~[0m
+
+    at createTSError (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:744:12)
+    at reportTSError (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:748:19)
+    at getOutput (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:935:36)
+    at Object.compile (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1237:30)
+    at Module.m._compile (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1364:30)
+    at Module._extensions..js (internal/modules/cjs/loader.js:1114:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1368:12)
+    at Module.load (internal/modules/cjs/loader.js:950:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:790:12)
+    at Module.require (internal/modules/cjs/loader.js:974:19) {
+  "error": {
+    "diagnosticText": "\u001b[96mmiddleware/errorHandler.ts\u001b[0m:\u001b[93m3\u001b[0m:\u001b[93m23\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS7006: \u001b[0mParameter 'req' implicitly has an 'any' type.\n\n\u001b[7m3\u001b[0m const errorHandler = (req, res, next) => {\n\u001b[7m \u001b[0m \u001b[91m                      ~~~\u001b[0m\n\u001b[96mmiddleware/errorHandler.ts\u001b[0m:\u001b[93m3\u001b[0m:\u001b[93m28\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS7006: \u001b[0mParameter 'res' implicitly has an 'any' type.\n\n\u001b[7m3\u001b[0m const errorHandler = (req, res, next) => {\n\u001b[7m \u001b[0m \u001b[91m                           ~~~\u001b[0m\n\u001b[96mmiddleware/errorHandler.ts\u001b[0m:\u001b[93m3\u001b[0m:\u001b[93m33\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS7006: \u001b[0mParameter 'next' implicitly has an 'any' type.\n\n\u001b[7m3\u001b[0m const errorHandler = (req, res, next) => {\n\u001b[7m \u001b[0m \u001b[91m                                ~~~~\u001b[0m\n",
+    "diagnosticCodes": [
+      7006,
+      7006,
+      7006
+    ]
+  },
+  "stack": "TSError: ⨯ Unable to compile TypeScript:\n\u001b[96mmiddleware/errorHandler.ts\u001b[0m:\u001b[93m3\u001b[0m:\u001b[93m23\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS7006: \u001b[0mParameter 'req' implicitly has an 'any' type.\n\n\u001b[7m3\u001b[0m const errorHandler = (req, res, next) => {\n\u001b[7m \u001b[0m \u001b[91m                      ~~~\u001b[0m\n\u001b[96mmiddleware/errorHandler.ts\u001b[0m:\u001b[93m3\u001b[0m:\u001b[93m28\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS7006: \u001b[0mParameter 'res' implicitly has an 'any' type.\n\n\u001b[7m3\u001b[0m const errorHandler = (req, res, next) => {\n\u001b[7m \u001b[0m \u001b[91m                           ~~~\u001b[0m\n\u001b[96mmiddleware/errorHandler.ts\u001b[0m:\u001b[93m3\u001b[0m:\u001b[93m33\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS7006: \u001b[0mParameter 'next' implicitly has an 'any' type.\n\n\u001b[7m3\u001b[0m const errorHandler = (req, res, next) => {\n\u001b[7m \u001b[0m \u001b[91m                                ~~~~\u001b[0m\n\n    at createTSError (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:744:12)\n    at reportTSError (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:748:19)\n    at getOutput (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:935:36)\n    at Object.compile (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1237:30)\n    at Module.m._compile (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1364:30)\n    at Module._extensions..js (internal/modules/cjs/loader.js:1114:10)\n    at Object.require.extensions.<computed> [as .ts] (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1368:12)\n    at Module.load (internal/modules/cjs/loader.js:950:32)\n    at Function.Module._load (internal/modules/cjs/loader.js:790:12)\n    at Module.require (internal/modules/cjs/loader.js:974:19)",
+  "exception": true,
+  "date": "Sat Nov 27 2021 00:38:07 GMT-0700 (Mountain Standard Time)",
+  "process": {
+    "pid": 8830,
+    "uid": 1000,
+    "gid": 1000,
+    "cwd": "/home/herilsaha/nixodeWebsite/server",
+    "execPath": "/home/herilsaha/.nvm/versions/node/v14.18.1/bin/node",
+    "version": "v14.18.1",
+    "argv": [
+      "/home/herilsaha/nixodeWebsite/server/node_modules/.bin/ts-node",
+      "/home/herilsaha/nixodeWebsite/server/index.ts"
+    ],
+    "memoryUsage": {
+      "rss": 350855168,
+      "heapTotal": 261275648,
+      "heapUsed": 237989296,
+      "external": 25597308,
+      "arrayBuffers": 19438128
+    }
+  },
+  "os": {
+    "loadavg": [
+      1.15,
+      0.79,
+      0.46
+    ],
+    "uptime": 9965.84
+  },
+  "trace": [
+    {
+      "column": 12,
+      "file": "/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "createTSError",
+      "line": 744,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 19,
+      "file": "/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "reportTSError",
+      "line": 748,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 36,
+      "file": "/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "getOutput",
+      "line": 935,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 30,
+      "file": "/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "Object.compile",
+      "line": 1237,
+      "method": "compile",
+      "native": false
+    },
+    {
+      "column": 30,
+      "file": "/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "Module.m._compile",
+      "line": 1364,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "internal/modules/cjs/loader.js",
+      "function": "Module._extensions..js",
+      "line": 1114,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "Object.require.extensions.<computed> [as .ts]",
+      "line": 1368,
+      "method": "ts]",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "internal/modules/cjs/loader.js",
+      "function": "Module.load",
+      "line": 950,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "internal/modules/cjs/loader.js",
+      "function": "Module._load",
+      "line": 790,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 19,
+      "file": "internal/modules/cjs/loader.js",
+      "function": "Module.require",
+      "line": 974,
+      "method": "require",
+      "native": false
+    }
+  ]
+}
+2021-11-27 07:38:13 [[31merror[39m]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mmiddleware/errorHandler.ts[0m:[93m3[0m:[93m23[0m - [91merror[0m[90m TS7006: [0mParameter 'req' implicitly has an 'any' type.
+
+[7m3[0m const errorHandler = (req, res, next) => {
+[7m [0m [91m                      ~~~[0m
+[96mmiddleware/errorHandler.ts[0m:[93m3[0m:[93m28[0m - [91merror[0m[90m TS7006: [0mParameter 'res' implicitly has an 'any' type.
+
+[7m3[0m const errorHandler = (req, res, next) => {
+[7m [0m [91m                           ~~~[0m
+[96mmiddleware/errorHandler.ts[0m:[93m3[0m:[93m33[0m - [91merror[0m[90m TS7006: [0mParameter 'next' implicitly has an 'any' type.
+
+[7m3[0m const errorHandler = (req, res, next) => {
+[7m [0m [91m                                ~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mmiddleware/errorHandler.ts[0m:[93m3[0m:[93m23[0m - [91merror[0m[90m TS7006: [0mParameter 'req' implicitly has an 'any' type.
+
+[7m3[0m const errorHandler = (req, res, next) => {
+[7m [0m [91m                      ~~~[0m
+[96mmiddleware/errorHandler.ts[0m:[93m3[0m:[93m28[0m - [91merror[0m[90m TS7006: [0mParameter 'res' implicitly has an 'any' type.
+
+[7m3[0m const errorHandler = (req, res, next) => {
+[7m [0m [91m                           ~~~[0m
+[96mmiddleware/errorHandler.ts[0m:[93m3[0m:[93m33[0m - [91merror[0m[90m TS7006: [0mParameter 'next' implicitly has an 'any' type.
+
+[7m3[0m const errorHandler = (req, res, next) => {
+[7m [0m [91m                                ~~~~[0m
+
+    at createTSError (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:744:12)
+    at reportTSError (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:748:19)
+    at getOutput (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:935:36)
+    at Object.compile (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1237:30)
+    at Module.m._compile (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1364:30)
+    at Module._extensions..js (internal/modules/cjs/loader.js:1114:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1368:12)
+    at Module.load (internal/modules/cjs/loader.js:950:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:790:12)
+    at Module.require (internal/modules/cjs/loader.js:974:19) {
+  "error": {
+    "diagnosticText": "\u001b[96mmiddleware/errorHandler.ts\u001b[0m:\u001b[93m3\u001b[0m:\u001b[93m23\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS7006: \u001b[0mParameter 'req' implicitly has an 'any' type.\n\n\u001b[7m3\u001b[0m const errorHandler = (req, res, next) => {\n\u001b[7m \u001b[0m \u001b[91m                      ~~~\u001b[0m\n\u001b[96mmiddleware/errorHandler.ts\u001b[0m:\u001b[93m3\u001b[0m:\u001b[93m28\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS7006: \u001b[0mParameter 'res' implicitly has an 'any' type.\n\n\u001b[7m3\u001b[0m const errorHandler = (req, res, next) => {\n\u001b[7m \u001b[0m \u001b[91m                           ~~~\u001b[0m\n\u001b[96mmiddleware/errorHandler.ts\u001b[0m:\u001b[93m3\u001b[0m:\u001b[93m33\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS7006: \u001b[0mParameter 'next' implicitly has an 'any' type.\n\n\u001b[7m3\u001b[0m const errorHandler = (req, res, next) => {\n\u001b[7m \u001b[0m \u001b[91m                                ~~~~\u001b[0m\n",
+    "diagnosticCodes": [
+      7006,
+      7006,
+      7006
+    ]
+  },
+  "stack": "TSError: ⨯ Unable to compile TypeScript:\n\u001b[96mmiddleware/errorHandler.ts\u001b[0m:\u001b[93m3\u001b[0m:\u001b[93m23\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS7006: \u001b[0mParameter 'req' implicitly has an 'any' type.\n\n\u001b[7m3\u001b[0m const errorHandler = (req, res, next) => {\n\u001b[7m \u001b[0m \u001b[91m                      ~~~\u001b[0m\n\u001b[96mmiddleware/errorHandler.ts\u001b[0m:\u001b[93m3\u001b[0m:\u001b[93m28\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS7006: \u001b[0mParameter 'res' implicitly has an 'any' type.\n\n\u001b[7m3\u001b[0m const errorHandler = (req, res, next) => {\n\u001b[7m \u001b[0m \u001b[91m                           ~~~\u001b[0m\n\u001b[96mmiddleware/errorHandler.ts\u001b[0m:\u001b[93m3\u001b[0m:\u001b[93m33\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS7006: \u001b[0mParameter 'next' implicitly has an 'any' type.\n\n\u001b[7m3\u001b[0m const errorHandler = (req, res, next) => {\n\u001b[7m \u001b[0m \u001b[91m                                ~~~~\u001b[0m\n\n    at createTSError (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:744:12)\n    at reportTSError (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:748:19)\n    at getOutput (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:935:36)\n    at Object.compile (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1237:30)\n    at Module.m._compile (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1364:30)\n    at Module._extensions..js (internal/modules/cjs/loader.js:1114:10)\n    at Object.require.extensions.<computed> [as .ts] (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1368:12)\n    at Module.load (internal/modules/cjs/loader.js:950:32)\n    at Function.Module._load (internal/modules/cjs/loader.js:790:12)\n    at Module.require (internal/modules/cjs/loader.js:974:19)",
+  "exception": true,
+  "date": "Sat Nov 27 2021 00:38:13 GMT-0700 (Mountain Standard Time)",
+  "process": {
+    "pid": 8854,
+    "uid": 1000,
+    "gid": 1000,
+    "cwd": "/home/herilsaha/nixodeWebsite/server",
+    "execPath": "/home/herilsaha/.nvm/versions/node/v14.18.1/bin/node",
+    "version": "v14.18.1",
+    "argv": [
+      "/home/herilsaha/nixodeWebsite/server/node_modules/.bin/ts-node",
+      "/home/herilsaha/nixodeWebsite/server/index.ts"
+    ],
+    "memoryUsage": {
+      "rss": 352014336,
+      "heapTotal": 261541888,
+      "heapUsed": 240058496,
+      "external": 25504660,
+      "arrayBuffers": 19345480
+    }
+  },
+  "os": {
+    "loadavg": [
+      1.22,
+      0.81,
+      0.47
+    ],
+    "uptime": 9972.14
+  },
+  "trace": [
+    {
+      "column": 12,
+      "file": "/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "createTSError",
+      "line": 744,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 19,
+      "file": "/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "reportTSError",
+      "line": 748,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 36,
+      "file": "/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "getOutput",
+      "line": 935,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 30,
+      "file": "/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "Object.compile",
+      "line": 1237,
+      "method": "compile",
+      "native": false
+    },
+    {
+      "column": 30,
+      "file": "/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "Module.m._compile",
+      "line": 1364,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "internal/modules/cjs/loader.js",
+      "function": "Module._extensions..js",
+      "line": 1114,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "Object.require.extensions.<computed> [as .ts]",
+      "line": 1368,
+      "method": "ts]",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "internal/modules/cjs/loader.js",
+      "function": "Module.load",
+      "line": 950,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "internal/modules/cjs/loader.js",
+      "function": "Module._load",
+      "line": 790,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 19,
+      "file": "internal/modules/cjs/loader.js",
+      "function": "Module.require",
+      "line": 974,
+      "method": "require",
+      "native": false
+    }
+  ]
+}
+2021-11-27 07:40:17 [[31merror[39m]: uncaughtException: ⨯ Unable to compile TypeScript:
+[96mmiddleware/errorHandler.ts[0m:[93m3[0m:[93m21[0m - [91merror[0m[90m TS2304: [0mCannot find name 'RequestHandler'.
+
+[7m3[0m const errorHandler: RequestHandler = (req, res, next) => {
+[7m [0m [91m                    ~~~~~~~~~~~~~~[0m
+[96mmiddleware/errorHandler.ts[0m:[93m3[0m:[93m39[0m - [91merror[0m[90m TS7006: [0mParameter 'req' implicitly has an 'any' type.
+
+[7m3[0m const errorHandler: RequestHandler = (req, res, next) => {
+[7m [0m [91m                                      ~~~[0m
+[96mmiddleware/errorHandler.ts[0m:[93m3[0m:[93m44[0m - [91merror[0m[90m TS7006: [0mParameter 'res' implicitly has an 'any' type.
+
+[7m3[0m const errorHandler: RequestHandler = (req, res, next) => {
+[7m [0m [91m                                           ~~~[0m
+[96mmiddleware/errorHandler.ts[0m:[93m3[0m:[93m49[0m - [91merror[0m[90m TS7006: [0mParameter 'next' implicitly has an 'any' type.
+
+[7m3[0m const errorHandler: RequestHandler = (req, res, next) => {
+[7m [0m [91m                                                ~~~~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96mmiddleware/errorHandler.ts[0m:[93m3[0m:[93m21[0m - [91merror[0m[90m TS2304: [0mCannot find name 'RequestHandler'.
+
+[7m3[0m const errorHandler: RequestHandler = (req, res, next) => {
+[7m [0m [91m                    ~~~~~~~~~~~~~~[0m
+[96mmiddleware/errorHandler.ts[0m:[93m3[0m:[93m39[0m - [91merror[0m[90m TS7006: [0mParameter 'req' implicitly has an 'any' type.
+
+[7m3[0m const errorHandler: RequestHandler = (req, res, next) => {
+[7m [0m [91m                                      ~~~[0m
+[96mmiddleware/errorHandler.ts[0m:[93m3[0m:[93m44[0m - [91merror[0m[90m TS7006: [0mParameter 'res' implicitly has an 'any' type.
+
+[7m3[0m const errorHandler: RequestHandler = (req, res, next) => {
+[7m [0m [91m                                           ~~~[0m
+[96mmiddleware/errorHandler.ts[0m:[93m3[0m:[93m49[0m - [91merror[0m[90m TS7006: [0mParameter 'next' implicitly has an 'any' type.
+
+[7m3[0m const errorHandler: RequestHandler = (req, res, next) => {
+[7m [0m [91m                                                ~~~~[0m
+
+    at createTSError (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:744:12)
+    at reportTSError (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:748:19)
+    at getOutput (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:935:36)
+    at Object.compile (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1237:30)
+    at Module.m._compile (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1364:30)
+    at Module._extensions..js (internal/modules/cjs/loader.js:1114:10)
+    at Object.require.extensions.<computed> [as .ts] (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1368:12)
+    at Module.load (internal/modules/cjs/loader.js:950:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:790:12)
+    at Module.require (internal/modules/cjs/loader.js:974:19) {
+  "error": {
+    "diagnosticText": "\u001b[96mmiddleware/errorHandler.ts\u001b[0m:\u001b[93m3\u001b[0m:\u001b[93m21\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS2304: \u001b[0mCannot find name 'RequestHandler'.\n\n\u001b[7m3\u001b[0m const errorHandler: RequestHandler = (req, res, next) => {\n\u001b[7m \u001b[0m \u001b[91m                    ~~~~~~~~~~~~~~\u001b[0m\n\u001b[96mmiddleware/errorHandler.ts\u001b[0m:\u001b[93m3\u001b[0m:\u001b[93m39\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS7006: \u001b[0mParameter 'req' implicitly has an 'any' type.\n\n\u001b[7m3\u001b[0m const errorHandler: RequestHandler = (req, res, next) => {\n\u001b[7m \u001b[0m \u001b[91m                                      ~~~\u001b[0m\n\u001b[96mmiddleware/errorHandler.ts\u001b[0m:\u001b[93m3\u001b[0m:\u001b[93m44\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS7006: \u001b[0mParameter 'res' implicitly has an 'any' type.\n\n\u001b[7m3\u001b[0m const errorHandler: RequestHandler = (req, res, next) => {\n\u001b[7m \u001b[0m \u001b[91m                                           ~~~\u001b[0m\n\u001b[96mmiddleware/errorHandler.ts\u001b[0m:\u001b[93m3\u001b[0m:\u001b[93m49\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS7006: \u001b[0mParameter 'next' implicitly has an 'any' type.\n\n\u001b[7m3\u001b[0m const errorHandler: RequestHandler = (req, res, next) => {\n\u001b[7m \u001b[0m \u001b[91m                                                ~~~~\u001b[0m\n",
+    "diagnosticCodes": [
+      2304,
+      7006,
+      7006,
+      7006
+    ]
+  },
+  "stack": "TSError: ⨯ Unable to compile TypeScript:\n\u001b[96mmiddleware/errorHandler.ts\u001b[0m:\u001b[93m3\u001b[0m:\u001b[93m21\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS2304: \u001b[0mCannot find name 'RequestHandler'.\n\n\u001b[7m3\u001b[0m const errorHandler: RequestHandler = (req, res, next) => {\n\u001b[7m \u001b[0m \u001b[91m                    ~~~~~~~~~~~~~~\u001b[0m\n\u001b[96mmiddleware/errorHandler.ts\u001b[0m:\u001b[93m3\u001b[0m:\u001b[93m39\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS7006: \u001b[0mParameter 'req' implicitly has an 'any' type.\n\n\u001b[7m3\u001b[0m const errorHandler: RequestHandler = (req, res, next) => {\n\u001b[7m \u001b[0m \u001b[91m                                      ~~~\u001b[0m\n\u001b[96mmiddleware/errorHandler.ts\u001b[0m:\u001b[93m3\u001b[0m:\u001b[93m44\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS7006: \u001b[0mParameter 'res' implicitly has an 'any' type.\n\n\u001b[7m3\u001b[0m const errorHandler: RequestHandler = (req, res, next) => {\n\u001b[7m \u001b[0m \u001b[91m                                           ~~~\u001b[0m\n\u001b[96mmiddleware/errorHandler.ts\u001b[0m:\u001b[93m3\u001b[0m:\u001b[93m49\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS7006: \u001b[0mParameter 'next' implicitly has an 'any' type.\n\n\u001b[7m3\u001b[0m const errorHandler: RequestHandler = (req, res, next) => {\n\u001b[7m \u001b[0m \u001b[91m                                                ~~~~\u001b[0m\n\n    at createTSError (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:744:12)\n    at reportTSError (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:748:19)\n    at getOutput (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:935:36)\n    at Object.compile (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1237:30)\n    at Module.m._compile (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1364:30)\n    at Module._extensions..js (internal/modules/cjs/loader.js:1114:10)\n    at Object.require.extensions.<computed> [as .ts] (/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1368:12)\n    at Module.load (internal/modules/cjs/loader.js:950:32)\n    at Function.Module._load (internal/modules/cjs/loader.js:790:12)\n    at Module.require (internal/modules/cjs/loader.js:974:19)",
+  "exception": true,
+  "date": "Sat Nov 27 2021 00:40:17 GMT-0700 (Mountain Standard Time)",
+  "process": {
+    "pid": 8969,
+    "uid": 1000,
+    "gid": 1000,
+    "cwd": "/home/herilsaha/nixodeWebsite/server",
+    "execPath": "/home/herilsaha/.nvm/versions/node/v14.18.1/bin/node",
+    "version": "v14.18.1",
+    "argv": [
+      "/home/herilsaha/nixodeWebsite/server/node_modules/.bin/ts-node",
+      "/home/herilsaha/nixodeWebsite/server/index.ts"
+    ],
+    "memoryUsage": {
+      "rss": 350855168,
+      "heapTotal": 261537792,
+      "heapUsed": 238386344,
+      "external": 25634975,
+      "arrayBuffers": 19475795
+    }
+  },
+  "os": {
+    "loadavg": [
+      0.49,
+      0.64,
+      0.45
+    ],
+    "uptime": 10096.01
+  },
+  "trace": [
+    {
+      "column": 12,
+      "file": "/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "createTSError",
+      "line": 744,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 19,
+      "file": "/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "reportTSError",
+      "line": 748,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 36,
+      "file": "/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "getOutput",
+      "line": 935,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 30,
+      "file": "/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "Object.compile",
+      "line": 1237,
+      "method": "compile",
+      "native": false
+    },
+    {
+      "column": 30,
+      "file": "/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "Module.m._compile",
+      "line": 1364,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "internal/modules/cjs/loader.js",
+      "function": "Module._extensions..js",
+      "line": 1114,
+      "method": ".js",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "/home/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "Object.require.extensions.<computed> [as .ts]",
+      "line": 1368,
+      "method": "ts]",
+      "native": false
+    },
+    {
+      "column": 32,
+      "file": "internal/modules/cjs/loader.js",
+      "function": "Module.load",
+      "line": 950,
+      "method": "load",
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "internal/modules/cjs/loader.js",
+      "function": "Module._load",
+      "line": 790,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 19,
+      "file": "internal/modules/cjs/loader.js",
+      "function": "Module.require",
+      "line": 974,
+      "method": "require",
+      "native": false
+    }
+  ]
+}

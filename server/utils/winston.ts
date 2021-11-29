@@ -50,13 +50,6 @@ const options = {
     handleExceptions: true,
     filename: `debug-${newdate}.log`,
   },
-  fatal: {
-    level: 'fatal',
-    dirname: 'logs/fatal',
-    json: true,
-    handleExceptions: true,
-    filename: `debug-${newdate}.log`,
-  },
   console: {
     level: 'debug',
     json: false,
@@ -72,7 +65,6 @@ const logger = new (createLogger as any)({
     new transports.File(options.warn),
     new transports.File(options.error),
     new transports.File(options.debug),
-    new transports.File(options.fatal),
     new transports.Console(options.console),
   ],
   exitOnError: false,

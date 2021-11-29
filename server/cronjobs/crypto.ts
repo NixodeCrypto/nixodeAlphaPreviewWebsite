@@ -21,7 +21,6 @@ cron.schedule(TICKER_DATA_TTL.cron, () => {
       );
 
       try {
-        logger.info('Wrote New Ticker Data');
         Ticker.bulkWrite(bulkData);
       } catch (e) {
         logger.error('MongoDB: Failed Obtaining New Ticker Data');

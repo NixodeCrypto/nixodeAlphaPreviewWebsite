@@ -12,7 +12,7 @@ export interface IGetAllCoins extends Request {
   };
 }
 
-const getAllCoins = (req: IGetAllCoins, res: Response) => {
+const getAllCoins = async (req: IGetAllCoins, res: Response) => {
   const idxPage = Math.max(parseFloat(req.query.page), 0);
 
   if (req.query.sortBy) {
