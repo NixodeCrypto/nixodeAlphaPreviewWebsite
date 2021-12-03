@@ -1,0 +1,144 @@
+2021-11-30 17:17:57 [[32minfo[39m]: Connected to MongoDB 
+2021-11-30 17:17:57 [[32minfo[39m]: App is running on port 7000 
+2021-11-30 17:32:34 [[31merror[39m]: Failed Request to Crypto API Servers 
+2021-11-30 17:46:06 [[32minfo[39m]: Connected to MongoDB 
+2021-11-30 17:46:06 [[32minfo[39m]: App is running on port 7000 
+2021-11-30 18:10:20 [[32minfo[39m]: Connected to MongoDB 
+2021-11-30 18:10:20 [[32minfo[39m]: App is running on port 7000 
+2021-11-30 18:10:55 [[31merror[39m]: uncaughtException: Cannot find module '/Users/herilsaha/nixodeWebsite/server/cronjobs/genCryptoData'
+Require stack:
+- /Users/herilsaha/nixodeWebsite/server/index.ts
+Error: Cannot find module '/Users/herilsaha/nixodeWebsite/server/cronjobs/genCryptoData'
+Require stack:
+- /Users/herilsaha/nixodeWebsite/server/index.ts
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue (/Users/herilsaha/nixodeWebsite/server/node_modules/@cspotcode/source-map-support/source-map-support.js:679:30)
+    at Function.Module._resolveFilename (/Users/herilsaha/nixodeWebsite/server/node_modules/module-alias/index.js:49:29)
+    at Function.Module._load (node:internal/modules/cjs/loader:778:27)
+    at Module.require (node:internal/modules/cjs/loader:999:19)
+    at require (node:internal/modules/cjs/helpers:102:18)
+    at Object.<anonymous> (/Users/herilsaha/nixodeWebsite/server/index.ts:11:1)
+    at Module._compile (node:internal/modules/cjs/loader:1095:14)
+    at Module.m._compile (/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1365:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1147:10) {
+  "error": {
+    "code": "MODULE_NOT_FOUND",
+    "requireStack": [
+      "/Users/herilsaha/nixodeWebsite/server/index.ts"
+    ]
+  },
+  "stack": "Error: Cannot find module '/Users/herilsaha/nixodeWebsite/server/cronjobs/genCryptoData'\nRequire stack:\n- /Users/herilsaha/nixodeWebsite/server/index.ts\n    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:933:15)\n    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue (/Users/herilsaha/nixodeWebsite/server/node_modules/@cspotcode/source-map-support/source-map-support.js:679:30)\n    at Function.Module._resolveFilename (/Users/herilsaha/nixodeWebsite/server/node_modules/module-alias/index.js:49:29)\n    at Function.Module._load (node:internal/modules/cjs/loader:778:27)\n    at Module.require (node:internal/modules/cjs/loader:999:19)\n    at require (node:internal/modules/cjs/helpers:102:18)\n    at Object.<anonymous> (/Users/herilsaha/nixodeWebsite/server/index.ts:11:1)\n    at Module._compile (node:internal/modules/cjs/loader:1095:14)\n    at Module.m._compile (/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts:1365:23)\n    at Module._extensions..js (node:internal/modules/cjs/loader:1147:10)",
+  "exception": true,
+  "date": "Tue Nov 30 2021 11:10:55 GMT-0700 (Mountain Standard Time)",
+  "process": {
+    "pid": 79832,
+    "uid": 501,
+    "gid": 20,
+    "cwd": "/Users/herilsaha/nixodeWebsite/server",
+    "execPath": "/usr/local/Cellar/node/17.0.1/bin/node",
+    "version": "v17.0.1",
+    "argv": [
+      "/Users/herilsaha/nixodeWebsite/server/node_modules/.bin/ts-node",
+      "/Users/herilsaha/nixodeWebsite/server/index.ts"
+    ],
+    "memoryUsage": {
+      "rss": 249282560,
+      "heapTotal": 201883648,
+      "heapUsed": 177119984,
+      "external": 22278990,
+      "arrayBuffers": 19017172
+    }
+  },
+  "os": {
+    "loadavg": [
+      3.8583984375,
+      3.30859375,
+      3.490234375
+    ],
+    "uptime": 1272069
+  },
+  "trace": [
+    {
+      "column": 15,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._resolveFilename",
+      "line": 933,
+      "method": "_resolveFilename",
+      "native": false
+    },
+    {
+      "column": 30,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/@cspotcode/source-map-support/source-map-support.js",
+      "function": "Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue",
+      "line": 679,
+      "method": "installedValue",
+      "native": false
+    },
+    {
+      "column": 29,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/module-alias/index.js",
+      "function": "Module._resolveFilename",
+      "line": 49,
+      "method": "_resolveFilename",
+      "native": false
+    },
+    {
+      "column": 27,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._load",
+      "line": 778,
+      "method": "_load",
+      "native": false
+    },
+    {
+      "column": 19,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module.require",
+      "line": 999,
+      "method": "require",
+      "native": false
+    },
+    {
+      "column": 18,
+      "file": "node:internal/modules/cjs/helpers",
+      "function": "require",
+      "line": 102,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 1,
+      "file": "/Users/herilsaha/nixodeWebsite/server/index.ts",
+      "function": null,
+      "line": 11,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 14,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._compile",
+      "line": 1095,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 23,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/ts-node/src/index.ts",
+      "function": "Module.m._compile",
+      "line": 1365,
+      "method": "_compile",
+      "native": false
+    },
+    {
+      "column": 10,
+      "file": "node:internal/modules/cjs/loader",
+      "function": "Module._extensions..js",
+      "line": 1147,
+      "method": ".js",
+      "native": false
+    }
+  ]
+}
+2021-11-30 18:11:04 [[32minfo[39m]: Connected to MongoDB 
+2021-11-30 18:11:04 [[32minfo[39m]: App is running on port 7000 

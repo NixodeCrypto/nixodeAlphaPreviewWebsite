@@ -1,0 +1,262 @@
+2021-12-02 17:58:19 [[31merror[39m]: uncaughtException: Bad Request.
+er: Bad Request.
+    at BadRequest.BaseError [as constructor] (/Users/herilsaha/nixodeWebsite/server/utils/error.ts:28:11)
+    at new BadRequest (/Users/herilsaha/nixodeWebsite/server/utils/error.ts:50:5)
+    at /Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:5:15
+    at step (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:33:23)
+    at Object.next (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:14:53)
+    at /Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:4:12)
+    at getAllCoins (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:4:58)
+    at /Users/herilsaha/nixodeWebsite/server/utils/error.ts:8:21 {
+  "error": {
+    "name": "er",
+    "statusCode": 400,
+    "isOperational": true
+  },
+  "stack": "er: Bad Request.\n    at BadRequest.BaseError [as constructor] (/Users/herilsaha/nixodeWebsite/server/utils/error.ts:28:11)\n    at new BadRequest (/Users/herilsaha/nixodeWebsite/server/utils/error.ts:50:5)\n    at /Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:5:15\n    at step (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:33:23)\n    at Object.next (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:14:53)\n    at /Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:8:71\n    at new Promise (<anonymous>)\n    at __awaiter (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:4:12)\n    at getAllCoins (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:4:58)\n    at /Users/herilsaha/nixodeWebsite/server/utils/error.ts:8:21",
+  "exception": true,
+  "date": "Thu Dec 02 2021 10:58:19 GMT-0700 (Mountain Standard Time)",
+  "process": {
+    "pid": 91320,
+    "uid": 501,
+    "gid": 20,
+    "cwd": "/Users/herilsaha/nixodeWebsite/server",
+    "execPath": "/usr/local/Cellar/node/17.0.1/bin/node",
+    "version": "v17.0.1",
+    "argv": [
+      "/Users/herilsaha/nixodeWebsite/server/node_modules/.bin/ts-node",
+      "/Users/herilsaha/nixodeWebsite/server/index.ts"
+    ],
+    "memoryUsage": {
+      "rss": 268132352,
+      "heapTotal": 208277504,
+      "heapUsed": 166152760,
+      "external": 21215759,
+      "arrayBuffers": 18374123
+    }
+  },
+  "os": {
+    "loadavg": [
+      2.95263671875,
+      3.16455078125,
+      3.52880859375
+    ],
+    "uptime": 1444101
+  },
+  "trace": [
+    {
+      "column": 11,
+      "file": "/Users/herilsaha/nixodeWebsite/server/utils/error.ts",
+      "function": "BadRequest.BaseError [as constructor]",
+      "line": 28,
+      "method": "BaseError [as constructor]",
+      "native": false
+    },
+    {
+      "column": 5,
+      "file": "/Users/herilsaha/nixodeWebsite/server/utils/error.ts",
+      "function": "new BadRequest",
+      "line": 50,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 15,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": null,
+      "line": 5,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 23,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": "step",
+      "line": 33,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 53,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": "Object.next",
+      "line": 14,
+      "method": "next",
+      "native": false
+    },
+    {
+      "column": 71,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": null,
+      "line": 8,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": null,
+      "file": null,
+      "function": "new Promise",
+      "line": null,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": "__awaiter",
+      "line": 4,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 58,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": "getAllCoins",
+      "line": 4,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 21,
+      "file": "/Users/herilsaha/nixodeWebsite/server/utils/error.ts",
+      "function": null,
+      "line": 8,
+      "method": null,
+      "native": false
+    }
+  ]
+}
+2021-12-02 17:58:55 [[31merror[39m]: 400: er 
+2021-12-02 18:14:15 [[31merror[39m]: uncaughtException: Bad Request.
+er: Bad Request.
+    at BadRequest.BaseError [as constructor] (/Users/herilsaha/nixodeWebsite/server/utils/error.ts:28:11)
+    at new BadRequest (/Users/herilsaha/nixodeWebsite/server/utils/error.ts:50:5)
+    at /Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:5:15
+    at step (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:33:23)
+    at Object.next (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:14:53)
+    at /Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:4:12)
+    at getAllCoins (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:4:58)
+    at /Users/herilsaha/nixodeWebsite/server/utils/error.ts:8:21 {
+  "error": {
+    "name": "er",
+    "statusCode": 400,
+    "isOperational": true
+  },
+  "stack": "er: Bad Request.\n    at BadRequest.BaseError [as constructor] (/Users/herilsaha/nixodeWebsite/server/utils/error.ts:28:11)\n    at new BadRequest (/Users/herilsaha/nixodeWebsite/server/utils/error.ts:50:5)\n    at /Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:5:15\n    at step (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:33:23)\n    at Object.next (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:14:53)\n    at /Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:8:71\n    at new Promise (<anonymous>)\n    at __awaiter (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:4:12)\n    at getAllCoins (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:4:58)\n    at /Users/herilsaha/nixodeWebsite/server/utils/error.ts:8:21",
+  "exception": true,
+  "date": "Thu Dec 02 2021 11:14:15 GMT-0700 (Mountain Standard Time)",
+  "process": {
+    "pid": 92828,
+    "uid": 501,
+    "gid": 20,
+    "cwd": "/Users/herilsaha/nixodeWebsite/server",
+    "execPath": "/usr/local/Cellar/node/17.0.1/bin/node",
+    "version": "v17.0.1",
+    "argv": [
+      "/Users/herilsaha/nixodeWebsite/server/node_modules/.bin/ts-node",
+      "/Users/herilsaha/nixodeWebsite/server/index.ts"
+    ],
+    "memoryUsage": {
+      "rss": 263086080,
+      "heapTotal": 208539648,
+      "heapUsed": 169097152,
+      "external": 21380890,
+      "arrayBuffers": 18537963
+    }
+  },
+  "os": {
+    "loadavg": [
+      2.22998046875,
+      2.80712890625,
+      3.1435546875
+    ],
+    "uptime": 1445057
+  },
+  "trace": [
+    {
+      "column": 11,
+      "file": "/Users/herilsaha/nixodeWebsite/server/utils/error.ts",
+      "function": "BadRequest.BaseError [as constructor]",
+      "line": 28,
+      "method": "BaseError [as constructor]",
+      "native": false
+    },
+    {
+      "column": 5,
+      "file": "/Users/herilsaha/nixodeWebsite/server/utils/error.ts",
+      "function": "new BadRequest",
+      "line": 50,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 15,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": null,
+      "line": 5,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 23,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": "step",
+      "line": 33,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 53,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": "Object.next",
+      "line": 14,
+      "method": "next",
+      "native": false
+    },
+    {
+      "column": 71,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": null,
+      "line": 8,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": null,
+      "file": null,
+      "function": "new Promise",
+      "line": null,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": "__awaiter",
+      "line": 4,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 58,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": "getAllCoins",
+      "line": 4,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 21,
+      "file": "/Users/herilsaha/nixodeWebsite/server/utils/error.ts",
+      "function": null,
+      "line": 8,
+      "method": null,
+      "native": false
+    }
+  ]
+}
+2021-12-02 18:17:08 [[31merror[39m]: unhandledRejection 

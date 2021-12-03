@@ -1,0 +1,292 @@
+2021-12-01 17:29:09 [[32minfo[39m]: Connected to MongoDB 
+2021-12-01 17:29:09 [[32minfo[39m]: App is running on port 7000 
+2021-12-01 17:30:12 [[32minfo[39m]: Connected to MongoDB 
+2021-12-01 17:30:12 [[32minfo[39m]: App is running on port 7000 
+2021-12-01 17:31:04 [[32minfo[39m]: Connected to MongoDB 
+2021-12-01 17:31:04 [[32minfo[39m]: App is running on port 7000 
+2021-12-01 17:31:37 [[32minfo[39m]: Connected to MongoDB 
+2021-12-01 17:31:37 [[32minfo[39m]: App is running on port 7000 
+2021-12-01 17:33:04 [[32minfo[39m]: Connected to MongoDB 
+2021-12-01 17:33:04 [[32minfo[39m]: App is running on port 7000 
+2021-12-01 17:33:41 [[32minfo[39m]: Connected to MongoDB 
+2021-12-01 17:33:41 [[32minfo[39m]: App is running on port 7000 
+2021-12-01 17:41:17 [[32minfo[39m]: Connected to MongoDB 
+2021-12-01 17:41:17 [[32minfo[39m]: App is running on port 7000 
+2021-12-01 17:44:14 [[32minfo[39m]: Connected to MongoDB 
+2021-12-01 17:44:14 [[32minfo[39m]: App is running on port 7000 
+2021-12-01 17:44:23 [[32minfo[39m]: Connected to MongoDB 
+2021-12-01 17:44:23 [[32minfo[39m]: App is running on port 7000 
+2021-12-01 17:44:25 [[31merror[39m]: uncaughtException: er
+Error: er
+    at /Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:5:14
+    at step (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:33:23)
+    at Object.next (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:14:53)
+    at /Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:4:12)
+    at getAllCoins (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:4:58)
+    at Layer.handle [as handle_request] (/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/router/route.js:112:3) {
+  "error": {},
+  "stack": "Error: er\n    at /Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:5:14\n    at step (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:33:23)\n    at Object.next (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:14:53)\n    at /Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:8:71\n    at new Promise (<anonymous>)\n    at __awaiter (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:4:12)\n    at getAllCoins (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:4:58)\n    at Layer.handle [as handle_request] (/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/router/route.js:137:13)\n    at Route.dispatch (/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/router/route.js:112:3)",
+  "exception": true,
+  "date": "Wed Dec 01 2021 10:44:25 GMT-0700 (Mountain Standard Time)",
+  "process": {
+    "pid": 84269,
+    "uid": 501,
+    "gid": 20,
+    "cwd": "/Users/herilsaha/nixodeWebsite/server",
+    "execPath": "/usr/local/Cellar/node/17.0.1/bin/node",
+    "version": "v17.0.1",
+    "argv": [
+      "/Users/herilsaha/nixodeWebsite/server/node_modules/.bin/ts-node",
+      "/Users/herilsaha/nixodeWebsite/server/index.ts"
+    ],
+    "memoryUsage": {
+      "rss": 266579968,
+      "heapTotal": 207491072,
+      "heapUsed": 165286840,
+      "external": 21193608,
+      "arrayBuffers": 18351972
+    }
+  },
+  "os": {
+    "loadavg": [
+      4.4296875,
+      4.291015625,
+      3.9755859375
+    ],
+    "uptime": 1356871
+  },
+  "trace": [
+    {
+      "column": 14,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": null,
+      "line": 5,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 23,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": "step",
+      "line": 33,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 53,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": "Object.next",
+      "line": 14,
+      "method": "next",
+      "native": false
+    },
+    {
+      "column": 71,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": null,
+      "line": 8,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": null,
+      "file": null,
+      "function": "new Promise",
+      "line": null,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": "__awaiter",
+      "line": 4,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 58,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": "getAllCoins",
+      "line": 4,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 5,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/router/layer.js",
+      "function": "Layer.handle [as handle_request]",
+      "line": 95,
+      "method": "handle [as handle_request]",
+      "native": false
+    },
+    {
+      "column": 13,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/router/route.js",
+      "function": "next",
+      "line": 137,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 3,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/router/route.js",
+      "function": "Route.dispatch",
+      "line": 112,
+      "method": "dispatch",
+      "native": false
+    }
+  ]
+}
+2021-12-01 17:44:59 [[32minfo[39m]: Connected to MongoDB 
+2021-12-01 17:44:59 [[32minfo[39m]: App is running on port 7000 
+2021-12-01 17:45:27 [[32minfo[39m]: Connected to MongoDB 
+2021-12-01 17:45:27 [[32minfo[39m]: App is running on port 7000 
+2021-12-01 17:46:30 [[32minfo[39m]: Connected to MongoDB 
+2021-12-01 17:46:30 [[32minfo[39m]: App is running on port 7000 
+2021-12-01 17:46:36 [[31merror[39m]: uncaughtException: er
+Error: er
+    at /Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:5:14
+    at step (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:33:23)
+    at Object.next (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:14:53)
+    at /Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:8:71
+    at new Promise (<anonymous>)
+    at __awaiter (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:4:12)
+    at getAllCoins (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:4:58)
+    at Layer.handle [as handle_request] (/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/router/route.js:112:3) {
+  "error": {},
+  "stack": "Error: er\n    at /Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:5:14\n    at step (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:33:23)\n    at Object.next (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:14:53)\n    at /Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:8:71\n    at new Promise (<anonymous>)\n    at __awaiter (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:4:12)\n    at getAllCoins (/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts:4:58)\n    at Layer.handle [as handle_request] (/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/router/layer.js:95:5)\n    at next (/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/router/route.js:137:13)\n    at Route.dispatch (/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/router/route.js:112:3)",
+  "exception": true,
+  "date": "Wed Dec 01 2021 10:46:36 GMT-0700 (Mountain Standard Time)",
+  "process": {
+    "pid": 84411,
+    "uid": 501,
+    "gid": 20,
+    "cwd": "/Users/herilsaha/nixodeWebsite/server",
+    "execPath": "/usr/local/Cellar/node/17.0.1/bin/node",
+    "version": "v17.0.1",
+    "argv": [
+      "/Users/herilsaha/nixodeWebsite/server/node_modules/.bin/ts-node",
+      "/Users/herilsaha/nixodeWebsite/server/index.ts"
+    ],
+    "memoryUsage": {
+      "rss": 254816256,
+      "heapTotal": 206442496,
+      "heapUsed": 167105760,
+      "external": 21213007,
+      "arrayBuffers": 18370080
+    }
+  },
+  "os": {
+    "loadavg": [
+      2.75341796875,
+      3.736328125,
+      3.79638671875
+    ],
+    "uptime": 1357002
+  },
+  "trace": [
+    {
+      "column": 14,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": null,
+      "line": 5,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 23,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": "step",
+      "line": 33,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 53,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": "Object.next",
+      "line": 14,
+      "method": "next",
+      "native": false
+    },
+    {
+      "column": 71,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": null,
+      "line": 8,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": null,
+      "file": null,
+      "function": "new Promise",
+      "line": null,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 12,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": "__awaiter",
+      "line": 4,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 58,
+      "file": "/Users/herilsaha/nixodeWebsite/server/controllers/crypto.ts",
+      "function": "getAllCoins",
+      "line": 4,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 5,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/router/layer.js",
+      "function": "Layer.handle [as handle_request]",
+      "line": 95,
+      "method": "handle [as handle_request]",
+      "native": false
+    },
+    {
+      "column": 13,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/router/route.js",
+      "function": "next",
+      "line": 137,
+      "method": null,
+      "native": false
+    },
+    {
+      "column": 3,
+      "file": "/Users/herilsaha/nixodeWebsite/server/node_modules/express/lib/router/route.js",
+      "function": "Route.dispatch",
+      "line": 112,
+      "method": "dispatch",
+      "native": false
+    }
+  ]
+}
+2021-12-01 17:47:57 [[32minfo[39m]: Connected to MongoDB 
+2021-12-01 17:47:57 [[32minfo[39m]: App is running on port 7000 
+2021-12-01 17:48:10 [[32minfo[39m]: Connected to MongoDB 
+2021-12-01 17:48:10 [[32minfo[39m]: App is running on port 7000 
+2021-12-01 17:49:38 [[32minfo[39m]: Connected to MongoDB 
+2021-12-01 17:49:38 [[32minfo[39m]: App is running on port 7000 
+2021-12-01 17:50:45 [[32minfo[39m]: Connected to MongoDB 
+2021-12-01 17:50:45 [[32minfo[39m]: App is running on port 7000 
+2021-12-01 17:51:34 [[32minfo[39m]: Connected to MongoDB 
+2021-12-01 17:51:34 [[32minfo[39m]: App is running on port 7000 
+2021-12-01 17:52:15 [[32minfo[39m]: Connected to MongoDB 
+2021-12-01 17:52:15 [[32minfo[39m]: App is running on port 7000 
+2021-12-01 17:54:44 [[32minfo[39m]: Connected to MongoDB 
+2021-12-01 17:54:44 [[32minfo[39m]: App is running on port 7000 
+2021-12-01 17:55:01 [[32minfo[39m]: Connected to MongoDB 
+2021-12-01 17:55:01 [[32minfo[39m]: App is running on port 7000 

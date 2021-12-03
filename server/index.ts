@@ -8,8 +8,9 @@ import mongoose, { ConnectOptions } from 'mongoose';
 import indexRouter from '@/routes/index';
 import apiRouter from '@/routes/api';
 import logger from '@/utils/winston';
-import errorHandler from '@/middleware/errorHandler';
-import '@/cronjobs/crypto';
+import errorMiddleware from '@/middleware/error';
+import { InternalServer } from '@/utils/error';
+import '@/cronjobs/genCryptoData';
 
 const PORT = process.env.PORT || 7000;
 
@@ -24,18 +25,11 @@ mongoose
     } as ConnectOptions,
   )
   .then(() => {
-    // do not show the log when environment = "test"
-    if (process.env.NODE_ENV !== 'test') {
-      logger.info('Connected to MongoDB');
-      logger.info(`App is running on port ${PORT}`);
-    }
+    logger.info('Connected to MongoDB');
   })
   .catch((err) => {
-    // do not show the log when environment = "test"
-    if (process.env.NODE_ENV !== 'test') {
-      logger.error(`App Starting Error: ${err.message}`);
-      process.exit(1);
-    }
+    logger.error(`App Starting Error: ${err.message}`);
+    process.exit(1);
   });
 
 const app = express();
@@ -52,6 +46,42 @@ app.use(cors());
 app.use('/', indexRouter);
 app.use('/', apiRouter);
 
-app.listen(PORT);
+// error handler
+app.use(errorMiddleware);
+
+const server = app.listen(PORT, () =>
+  logger.info(`App is running on port ${PORT}`),
+);
+
+// process events
+process.on('SIGTERM', () => {
+  logger.info('SIGTERM signal recieved');
+  logger.info('Closing HTTP server');
+  server.close(() => {
+    logger.info('HTTP Server closed');
+    mongoose.connection.close(false, () => {
+      logger.info('MongoDB connection closed');
+      process.exit(0);
+    });
+  });
+
+  setTimeout(() => {
+    logger.info('Timeout for graceful restart, forcefully shutting down');
+    process.exit(1);
+  }, 10000);
+});
+
+process.on('uncaughtException', () => {
+  logger.error('uncaughtException');
+  process.exit(1);
+});
+
+process.on('unhandledRejection', (err) => {
+  logger.error('unhandledRejection');
+  if (process.env.NODE_ENV !== 'production') {
+    logger.error(err);
+  }
+  throw new InternalServer('Unhandled Rejection');
+});
 
 export default app;
