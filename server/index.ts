@@ -44,7 +44,7 @@ app.use(cors());
 
 // route prefixes
 app.use('/', indexRouter);
-app.use('/', apiRouter);
+app.use('/api', apiRouter);
 
 // error handler
 app.use(errorMiddleware);

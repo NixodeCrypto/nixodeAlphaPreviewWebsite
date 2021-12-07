@@ -10,6 +10,7 @@ import Body from '@/components/Body';
 import Caption from '@/components/Caption';
 import Input from '@/components/Input';
 import Image from '@/components/Image';
+import CoinTable from '@/components/CoinTable';
 
 export {
   Button,
@@ -24,4 +25,5 @@ export {
   Caption,
   Input,
   Image,
+  CoinTable,
 };

@@ -9,6 +9,10 @@ const tickerSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  img: {
+    type: String,
+    required: false,
+  },
   symbol: {
     type: String,
     required: true,

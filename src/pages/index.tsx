@@ -1,4 +1,5 @@
 /** @jsxImportSource @emotion/react */
+import { GetServerSideProps } from 'next';
 import {
   Layout,
   Button,
@@ -8,9 +9,14 @@ import {
   Box,
   Body,
   Image,
+  CoinTable,
 } from '@/components';
 
-const Home = () => (
+export interface IProps {
+  data: Record<string, any>;
+}
+
+const Home = ({ data }: IProps) => (
   <Layout>
     <Box px="sm">
       <Box>
@@ -37,9 +43,21 @@ const Home = () => (
           </Body>
         </Box>
         <Image src="/TrendingCoins.svg" alt="CoverImg" width="max" />
+        <CoinTable tickerData={data} />
       </Box>
     </Box>
   </Layout>
 );
 
 export default Home;
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const res = await fetch(
+    `${process.env.SERVER_API}/api/crypto/getPreviewCoins`,
+  );
+  const data = await res.json();
+
+  return {
+    props: { data },
+  };
+};

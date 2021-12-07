@@ -1,1 +1,1 @@
-export const TICKER_DATA_TTL = { s: 60, cron: '* * * * *' };
+export const TICKER_DATA_TTL = { s: 120, cron: '*/2 * * * *' };
