@@ -66,7 +66,7 @@ export const GlobalTheme: Theme = {
     blueGrey: colorSwatches('#607d8b'),
   },
   fonts: {
-    title: 'Poppins',
+    title: 'Poppins, Roboto, sans-serif',
     text: 'Inter, Roboto, sans-serif',
   },
   fontWeights: {
@@ -88,6 +88,7 @@ export const GlobalTheme: Theme = {
     lg: rem(46),
     xl: rem(64),
     xxl: rem(144),
+    card: rem(240),
     max: '100%',
   },
   breakpoints: {

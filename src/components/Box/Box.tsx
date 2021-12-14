@@ -2,6 +2,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import {
+  color,
+  ColorProps,
   background,
   BackgroundProps,
   space,
@@ -26,7 +28,8 @@ export interface IProps
     BorderProps,
     ShadowProps,
     PositionProps,
-    TypographyProps {}
+    TypographyProps,
+    ColorProps {}
 
 // Exporting Styles as they are used in Flex and Grid components
 export const BoxStyles = styled.div<IProps>`
@@ -37,6 +40,7 @@ export const BoxStyles = styled.div<IProps>`
   ${shadow};
   ${position};
   ${typography};
+  ${color};
 `;
 
 const Box = React.forwardRef(

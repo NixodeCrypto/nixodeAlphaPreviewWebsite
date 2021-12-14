@@ -57,6 +57,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-feather": "2.0.9",
+    "react-inlinesvg": "2.3.0",
     "sinon-chai": "3.7.0",
     "start-server-and-test": "1.14.0",
     "styled-map": "3.3.0",

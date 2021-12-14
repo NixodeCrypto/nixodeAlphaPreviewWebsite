@@ -10,6 +10,7 @@ import {
   Body,
   Image,
   CoinTable,
+  CoinCard,
 } from '@/components';
 
 export interface IProps {
@@ -18,11 +19,11 @@ export interface IProps {
 
 const Home = ({ data }: IProps) => (
   <Layout>
-    <Box px="sm">
-      <Box>
+    <Box>
+      <Box px="sm" py="md">
         <Flex flexDirection="column" verticalGap="sm" mt="sm" mb="md">
           <Header as="h1">Stay on top of crypto prices</Header>
-          <Body color="grey.900">
+          <Body color="grey.900" mt="xs">
             Monitor crypto prices and be notified at certain price points. Sign
             up and get started for free today.
           </Body>
@@ -34,16 +35,25 @@ const Home = ({ data }: IProps) => (
           </Button>
         </Flex>
       </Box>
-      <Box mt="xl">
-        <Box textAlign="center">
+      <Box overflow="scroll" py="sm" ml="xs" mr="sm">
+        <Flex>
+          {data.slice(0, 5).map((i: any) => (
+            <Box mx="xs" key={i.id}>
+              <CoinCard tickerData={i} />
+            </Box>
+          ))}
+        </Flex>
+      </Box>
+      <Box mt="lg">
+        <Box textAlign="center" px="sm" mb="md">
           <Header as="h1">Get insight on trending coins</Header>
-          <Body color="grey.900">
+          <Body color="grey.900" mt="xs">
             View what coins are the rage in the market and plan to invest with
             the help of our services
           </Body>
+          <Image src="/TrendingCoins.svg" alt="CoverImg" width="max" />
         </Box>
-        <Image src="/TrendingCoins.svg" alt="CoverImg" width="max" />
-        <CoinTable tickerData={data} />
+        <CoinTable tickerData={data.slice(0, 5)} />
       </Box>
     </Box>
   </Layout>

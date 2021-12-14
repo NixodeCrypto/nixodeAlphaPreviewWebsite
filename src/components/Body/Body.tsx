@@ -8,6 +8,8 @@ import {
   ColorProps,
   typography,
   TypographyProps,
+  position,
+  PositionProps,
 } from '@/system';
 import { token, mq } from '@/utils';
 
@@ -15,9 +17,11 @@ export interface IProps
   extends PProps,
     SpaceProps,
     ColorProps,
-    TypographyProps {}
+    TypographyProps,
+    PositionProps {}
 
 const BodyRoot = styled.p<IProps>`
+  margin: 0 0;
   font-family: ${token.fonts('text')};
   font-size: ${token.fs('bodySm')};
   ${mq('sm')} {
@@ -27,6 +31,7 @@ const BodyRoot = styled.p<IProps>`
   ${space};
   ${color};
   ${typography};
+  ${position};
 `;
 
 const Body = React.forwardRef(

@@ -11,6 +11,7 @@ import Caption from '@/components/Caption';
 import Input from '@/components/Input';
 import Image from '@/components/Image';
 import CoinTable from '@/components/CoinTable';
+import CoinCard from '@/components/CoinCard';
 
 export {
   Button,
@@ -26,4 +27,5 @@ export {
   Input,
   Image,
   CoinTable,
+  CoinCard,
 };

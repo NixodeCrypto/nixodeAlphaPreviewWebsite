@@ -1,51 +1,86 @@
 /* @jsxImportSource @emotion/react */
-import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 import Box from '@/components/Box';
+import Image from '@/components/Image';
+import Flex from '@/components/Flex';
+import Body from '@/components/Body';
 import { token } from '@/utils';
 
 export interface IProps {
   tickerData: Record<string, any>;
 }
 
-const Table = styled.table``;
-
-const TableHeader = styled.th``;
-
 const CoinTable = (props: IProps) => {
   const { tickerData } = props;
-  const headers = [
-    '#',
-    'Name',
-    'Price',
-    'Change',
-    'Volume (24h)',
-    'Market cap',
-    'Supply',
-  ];
-
   return (
-    <Table>
-      <tr>
-        {headers.map((i) => (
-          <TableHeader key={i}>{i}</TableHeader>
-        ))}
-      </tr>
+    <>
       {tickerData &&
         tickerData.map((i: any) => (
-          <tr key={i.id}>
-            <td>{i.rank}</td>
-            <td>
-              <img src={i.img} alt="img" />
-              {i.name}
-            </td>
-            <td>{i.quotes.USD.price}</td>
-            <td>{i.quotes.USD.percent_change_24h}</td>
-            <td>{i.quotes.USD.volume_24h}</td>
-            <td>{i.quotes.USD.market_cap}</td>
-            <td>{i.total_supply}</td>
-          </tr>
+          <Box key={i.id}>
+            <Flex
+              justifyContent="space-between"
+              alignItems="center"
+              py="sm"
+              px="sm"
+              borderTop="sm"
+              borderColor="grey.100"
+              css={css`
+                transition: ${token.transition('standard')};
+                &:hover {
+                  background-color: ${token.colors('grey.50')};
+                  transition: ${token.transition('standard')};
+                }
+              `}
+            >
+              <Flex alignItems="center">
+                <Image src={i.img} alt={i.name} width="sm" mr="xs" />
+                <Flex flexDirection="column">
+                  <Body>{i.name}</Body>
+                  <Body color="grey.600">{i.symbol}</Body>
+                </Flex>
+              </Flex>
+              <Flex
+                alignItems="flex-end"
+                justifyContent="flex-end"
+                flexDirection="column"
+              >
+                <Body>
+                  $
+                  {i.quotes.USD.price.toLocaleString(undefined, {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                  })}
+                </Body>
+                <Body
+                  color={
+                    i.quotes.USD.percent_change_24h.toString().substr(0, 1) ===
+                    '-'
+                      ? 'red.600'
+                      : 'green.600'
+                  }
+                >
+                  {i.quotes.USD.percent_change_24h.toString().substr(0, 1) ===
+                  '-'
+                    ? `${i.quotes.USD.percent_change_24h.toLocaleString(
+                        undefined,
+                        {
+                          minimumFractionDigits: 2,
+                          maximumFractionDigits: 2,
+                        },
+                      )}%`
+                    : `+${i.quotes.USD.percent_change_24h.toLocaleString(
+                        undefined,
+                        {
+                          minimumFractionDigits: 2,
+                          maximumFractionDigits: 2,
+                        },
+                      )}%`}
+                </Body>
+              </Flex>
+            </Flex>
+          </Box>
         ))}
-    </Table>
+    </>
   );
 };
 

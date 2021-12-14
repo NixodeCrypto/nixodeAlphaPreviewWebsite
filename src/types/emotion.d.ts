@@ -76,6 +76,7 @@ declare module '@emotion/react' {
       lg: string;
       xl: string;
       xxl: string;
+      card: string;
       max: string;
     };
     breakpoints: Record<'xss' | 'xs' | 'sm' | 'md' | 'lg', string>;

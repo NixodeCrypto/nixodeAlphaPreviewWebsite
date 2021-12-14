@@ -8,6 +8,8 @@ import {
   ColorProps,
   typography,
   TypographyProps,
+  position,
+  PositionProps,
 } from '@/system';
 import { token, mq } from '@/utils';
 
@@ -15,12 +17,14 @@ export interface IProps
   extends PProps,
     SpaceProps,
     ColorProps,
-    TypographyProps {
+    TypographyProps,
+    PositionProps {
   xs?: boolean;
 }
 
 const CaptionRoot = styled.p<IProps>`
   font-family: ${token.fonts('text')};
+  margin: 0 0;
   font-size: ${(props) =>
     props.xs ? token.fs('footer') : token.fs('captionSm')};
   ${mq('sm')} {
@@ -31,6 +35,7 @@ const CaptionRoot = styled.p<IProps>`
   ${space};
   ${color};
   ${typography};
+  ${position};
 `;
 
 const Caption = React.forwardRef(
