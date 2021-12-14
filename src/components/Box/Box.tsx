@@ -37,10 +37,10 @@ export const BoxStyles = styled.div<IProps>`
   ${space};
   ${layout};
   ${border};
-  ${shadow};
   ${position};
   ${typography};
   ${color};
+  ${shadow};
 `;
 
 const Box = React.forwardRef(

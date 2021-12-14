@@ -15,7 +15,7 @@ const CoinTable = (props: IProps) => {
   return (
     <>
       {tickerData &&
-        tickerData.map((i: any) => (
+        tickerData.map((i: any, idx: number) => (
           <Box key={i.id}>
             <Flex
               justifyContent="space-between"
@@ -23,6 +23,7 @@ const CoinTable = (props: IProps) => {
               py="sm"
               px="sm"
               borderTop="sm"
+              borderBottom={idx === tickerData.length - 1 && 'sm'}
               borderColor="grey.100"
               css={css`
                 transition: ${token.transition('standard')};

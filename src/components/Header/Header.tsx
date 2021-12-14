@@ -3,6 +3,8 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import {
+  layout,
+  LayoutProps,
   space,
   SpaceProps,
   color,
@@ -17,7 +19,8 @@ export interface IProps
   extends HeadingProps,
     SpaceProps,
     ColorProps,
-    TypographyProps {
+    TypographyProps,
+    LayoutProps {
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
@@ -70,6 +73,7 @@ const HeaderRoot = styled.h1<IProps>`
   ${space};
   ${color};
   ${typography};
+  ${layout};
 `;
 
 const Header = React.forwardRef(

@@ -66,7 +66,7 @@ export const GlobalTheme: Theme = {
     blueGrey: colorSwatches('#607d8b'),
   },
   fonts: {
-    title: 'Poppins, Roboto, sans-serif',
+    title: 'Inter, Roboto, sans-serif',
     text: 'Inter, Roboto, sans-serif',
   },
   fontWeights: {
@@ -106,6 +106,7 @@ export const GlobalTheme: Theme = {
   },
   shadows: {
     focus: '0 0 0 3px rgba(66,153,225,0.3)',
+    reg: 'rgba(0,0,0,0.1) 0px 4px 12px',
   },
   zIndices: {
     navbar: 9999,
@@ -119,6 +120,7 @@ export const GlobalReset = css`
   html {
     line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
+    scroll-behavior: smooth;
   }
   body {
     margin: 0;

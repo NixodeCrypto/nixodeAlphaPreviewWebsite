@@ -1,14 +1,15 @@
 /* @jsxImportSource @emotion/react */
 import React from 'react';
 import styled from '@emotion/styled';
-import { flexbox, FlexboxProps } from '@/system';
+import { flexbox, FlexboxProps, shadow, ShadowProps } from '@/system';
 import { IProps as BoxProps, BoxStyles } from '@/components/Box';
 
-export interface IProps extends BoxProps, FlexboxProps {}
+export interface IProps extends BoxProps, FlexboxProps, ShadowProps {}
 
 const FlexStyles = styled(BoxStyles)<IProps>`
   display: flex;
   ${flexbox};
+  ${shadow};
 `;
 
 const Flex = React.forwardRef(

@@ -78,6 +78,8 @@ export const typography: InternalSystemProp = {
   letterSpacing: 'letterSpacings',
   textAlign: true,
   fontStyle: true,
+  wordWrap: true,
+  whiteSpace: true,
 };
 
 export const layout: InternalSystemProp = {
