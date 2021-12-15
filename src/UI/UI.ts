@@ -4,6 +4,12 @@ import colorSwatches from '@/utils/colorSwatches'; // import directly to avoid c
 
 export const GlobalTheme: Theme = {
   space: {
+    '-xl': rem(-64),
+    '-lg': rem(-32),
+    '-md': rem(-24),
+    '-sm': rem(-16),
+    '-xs': rem(-8),
+    '-xss': rem(-4),
     xss: rem(4),
     xs: rem(8),
     sm: rem(16),

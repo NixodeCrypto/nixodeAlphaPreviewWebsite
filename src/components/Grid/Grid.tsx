@@ -1,14 +1,50 @@
 /* @jsxImportSource @emotion/react */
 import React from 'react';
 import styled from '@emotion/styled';
-import { grid, GridProps as GridExtendProps } from '@/system';
-import { IProps as BoxProps, BoxStyles } from '@/components/Box';
+import {
+  grid,
+  GridProps,
+  color,
+  ColorProps,
+  background,
+  BackgroundProps,
+  space,
+  SpaceProps,
+  layout,
+  LayoutProps,
+  border,
+  BorderProps,
+  shadow,
+  ShadowProps,
+  position,
+  PositionProps,
+  typography,
+  TypographyProps,
+} from '@/system';
 
-export interface GridProps extends BoxProps, GridExtendProps {}
+export interface IProps
+  extends DivProps,
+    GridProps,
+    BackgroundProps,
+    SpaceProps,
+    LayoutProps,
+    BorderProps,
+    ShadowProps,
+    PositionProps,
+    TypographyProps,
+    ColorProps {}
 
-const GridStyles = styled(BoxStyles)<GridProps>`
+const GridStyles = styled.div<IProps>`
   display: grid;
   ${grid};
+  ${background};
+  ${space};
+  ${layout};
+  ${border};
+  ${position};
+  ${typography};
+  ${color};
+  ${shadow};
 `;
 
 const Grid = React.forwardRef(

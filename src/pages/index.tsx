@@ -14,6 +14,7 @@ import {
   Image,
   CoinTable,
   CoinCard,
+  Link,
 } from '@/components';
 
 export interface IProps {
@@ -49,6 +50,18 @@ const Home = ({ data }: IProps) => {
       />,
       'Learn how to trade',
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean varius.',
+    ],
+  ];
+
+  // temporary array, will be replaced with api call
+  const learnHowToInvestArr = [
+    [
+      'What is Digital Finance and why is it important',
+      'why-is-digital-finance-important',
+    ],
+    [
+      'What are the most common trading techniques',
+      'what-are-the-most-common-trading-techniques',
     ],
   ];
   return (
@@ -107,7 +120,7 @@ const Home = ({ data }: IProps) => {
           <CoinTable tickerData={data.slice(5, 10)} />
         </Box>
         <Box mt="xl">
-          <Box textAlign="center" px="sm" mb="md">
+          <Box textAlign="center" px="sm">
             <Header as="h1" wordWrap="break-word" whiteSpace="normal">
               Manage your cryptocurrency
             </Header>
@@ -115,9 +128,9 @@ const Home = ({ data }: IProps) => {
               Nixode creates a simple environment to keep track of all your
               investments
             </Body>
-            <Image src="/ManageCrypto.svg" alt="CoverImg" width="max" />
+            <Image src="/ManageCrypto.svg" alt="Managing Crypto" width="max" />
           </Box>
-          <Flex flexDirection="column">
+          <Flex flexDirection="column" mt="-sm" pb="lg">
             {manageCryptoArr.map((i) => (
               <Flex flexDirection="row" mx="sm" key={i[1] as string} pb="md">
                 <Flex
@@ -142,6 +155,54 @@ const Home = ({ data }: IProps) => {
             ))}
           </Flex>
         </Box>
+
+        <Box my="md">
+          <Box textAlign="center" px="sm" mb="md">
+            <Header as="h1">Learn how to properly invest</Header>
+            <Body color="grey.900" mt="xs">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              sodales sem id velit hendrerit lacinia.
+            </Body>
+            <Image src="/PiggyBank.svg" alt="Piggy Bank" width="max" />
+          </Box>
+          <Flex
+            flexDirection="column"
+            px="sm"
+            justifyContent="center"
+            alignItems="center"
+            verticalGap="lg"
+          >
+            {learnHowToInvestArr.map((i) => (
+              <Box key={i[0]}>
+                <Header as="h3" m="0" mb="xss">
+                  {i[0]}
+                </Header>
+                <Link href={i[1]} color="blue.900">
+                  Read More
+                </Link>
+              </Box>
+            ))}
+          </Flex>
+        </Box>
+
+        <Flex
+          mt="xl"
+          py="lg"
+          bg="secondary.500"
+          color="white"
+          justifyContent="center"
+          alignItems="center"
+          flexDirection="column"
+          px="md"
+        >
+          <Header as="h1">Join our newsletter</Header>
+          <Body>Nixode offers rich knowledge in cryptocurrency trading</Body>
+
+          <Input label="Email Address" size="lg" width="max" mb="xs" mt="md" />
+          <Button size="lg" width="max">
+            Get Started
+          </Button>
+        </Flex>
       </Box>
     </Layout>
   );

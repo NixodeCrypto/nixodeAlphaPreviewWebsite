@@ -10,6 +10,7 @@ import Body from '@/components/Body';
 import Caption from '@/components/Caption';
 import Input from '@/components/Input';
 import Image from '@/components/Image';
+import Link from '@/components/Link';
 import CoinTable from '@/components/CoinTable';
 import CoinCard from '@/components/CoinCard';
 
@@ -26,6 +27,7 @@ export {
   Caption,
   Input,
   Image,
+  Link,
   CoinTable,
   CoinCard,
 };

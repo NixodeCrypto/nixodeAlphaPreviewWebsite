@@ -1,14 +1,49 @@
 /* @jsxImportSource @emotion/react */
 import React from 'react';
 import styled from '@emotion/styled';
-import { flexbox, FlexboxProps, shadow, ShadowProps } from '@/system';
-import { IProps as BoxProps, BoxStyles } from '@/components/Box';
+import {
+  flexbox,
+  FlexboxProps,
+  color,
+  ColorProps,
+  background,
+  BackgroundProps,
+  space,
+  SpaceProps,
+  layout,
+  LayoutProps,
+  border,
+  BorderProps,
+  shadow,
+  ShadowProps,
+  position,
+  PositionProps,
+  typography,
+  TypographyProps,
+} from '@/system';
 
-export interface IProps extends BoxProps, FlexboxProps, ShadowProps {}
+export interface IProps
+  extends DivProps,
+    FlexboxProps,
+    BackgroundProps,
+    SpaceProps,
+    LayoutProps,
+    BorderProps,
+    ShadowProps,
+    PositionProps,
+    TypographyProps,
+    ColorProps {}
 
-const FlexStyles = styled(BoxStyles)<IProps>`
+const FlexStyles = styled.div<IProps>`
   display: flex;
   ${flexbox};
+  ${background};
+  ${space};
+  ${layout};
+  ${border};
+  ${position};
+  ${typography};
+  ${color};
   ${shadow};
 `;
 

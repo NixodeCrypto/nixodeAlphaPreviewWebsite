@@ -8,7 +8,7 @@ interface IProps extends LinkProps, SpaceProps, ColorProps {
   size?: 'sm';
 }
 
-const LinkStyles = styled.a<IProps>`
+const LinkStyles = styled.a<any>`
   font-family: ${token.fonts('text')};
   color: black;
   text-decoration: none;
@@ -26,7 +26,7 @@ const Link = (props: IProps): JSX.Element => {
   const { children, href, className, size, ...other } = props;
   return (
     <NextLink href={href as string} passHref {...other}>
-      <LinkStyles size={size} className={className}>
+      <LinkStyles size={size} className={className} {...other}>
         {children}
       </LinkStyles>
     </NextLink>

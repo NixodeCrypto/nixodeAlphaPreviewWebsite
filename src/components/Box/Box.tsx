@@ -32,7 +32,7 @@ export interface IProps
     ColorProps {}
 
 // Exporting Styles as they are used in Flex and Grid components
-export const BoxStyles = styled.div<IProps>`
+const BoxStyles = styled.div<IProps>`
   ${background};
   ${space};
   ${layout};
