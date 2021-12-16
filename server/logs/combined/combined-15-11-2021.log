@@ -1,2 +1,6 @@
 2021-12-15 17:25:24 [[32minfo[39m]: App is running on port 7000 
 2021-12-15 17:25:25 [[32minfo[39m]: Connected to MongoDB 
+2021-12-15 23:20:00 [[31merror[39m]: Failed Request to Crypto API Servers 
+2021-12-16 01:19:32 [[31merror[39m]: unhandledRejection 
+2021-12-16 01:27:49 [[32minfo[39m]: App is running on port 7000 
+2021-12-16 01:27:50 [[32minfo[39m]: Connected to MongoDB 

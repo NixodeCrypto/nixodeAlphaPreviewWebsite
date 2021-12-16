@@ -13,6 +13,7 @@ import Image from '@/components/Image';
 import Link from '@/components/Link';
 import CoinTable from '@/components/CoinTable';
 import CoinCard from '@/components/CoinCard';
+import Footer from '@/components/Footer';
 
 export {
   Button,
@@ -30,4 +31,5 @@ export {
   Link,
   CoinTable,
   CoinCard,
+  Footer,
 };

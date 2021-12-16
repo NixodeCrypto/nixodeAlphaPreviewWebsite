@@ -2,6 +2,7 @@
 import { ThemeProvider, Global } from '@emotion/react';
 import { GlobalTheme, GlobalReset } from '@/UI';
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import Box from '@/components/Box';
 
 const Layout = (props: {
@@ -15,6 +16,7 @@ const Layout = (props: {
       <ThemeProvider theme={GlobalTheme}>
         <Navbar />
         {nonStandardLayout ? children : <Box pt="xl">{children}</Box>}
+        <Footer />
       </ThemeProvider>
     </>
   );
