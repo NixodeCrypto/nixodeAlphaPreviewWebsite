@@ -98,5 +98,10 @@ declare module '@emotion/react' {
     shadows: Record<string, string>;
     zIndices: Record<'navbar', number>;
     transition: Record<'standard', string>;
+    screenMaxWidths: {
+      xs: string;
+      sm: string;
+      md: string;
+    };
   }
 }

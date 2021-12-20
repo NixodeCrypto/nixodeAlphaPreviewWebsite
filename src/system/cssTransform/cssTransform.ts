@@ -86,7 +86,7 @@ export const layout: InternalSystemProp = {
   width: 'sizes',
   minWidth: 'sizes',
   maxWidth: 'sizes',
-  screenMaxWidth: ['maxWidth', 'breakpoints'],
+  screenMaxWidth: ['maxWidth', 'screenMaxWidths'],
   height: 'sizes',
   minHeight: 'sizes',
   maxHeight: 'sizes',

@@ -97,6 +97,11 @@ export const GlobalTheme: Theme = {
     card: rem(240),
     max: '100%',
   },
+  screenMaxWidths: {
+    xs: rem(400),
+    sm: rem(700),
+    md: rem(1000),
+  },
   breakpoints: {
     xss: '0px',
     xs: '320px',

@@ -2,14 +2,22 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import NextImage, { ImageProps } from 'next/image';
-import { layout, LayoutProps, space, SpaceProps } from '@/system';
+import {
+  layout,
+  LayoutProps,
+  space,
+  SpaceProps,
+  position,
+  PositionProps,
+} from '@/system';
 
 interface IProps extends LayoutProps, SpaceProps, ImageProps {}
 
-const ImageWrapper = styled.div<LayoutProps & SpaceProps>`
+const ImageWrapper = styled.div<LayoutProps & SpaceProps & PositionProps>`
   position: relative;
   ${layout};
   ${space};
+  ${position};
 `;
 
 const Image = React.forwardRef(
