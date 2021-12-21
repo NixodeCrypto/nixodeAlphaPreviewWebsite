@@ -41,8 +41,8 @@ describe('system/cssTransform', () => {
     });
   });
   it('prop array aliases', () => {
-    expect(cssTransform('screenMaxWidth', 'lg')).toStrictEqual({
-      maxWidth: GlobalTheme.breakpoints.lg,
+    expect(cssTransform('screenMaxWidth', 'xs')).toStrictEqual({
+      maxWidth: GlobalTheme.screenMaxWidths.xs,
     });
   });
   it('custom fn transformer', () => {

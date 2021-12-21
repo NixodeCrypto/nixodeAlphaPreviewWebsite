@@ -105,7 +105,7 @@ describe('system/responsiveStyles', () => {
         maxWidth: '1rem',
       },
       [mq('md')]: {
-        maxWidth: GlobalTheme.breakpoints.sm,
+        maxWidth: GlobalTheme.screenMaxWidths.sm,
       },
     });
   });
