@@ -12,10 +12,6 @@ describe('components/Header', () => {
     const wrapper = mount(<Header as="h2" />);
     expect(wrapper.find('h2').exists()).toBeTruthy();
   });
-  it('has correct percentage line-height', () => {
-    const wrapper = mount(<Header as="h1" />);
-    expect(wrapper).toHaveStyleRule('line-height', '140%');
-  });
   describe('sizes', () => {
     it('h1', () => {
       const wrapper = mount(<Header as="h1" />);
