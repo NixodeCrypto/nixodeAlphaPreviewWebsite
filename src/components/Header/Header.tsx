@@ -69,7 +69,7 @@ const HeaderRoot = styled.h1<IProps>`
       },
       true,
     )}
-  line-height: 140%;
+  line-height: 130%;
   ${space};
   ${color};
   ${typography};

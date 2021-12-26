@@ -68,7 +68,7 @@ const Home = ({ data }: IProps) => {
     <Layout>
       <Box>
         <Flex
-          px="sm"
+          px={{ xss: 'sm', sm: '0' }}
           py="lg"
           screenMaxWidth={{ xss: 'xs', sm: '100%' }}
           ml={{ xss: 'auto', sm: 'lg', md: '0' }}
@@ -106,13 +106,15 @@ const Home = ({ data }: IProps) => {
             src="/AboveFold.svg"
             alt="Cryptocurrency"
             display={{ xss: 'none', sm: 'block' }}
-            width="27rem"
-            minWidth="27rem"
+            ml={{ sm: 'md' }}
+            width={{ xss: 'img', lg: 'imgXl' }}
+            minWidth={{ xss: 'img', lg: 'imgXl' }}
             my="auto"
           />
         </Flex>
         <Flex
-          py="md"
+          pt={{ xss: 'md' }}
+          pb={{ md: 'xl' }}
           overflow="scroll"
           css={css`
             ::-webkit-scrollbar {
@@ -122,13 +124,13 @@ const Home = ({ data }: IProps) => {
             overflow-x: scroll;
             scroll-snap-type: x mandatory;
           `}
+          justifyContent={{ md: 'center' }}
         >
-          {data.slice(0, 5).map((i: Record<string, any>, idx: number) => (
+          {data.slice(0, 4).map((i: Record<string, any>, idx: number) => (
             <Box
               key={i.id}
-              pl="sm"
-              pr={idx === 4 && 'sm'}
-              width="100%"
+              pl={idx === 0 ? { xss: 'sm', sm: 'lg', md: 'sm' } : 'sm'}
+              pr={idx === 3 && { xss: 'sm', sm: 'lg', md: 'sm' }}
               css={css`
                 scroll-snap-align: start;
               `}
@@ -138,7 +140,13 @@ const Home = ({ data }: IProps) => {
           ))}
         </Flex>
         <Box my="md">
-          <Box textAlign="center" px="sm" mb="md">
+          <Box
+            textAlign="center"
+            px="sm"
+            mb="md"
+            screenMaxWidth={{ xss: 'xs' }}
+            mx="auto"
+          >
             <Header as="h1">Get insight on trending coins</Header>
             <Body color="grey.900" mt="xs">
               View what coins are the rage in the market and plan to invest with
@@ -146,7 +154,7 @@ const Home = ({ data }: IProps) => {
             </Body>
             <Image src="/TrendingCoins.svg" alt="CoverImg" width="max" />
           </Box>
-          <CoinTable tickerData={data.slice(5, 10)} />
+          <CoinTable tickerData={data.slice(4, 9)} />
         </Box>
         <Box mt="xl">
           <Box textAlign="center" px="sm">

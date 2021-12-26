@@ -90,6 +90,9 @@ declare module '@emotion/react' {
       xl: string;
       xxl: string;
       card: string;
+      cardXl: string;
+      img: string;
+      imgXl: string;
       max: string;
     };
     breakpoints: Record<'xss' | 'xs' | 'sm' | 'md' | 'lg', string>;

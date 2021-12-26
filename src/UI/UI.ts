@@ -43,7 +43,7 @@ export const GlobalTheme: Theme = {
     h2: rem(34),
     // H1 fs
     h1Sm: rem(34),
-    h1: rem(48),
+    h1: rem(52),
   },
   colors: {
     // Brand Colors
@@ -94,7 +94,10 @@ export const GlobalTheme: Theme = {
     lg: rem(46),
     xl: rem(64),
     xxl: rem(144),
-    card: rem(240),
+    card: rem(215),
+    cardXl: rem(225),
+    img: rem(432),
+    imgXl: rem(480),
     max: '100%',
   },
   screenMaxWidths: {

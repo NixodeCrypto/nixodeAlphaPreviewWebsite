@@ -10,6 +10,8 @@ import {
   TypographyProps,
   position,
   PositionProps,
+  layout,
+  LayoutProps,
 } from '@/system';
 import { token, mq } from '@/utils';
 
@@ -18,7 +20,8 @@ export interface IProps
     SpaceProps,
     ColorProps,
     TypographyProps,
-    PositionProps {}
+    PositionProps,
+    LayoutProps {}
 
 const BodyRoot = styled.p<IProps>`
   margin: 0 0;
@@ -30,8 +33,9 @@ const BodyRoot = styled.p<IProps>`
   line-height: 140%;
   ${space};
   ${color};
-  ${typography};
   ${position};
+  ${typography};
+  ${layout};
 `;
 
 const Body = React.forwardRef(

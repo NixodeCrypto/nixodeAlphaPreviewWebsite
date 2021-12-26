@@ -111,10 +111,21 @@ const getPreviewCoins: RequestHandler = (_, res, next) => {
       return res.status(200).json(parsedData);
     }
 
-    const cryptoData = await Ticker.aggregate(
-      [{ $sort: { rank: 1 } }, { $limit: 10 }],
-      { allowDiskUse: true },
-    );
+    const cryptoData = await Ticker.find({
+      id: {
+        $in: [
+          'btc-bitcoin',
+          'eth-ethereum',
+          'hex-hex',
+          'usdt-tether',
+          'sol-solana',
+          'ada-cardano',
+          'xrp-xrp',
+          'ltc-litecoin',
+          'shib-shiba-inu',
+        ],
+      },
+    });
 
     // object to string transformation
     const stringData = JSON.stringify(cryptoData);

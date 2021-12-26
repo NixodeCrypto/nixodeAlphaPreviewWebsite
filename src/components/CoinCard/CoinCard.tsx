@@ -22,11 +22,11 @@ const CoinCard = (props: IProps) => {
           key={tickerData.id}
           border="sm"
           borderColor="grey.100"
-          width="card"
-          height="card"
+          width={{ xss: 'card', lg: 'cardXl' }}
+          height={{ xss: 'card', lg: 'cardXl' }}
           borderRadius="sm"
           position="relative"
-          minWidth="card"
+          minWidth={{ xss: 'card', lg: 'cardXl' }}
         >
           <Flex justifyContent="space-between" p="sm">
             <Flex alignItems="center">
@@ -53,6 +53,7 @@ const CoinCard = (props: IProps) => {
             <Caption
               ml="xss"
               fontSize="captionLg"
+              fontWeight="semiBold"
               color={
                 tickerData.quotes.USD.percent_change_7d
                   .toString()
