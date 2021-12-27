@@ -6,7 +6,7 @@ import Image from '@/components/Image';
 import Flex from '@/components/Flex';
 import Body from '@/components/Body';
 import Box from '@/components/Box';
-import { token } from '@/utils';
+import { token, mq } from '@/utils';
 import { space, border, layout, typography } from '@/system';
 
 export interface IProps {
@@ -16,6 +16,11 @@ export interface IProps {
 const Table = styled.table`
   width: 100%;
   border-collapse: collapse;
+  ${mq('md')} {
+    border-right: ${token.borders('sm')};
+    border-left: ${token.borders('sm')};
+    border-color: ${token.colors('grey.100')};
+  }
 `;
 
 const Tbody = styled.tbody``;
@@ -75,13 +80,15 @@ const CoinTable = (props: IProps) => {
           <Th textAlign="left" pl="sm">
             Name
           </Th>
-          <Th textAlign="left" pl="sm">
+          <Th textAlign="left" pl="md">
             Price
           </Th>
-          <Th textAlign="left" pl="sm">
+          <Th textAlign="left" pl="md">
             Change
           </Th>
-          <Th textAlign="left">Chart (7d)</Th>
+          <Th textAlign="left" pl="md">
+            Chart (7d)
+          </Th>
         </Tr>
       </Thead>
       <Tbody>
@@ -102,7 +109,7 @@ const CoinTable = (props: IProps) => {
                   </Flex>
                 </Flex>
               </Td>
-              <Td px="sm" py="sm" width="3rem">
+              <Td px="md" py="sm" width="md">
                 <Flex
                   alignItems={{ xss: 'flex-end', sm: 'flex-start' }}
                   justifyContent="flex-end"
@@ -131,9 +138,9 @@ const CoinTable = (props: IProps) => {
               </Td>
               <Td
                 display={{ xss: 'none', sm: 'table-cell' }}
-                px="sm"
+                px="md"
                 py="sm"
-                width="3rem"
+                width="md"
               >
                 <Flex alignItems="flex-start" flexDirection="column">
                   <Body
@@ -151,7 +158,7 @@ const CoinTable = (props: IProps) => {
               </Td>
               <Td
                 display={{ xss: 'none', sm: 'table-cell' }}
-                pr="sm"
+                px="md"
                 py="sm"
                 width="xl"
               >

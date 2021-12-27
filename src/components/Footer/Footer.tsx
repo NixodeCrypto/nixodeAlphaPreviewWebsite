@@ -25,8 +25,10 @@ const Footer = () => {
   ];
 
   const sectionGen = (title: string, links: Array<Array<string>>) => (
-    <Flex verticalGap="xs" flexDirection="column" mb="md">
-      <Body fontWeight="bold">{title}</Body>
+    <Flex verticalGap="xs" flexDirection="column" mb="md" mr={{ sm: 'xl' }}>
+      <Body fontWeight="bold" color="blueGrey.900">
+        {title}
+      </Body>
       {links.map((i) => (
         <Link href={i[1]} key={i[1]}>
           <Body fontWeight="regular" color="grey.900">
@@ -39,16 +41,23 @@ const Footer = () => {
 
   return (
     <footer>
-      <Flex pt="md" pl="sm" fontFamily="text" flexDirection="column">
+      <Flex
+        py="md"
+        pl={{ xss: 'sm', sm: 'lg' }}
+        fontFamily="text"
+        flexDirection="column"
+      >
         <BrandLogo />
         <Flex flexDirection="column">
           <Body color="grey.700" mb="md">
             &copy; {new Date().getFullYear()} Nixode
           </Body>
         </Flex>
-        {sectionGen('Social Media', socials)}
-        {sectionGen('Company', companyLinks)}
-        {sectionGen('Legals', legalLinks)}
+        <Flex flexDirection={{ xss: 'column', sm: 'row' }}>
+          {sectionGen('Social Media', socials)}
+          {sectionGen('Company', companyLinks)}
+          {sectionGen('Legals', legalLinks)}
+        </Flex>
       </Flex>
     </footer>
   );

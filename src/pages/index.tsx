@@ -69,6 +69,8 @@ const Home = ({ data }: IProps) => {
       <Box>
         <Flex
           px={{ xss: 'sm', sm: '0' }}
+          pt={{ xss: 'lg', md: '0' }}
+          mt={{ md: '-lg' }}
           py="lg"
           screenMaxWidth={{ xss: 'xs', sm: '100%' }}
           ml={{ xss: 'auto', sm: 'lg', md: '0' }}
@@ -113,8 +115,8 @@ const Home = ({ data }: IProps) => {
           />
         </Flex>
         <Flex
-          pt={{ xss: 'md' }}
-          pb={{ md: 'xl' }}
+          pt={{ xss: 'sm', md: '0' }}
+          mt={{ md: '-lg' }}
           overflow="scroll"
           css={css`
             ::-webkit-scrollbar {
@@ -140,105 +142,203 @@ const Home = ({ data }: IProps) => {
           ))}
         </Flex>
         <Box my="md">
-          <Box
-            textAlign="center"
+          <Flex
+            textAlign={{ xss: 'center', sm: 'left' }}
             px="sm"
             mb="md"
-            screenMaxWidth={{ xss: 'xs' }}
+            screenMaxWidth={{ xss: 'xs', sm: '100%' }}
             mx="auto"
+            flexDirection={{ xss: 'column', sm: 'row-reverse' }}
+            position="relative"
+            alignItems="center"
+            justifyContent={{ md: 'center' }}
+            overflow="hidden"
           >
-            <Header as="h1">Get insight on trending coins</Header>
-            <Body color="grey.900" mt="xs">
-              View what coins are the rage in the market and plan to invest with
-              the help of our services
-            </Body>
-            <Image src="/TrendingCoins.svg" alt="CoverImg" width="max" />
+            <Box
+              screenMaxWidth={{ sm: 'xs' }}
+              ml={{ sm: 'xl' }}
+              mr={{ sm: 'xs', md: '0' }}
+              width={{ sm: '25rem' }}
+              minWidth={{ sm: '25rem' }}
+            >
+              <Header as="h1">Get insight on trending coins</Header>
+              <Body color="grey.900" mt="xs">
+                View what coins are the rage in the market and plan to invest
+                with the help of our services
+              </Body>
+              <Button size="lg" display={{ xss: 'none', sm: 'flex' }} mt="md">
+                Start My Portfolio
+              </Button>
+            </Box>
+            <Image
+              src="/TrendingCoins.svg"
+              alt="CoverImg"
+              width={{ xss: 'max', sm: 'img', lg: 'imgXl' }}
+              minWidth={{ xss: 'max', sm: 'img', lg: 'imgXl' }}
+              my="auto"
+            />
+          </Flex>
+          <Box screenMaxWidth="md" mx="auto" px={{ lg: 'xl' }}>
+            <CoinTable tickerData={data.slice(4, 9)} />
           </Box>
-          <CoinTable tickerData={data.slice(4, 9)} />
         </Box>
-        <Box mt="xl">
+        <Box
+          mt="xl"
+          screenMaxWidth={{ xss: 'xs', sm: '100%' }}
+          mx="auto"
+          px={{ xss: 'sm', sm: '0' }}
+        >
           <Box textAlign="center" px="sm">
             <Header as="h1" wordWrap="break-word" whiteSpace="normal">
               Manage your cryptocurrency
             </Header>
-            <Body color="grey.900" mt="xs">
+            <Body color="grey.900" mt="xs" maxWidth="20rem" mx="auto">
               Nixode creates a simple environment to keep track of all your
               investments
             </Body>
-            <Image src="/ManageCrypto.svg" alt="Managing Crypto" width="max" />
           </Box>
-          <Flex flexDirection="column" mt="-sm" pb="lg">
-            {manageCryptoArr.map((i) => (
-              <Flex flexDirection="row" mx="sm" key={i[1] as string} pb="md">
-                <Flex
-                  mt="sm"
-                  borderRadius="50%"
-                  minWidth="lg"
-                  width="lg"
-                  height="lg"
-                  justifyContent="center"
-                  alignItems="center"
-                  boxShadow="reg"
-                >
-                  {i[0]}
+          <Flex
+            flexDirection={{ xss: 'column-reverse', sm: 'row-reverse' }}
+            mt={{ xss: '-sm', sm: 'sm' }}
+            pb="lg"
+            overflow="hidden"
+            alignItems="center"
+            justifyContent={{ md: 'center' }}
+            ml={{ md: 'md' }}
+          >
+            <Box
+              width={{ sm: '25rem' }}
+              minWidth={{ sm: '25rem' }}
+              ml={{ sm: 'lg' }}
+              mr={{ sm: 'xl' }}
+            >
+              {manageCryptoArr.map((i) => (
+                <Flex flexDirection="row" mx="sm" key={i[1] as string} pb="md">
+                  <Flex
+                    mt="sm"
+                    borderRadius="50%"
+                    minWidth="lg"
+                    width="lg"
+                    height="lg"
+                    justifyContent="center"
+                    alignItems="center"
+                    boxShadow="reg"
+                  >
+                    {i[0]}
+                  </Flex>
+                  <Box ml="sm">
+                    <Header as="h3" lineHeight="120%" mb="xs">
+                      {i[1]}
+                    </Header>
+                    <Body color="grey.900">{i[2]}</Body>
+                  </Box>
                 </Flex>
-                <Box ml="sm">
-                  <Header as="h3" lineHeight="120%" mb="xs">
-                    {i[1]}
-                  </Header>
-                  <Body color="grey.900">{i[2]}</Body>
-                </Box>
-              </Flex>
-            ))}
+              ))}
+            </Box>
+
+            <Image
+              src="/ManageCrypto.svg"
+              alt="Managing Crypto"
+              width={{ xss: 'max', sm: 'img', lg: 'imgXl' }}
+              minWidth={{ xss: 'max', sm: 'img', lg: 'imgXl' }}
+              my="auto"
+            />
           </Flex>
         </Box>
 
-        <Box my="md">
-          <Box textAlign="center" px="sm" mb="md">
+        <Box
+          my="md"
+          maxWidth={{ xss: '25rem', sm: '100%' }}
+          mx="auto"
+          px={{ xss: 'sm', sm: '0' }}
+        >
+          <Box textAlign="center" px="sm" mb="-sm">
             <Header as="h1">Learn how to properly invest</Header>
-            <Body color="grey.900" mt="xs">
+            <Body color="grey.900" mt="xs" maxWidth="25rem" mx="auto">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
               sodales sem id velit hendrerit lacinia.
             </Body>
-            <Image src="/PiggyBank.svg" alt="Piggy Bank" width="max" />
           </Box>
           <Flex
-            flexDirection="column"
-            px="sm"
-            justifyContent="center"
+            flexDirection={{ xss: 'column-reverse', sm: 'row' }}
+            overflow="hidden"
+            pl={{ sm: 'xl', md: '0' }}
+            mx="auto"
             alignItems="center"
-            verticalGap="lg"
+            justifyContent={{ md: 'center' }}
           >
-            {learnHowToInvestArr.map((i) => (
-              <Box key={i[0]}>
-                <Header as="h3" m="0" mb="xss">
-                  {i[0]}
-                </Header>
-                <Link href={i[1]} color="blue.900">
-                  Read More
-                </Link>
-              </Box>
-            ))}
+            <Flex
+              flexDirection="column"
+              verticalGap="lg"
+              width={{ sm: '25rem' }}
+              minWidth={{ sm: '25rem' }}
+              pr={{ sm: 'md' }}
+            >
+              {learnHowToInvestArr.map((i) => (
+                <Box key={i[0]}>
+                  <Header as="h3" m="0" mb="xss">
+                    {i[0]}
+                  </Header>
+                  <Link href={i[1]} color="blue.900">
+                    Read More
+                  </Link>
+                </Box>
+              ))}
+            </Flex>
+
+            <Image
+              src="/PiggyBank.svg"
+              alt="Piggy Bank"
+              width={{ xss: 'max', sm: 'img', lg: 'imgXl' }}
+              minWidth={{ xss: 'max', sm: 'img', lg: 'imgXl' }}
+              my="auto"
+            />
           </Flex>
         </Box>
 
         <Flex
           mt="xl"
-          py="lg"
+          py={{ xss: 'lg', lg: 'sm' }}
           bg="secondary.500"
           color="white"
-          justifyContent="center"
+          justifyContent={{ xss: 'center', sm: 'flex-start', md: 'center' }}
           alignItems="center"
-          flexDirection="column"
+          flexDirection="row"
           px="md"
+          position="relative"
+          overflow="hidden"
         >
-          <Header as="h1">Join our newsletter</Header>
-          <Body>Nixode offers rich knowledge in cryptocurrency trading</Body>
+          <Box
+            width={{ sm: '25rem' }}
+            minWidth={{ sm: '25rem' }}
+            zIndex="2"
+            pr={{ lg: 'md' }}
+          >
+            <Header as="h1">Join our newsletter</Header>
+            <Body>Nixode offers rich knowledge in cryptocurrency trading</Body>
 
-          <Input label="Email Address" size="lg" width="max" mb="xs" mt="md" />
-          <Button size="lg" width="max">
-            Get Started
-          </Button>
+            <Input
+              label="Email Address"
+              size="lg"
+              width="max"
+              mb="xs"
+              mt="md"
+            />
+            <Button size="lg" width="max">
+              Get Started
+            </Button>
+          </Box>
+          <Image
+            mb={{ md: '-5rem', lg: '-4.4rem' }}
+            top="0"
+            right={{ xss: '-12rem', md: '-3rem' }}
+            position={{ xss: 'absolute', md: 'relative' }}
+            display={{ xss: 'none', sm: 'block' }}
+            src="/ChartNewsletter.svg"
+            alt="Newsletter"
+            width={{ xss: 'max', sm: 'img', lg: 'imgXl' }}
+            minWidth={{ xss: 'max', sm: 'img', lg: 'imgXl' }}
+          />
         </Flex>
       </Box>
     </Layout>
