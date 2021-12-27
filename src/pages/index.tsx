@@ -123,6 +123,7 @@ const Home = ({ data }: IProps) => {
               width: 0; /* Remove scrollbar space */
               background: transparent; /* Optional: just make scrollbar invisible */
             }
+            scrollbar-width: none; /* Firefox Support */
             overflow-x: scroll;
             scroll-snap-type: x mandatory;
           `}
