@@ -64,7 +64,8 @@
     "styled-map": "3.3.0",
     "styled-system": "5.1.5",
     "webpack": "5.61.0",
-    "webpack-dev-server": "4.4.0"
+    "webpack-dev-server": "4.4.0",
+    "yarn": "1.22.17"
   },
   "devDependencies": {
     "@commitlint/cli": "13.2.1",
