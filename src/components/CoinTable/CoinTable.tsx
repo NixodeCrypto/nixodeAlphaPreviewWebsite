@@ -23,8 +23,6 @@ const Table = styled.table`
   }
 `;
 
-const Tbody = styled.tbody``;
-
 const Tr = styled.tr`
   transition: ${token.transition('standard')};
   ${(props) =>
@@ -75,7 +73,10 @@ const CoinTable = (props: IProps) => {
   const { tickerData } = props;
   return (
     <Table>
-      <Thead display={{ xss: 'none', sm: 'table-header-group' }}>
+      <Thead
+        display={{ xss: 'none', sm: 'table-header-group' }}
+        data-testid="TableHeader"
+      >
         <Tr borderTop="sm" borderColor="grey.100" header>
           <Th textAlign="left" pl="sm">
             Name
@@ -91,7 +92,7 @@ const CoinTable = (props: IProps) => {
           </Th>
         </Tr>
       </Thead>
-      <Tbody>
+      <tbody>
         {tickerData &&
           tickerData.map((i: any, idx: number) => (
             <Tr
@@ -100,7 +101,7 @@ const CoinTable = (props: IProps) => {
               borderBottom={idx === tickerData.length - 1 && 'sm'}
               borderColor="grey.100"
             >
-              <Td px="sm" py="sm">
+              <Td px="sm" py="sm" data-testid="generalData">
                 <Flex alignItems="center">
                   <Image src={i.img} alt={i.name} width="sm" mr="xs" />
                   <Flex flexDirection={{ xss: 'column', sm: 'row' }}>
@@ -182,9 +183,10 @@ const CoinTable = (props: IProps) => {
               </Td>
             </Tr>
           ))}
-      </Tbody>
+      </tbody>
     </Table>
   );
 };
 
+CoinTable.displayName = 'CoinTable';
 export default CoinTable;
