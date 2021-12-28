@@ -3,8 +3,6 @@ import { Theme } from '@emotion/react';
 import { GlobalTheme } from '@/UI';
 import { strToObj, shallowFlatten } from '@/utils';
 
-// BASED ON STYLED-SYSTEM
-
 export type ComposeSystemProp<T> = Record<
   keyof T,
   string | number | object | undefined | boolean | null | Array<unknown>
@@ -114,7 +112,7 @@ export const flexbox: InternalSystemProp = {
   verticalGap: [
     'space',
     (prop: string) => ({
-      '* + *': {
+      '& > * + *': {
         marginTop: prop,
       },
     }),
@@ -122,7 +120,7 @@ export const flexbox: InternalSystemProp = {
   horizontalGap: [
     'space',
     (prop: string) => ({
-      '* + *': {
+      '& > * + *': {
         marginLeft: prop,
       },
     }),
@@ -202,6 +200,7 @@ export const svg: InternalSystemProp = {
   stroke: 'colors',
 };
 
+// scales is an object which contains all system css props and their associated theme pairs
 const scales: InternalSystemProp = {
   ...space,
   ...color,
@@ -216,53 +215,76 @@ const scales: InternalSystemProp = {
   ...svg,
 };
 
+/*
+ * DESCRIPTION:
+ * cssTransform function takes two arguments:
+ * 	prop - a camal-cased css property (e.g. marginTop, paddingRight, etc.)
+ * 	value - a theme value associated with the prop argument or a regular css value (e.g. sm, 1rem, etc.)
+ * */
 const cssTransform = (
   prop: string,
   value: string | number,
 ): string | Record<string, any> => {
-  if (Array.isArray(scales[prop])) {
-    if (typeof (scales[prop] as string[])[1] === 'string') {
+  const systemProp = scales[prop];
+  /* checks whether the system prop is an array in order to check whether the
+   * system prop is a custom css prop (e.g. screenMaxWidth, verticalGap, horizontalGap)
+   * or a regular css prop (e.g. width, height, display) */
+  if (Array.isArray(systemProp)) {
+    /* if secound value in array is a string, then the first value in the array
+     * (a regular css prop such as maxWidth or width) is being tied to a custom
+     * theme alias in the GlobalTheme object (@/UI) which is the second value in the array */
+    if (typeof systemProp[1] === 'string') {
       return {
-        [(scales[prop] as string[])[0]]:
+        [systemProp[0]]:
+          /* if the value prop is a key of GlobalTheme[SystemPropAliasKey]
+           * then GlobalTheme[SystemPropAliasKey][value] is returned
+           * (e.g. value = "sm" and GlobalTheme[SystemPropAliasKey]["sm"] is returned),
+           * otherwise return the value as it is a regular css value such as 1rem */
           strToObj(
             value.toString(),
-            GlobalTheme[(scales[prop] as string)[1] as keyof Theme],
-            true,
+            GlobalTheme[systemProp[1] as keyof Theme],
+            true, // optional chaining as incorrect string to dot notation should simply return undefined
           ) ?? value.toString(),
       };
     }
-    return (scales[prop] as any)[1](
+
+    /*
+     * if secoundvalue in array is not a string, then the first value in the array is a theme
+     * alias (e.g. space, fontSizes, sizes, etc.) and the secound value in the array is a custom function
+     * which take in a css value and returns custom css code
+     * */
+    return systemProp[1](
       strToObj(
         value.toString(),
-        GlobalTheme[(scales[prop] as string)[0] as keyof Theme],
+        GlobalTheme[systemProp[0] as keyof Theme],
         true,
       ) ?? value.toString(),
     );
   }
 
+  /* flattenedAliases is the aliases object without the first set of keys which returns all
+   * subkeys allowing for the object to be one layer deep (e.g. bg, m, mt, mr, mb) */
   if (Object.prototype.hasOwnProperty.call(flattenedAliases, prop)) {
-    return cssTransform(flattenedAliases[prop], value);
+    return cssTransform(flattenedAliases[prop], value); // recursively calls itself with the full value (e.g. m -> cssTransform("margin", value))
   }
 
+  /* flattenedMultiples is the multiples object without the first set of keys which returns all
+   * subkeys allowing for the object to be one layer deep (e.g. marginX, marginY, paddingX, paddingY) */
   if (Object.prototype.hasOwnProperty.call(flattenedMultiples, prop)) {
-    let cssObj = {};
-
-    // using index position 0's theme type as the keys of each theme property in GlobalTheme are not equal
-    const cachedThemeVar = strToObj(
-      value.toString(),
-      GlobalTheme[scales[flattenedMultiples[prop][0]] as keyof Theme],
-      true,
-    );
-
-    for (let i = 0; i < flattenedMultiples[prop].length; i += 1) {
-      cssObj = {
-        ...cssObj,
-        [flattenedMultiples[prop][i]]: cachedThemeVar ?? value.toString(),
-      };
+    const cssObj = {};
+    const multiplesValue = flattenedMultiples[prop];
+    // loop through multiples array (e.g. ["marginLeft", "marginRight"]) and recursively perform cssTransform on each iterable
+    for (let i = 0; i < multiplesValue.length; i += 1) {
+      const regularTransformAttrib = cssTransform(
+        multiplesValue[i],
+        value,
+      ) as Record<string, any>;
+      Object.assign(cssObj, { ...regularTransformAttrib });
     }
     return cssObj;
   }
 
+  // standard css value (e.g. prop = "marginLeft", value = "1rem")
   return {
     [prop]:
       strToObj(

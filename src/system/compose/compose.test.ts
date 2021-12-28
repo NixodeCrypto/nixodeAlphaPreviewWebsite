@@ -126,12 +126,12 @@ describe('system/compose', () => {
       [mq('xs')]: {
         paddingRight: '1rem',
         paddingLeft: '1rem',
-        '* + *': {
+        '& > * + *': {
           marginTop: GlobalTheme.space.sm,
         },
       },
       [mq('md')]: {
-        '* + *': {
+        '& > * + *': {
           marginTop: GlobalTheme.space.lg,
         },
       },

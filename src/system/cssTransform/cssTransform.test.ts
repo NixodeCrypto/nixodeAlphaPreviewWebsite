@@ -47,7 +47,7 @@ describe('system/cssTransform', () => {
   });
   it('custom fn transformer', () => {
     expect(cssTransform('verticalGap', 'sm')).toStrictEqual({
-      '* + *': {
+      '& > * + *': {
         marginTop: GlobalTheme.space.sm,
       },
     });

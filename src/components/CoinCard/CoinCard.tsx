@@ -92,7 +92,7 @@ const CoinCard = (props: IProps) => {
             <SVG
               src={`${process.env.NEXT_PUBLIC_GRAPH_API}/currency/chart/${tickerData.id}/7d/chart.svg`}
               width="100%"
-              height="3rem"
+              height="48px"
             />
           </Box>
         </Box>

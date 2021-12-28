@@ -58,11 +58,11 @@ const Home = ({ data }: IProps) => {
   const learnHowToInvestArr = [
     [
       'What is Digital Finance and why is it important',
-      'why-is-digital-finance-important',
+      '/why-is-digital-finance-important',
     ],
     [
       'What are the most common trading techniques',
-      'what-are-the-most-common-trading-techniques',
+      '/what-are-the-most-common-trading-techniques',
     ],
   ];
 

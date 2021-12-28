@@ -114,12 +114,12 @@ describe('system/responsiveStyles', () => {
     const scale = 'verticalGap';
     expect(responsiveStyles(resObj, scale)).toStrictEqual({
       [mq('xss')]: {
-        '* + *': {
+        '& > * + *': {
           marginTop: '1rem',
         },
       },
       [mq('md')]: {
-        '* + *': {
+        '& > * + *': {
           marginTop: GlobalTheme.space.md,
         },
       },
