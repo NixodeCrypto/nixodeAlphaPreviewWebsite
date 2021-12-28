@@ -12,3 +12,18 @@
 # What's Our Goal
 To build a community for traders, investors and cypto enthusiasts to be able to track their favourite cryptocurrencies, get price alerts, get the latest crypto news, and learn about other's expirences when trading coins
 
+# Developer Notes
+
+## Setup
+Developers must install the following packages globally through npm
+- ```commitizen```
+- ```yarn```
+- ```redis```
+
+## Secrets
+Local .env files or secrets are not shared within this company, instead we use ![Doppler](https://www.doppler.com/)
+
+### What this means
+- Developers must install Doppler on their local machine and authenticate with it using ```doppler login```
+- Setup is also required with the command ```doppler setup``` within the root directory or /server directory and the respective environments must be chosen before proceeding to the next step
+- Instead of running applications with ```npm run dev```, it will instead use ```doppler -- npm run dev```

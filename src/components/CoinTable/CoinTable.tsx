@@ -17,8 +17,9 @@ const Table = styled.table`
   width: 100%;
   border-collapse: collapse;
   ${mq('md')} {
-    border-right: ${token.borders('sm')};
-    border-left: ${token.borders('sm')};
+    border-style: hidden;
+    border-radius: ${token.radii('sm')};
+    box-shadow: 0 0 0 2px ${token.colors('grey.100')};
     border-color: ${token.colors('grey.100')};
   }
 `;
