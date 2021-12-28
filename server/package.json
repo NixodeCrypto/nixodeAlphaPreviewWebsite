@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.ts",
+    "dev": "doppler run -- nodemon index.ts",
+    "devNoEnv": "nodemon index.ts",
     "build": "tsc --project ./ && cp .env build/.env && cd build && npm install --only=prod"
   },
   "author": "",

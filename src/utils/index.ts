@@ -6,6 +6,7 @@ import mountWithTheme from '@/utils/mountWithTheme';
 import strToObj from '@/utils/strToObj';
 import shallowFlatten from '@/utils/shallowFlatten';
 import isObject from '@/utils/isObject';
+import assetPrice from '@/utils/assetPrice';
 
 export {
   token,
@@ -16,4 +17,5 @@ export {
   strToObj,
   shallowFlatten,
   isObject,
+  assetPrice,
 };

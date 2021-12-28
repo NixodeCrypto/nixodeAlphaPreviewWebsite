@@ -96,6 +96,8 @@ export const GlobalTheme: Theme = {
     xxl: rem(144),
     card: rem(215),
     cardXl: rem(225),
+    maxLayoutSm: rem(320),
+    maxLayoutMd: rem(400),
     img: rem(432),
     imgXl: rem(480),
     max: '100%',

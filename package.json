@@ -6,7 +6,8 @@
   "author": "Heril Saha <herilsaha06@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "next",
+    "dev": "doppler run -- next",
+    "devNoEnv": "next",
     "build": "next build",
     "build:ci": "export NODE_OPTIONS=--openssl-legacy-provider; next build",
     "start": "next start",

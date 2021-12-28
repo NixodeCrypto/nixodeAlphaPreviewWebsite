@@ -91,6 +91,8 @@ declare module '@emotion/react' {
       xxl: string;
       card: string;
       cardXl: string;
+      maxLayoutSm: string;
+      maxLayoutMd: string;
       img: string;
       imgXl: string;
       max: string;

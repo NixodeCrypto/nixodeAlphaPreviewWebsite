@@ -22,6 +22,7 @@ export interface IProps {
 }
 
 const Home = ({ data }: IProps) => {
+  // [ icon, title, description ]
   const manageCryptoArr = [
     [
       <List
@@ -53,7 +54,7 @@ const Home = ({ data }: IProps) => {
     ],
   ];
 
-  // temporary array, will be replaced with api call
+  // temporary array, will be replaced with api call [ title, slug ]
   const learnHowToInvestArr = [
     [
       'What is Digital Finance and why is it important',
@@ -64,9 +65,11 @@ const Home = ({ data }: IProps) => {
       'what-are-the-most-common-trading-techniques',
     ],
   ];
+
   return (
     <Layout>
       <Box>
+        {/* ABOVE FOLD --- START --- */}
         <Flex
           px={{ xss: 'sm', sm: '0' }}
           pt={{ xss: 'lg', md: '0' }}
@@ -83,8 +86,8 @@ const Home = ({ data }: IProps) => {
           <Box
             screenMaxWidth={{ sm: 'xs' }}
             mr={{ xss: '0', sm: 'xl' }}
-            width={{ sm: '25rem' }}
-            minWidth={{ sm: '25rem' }}
+            width={{ sm: 'maxLayoutMd' }}
+            minWidth={{ sm: 'maxLayoutMd' }}
           >
             <Flex flexDirection="column" verticalGap="sm" mt="sm" mb="md">
               <Header as="h1">Stay on top of crypto prices</Header>
@@ -114,6 +117,11 @@ const Home = ({ data }: IProps) => {
             my="auto"
           />
         </Flex>
+        {/* ABOVE FOLD --- END --- */}
+
+        {/* BELOW FOLD --- START --- */}
+
+        {/* COIN CARD SLIDABLE SECTION --- START --- */}
         <Flex
           pt={{ xss: 'sm', md: '0' }}
           mt={{ md: '-lg' }}
@@ -141,6 +149,9 @@ const Home = ({ data }: IProps) => {
             </Box>
           ))}
         </Flex>
+        {/* COIN CARD SLIDABLE SECTION --- END --- */}
+
+        {/* TRENDING COINS SECTION --- START --- */}
         <Box my="md">
           <Flex
             textAlign={{ xss: 'center', sm: 'left' }}
@@ -158,8 +169,8 @@ const Home = ({ data }: IProps) => {
               screenMaxWidth={{ sm: 'xs' }}
               ml={{ sm: 'xl' }}
               mr={{ sm: 'xs', md: '0' }}
-              width={{ sm: '25rem' }}
-              minWidth={{ sm: '25rem' }}
+              width={{ sm: 'maxLayoutMd' }}
+              minWidth={{ sm: 'maxLayoutMd' }}
             >
               <Header as="h1">Get insight on trending coins</Header>
               <Body color="grey.900" mt="xs">
@@ -178,10 +189,16 @@ const Home = ({ data }: IProps) => {
               my="auto"
             />
           </Flex>
+
+          {/* COIN TABLE SECTION --- START --- */}
           <Box screenMaxWidth="md" mx="auto" px={{ lg: 'xl' }}>
             <CoinTable tickerData={data.slice(4, 9)} />
           </Box>
+          {/* COIN TABLE SECTION --- END --- */}
         </Box>
+        {/* TRENDING COINS SECTION --- END --- */}
+
+        {/* MANAGE CRYPTOCURRENCY SECTION --- START --- */}
         <Box
           mt="xl"
           screenMaxWidth={{ xss: 'xs', sm: '100%' }}
@@ -207,8 +224,8 @@ const Home = ({ data }: IProps) => {
             ml={{ md: 'md' }}
           >
             <Box
-              width={{ sm: '25rem' }}
-              minWidth={{ sm: '25rem' }}
+              width={{ sm: 'maxLayoutMd' }}
+              minWidth={{ sm: 'maxLayoutMd' }}
               ml={{ sm: 'lg' }}
               mr={{ sm: 'xl' }}
             >
@@ -245,7 +262,9 @@ const Home = ({ data }: IProps) => {
             />
           </Flex>
         </Box>
+        {/* MANAGE CRYPTOCURRENCY SECTION --- END --- */}
 
+        {/* LEARN HOW TO INVEST SECTION --- START --- */}
         <Box
           my="md"
           maxWidth={{ xss: '25rem', sm: '100%' }}
@@ -254,7 +273,7 @@ const Home = ({ data }: IProps) => {
         >
           <Box textAlign="center" px="sm" mb="-sm">
             <Header as="h1">Learn how to properly invest</Header>
-            <Body color="grey.900" mt="xs" maxWidth="25rem" mx="auto">
+            <Body color="grey.900" mt="xs" maxWidth="maxLayoutMd" mx="auto">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
               sodales sem id velit hendrerit lacinia.
             </Body>
@@ -270,8 +289,8 @@ const Home = ({ data }: IProps) => {
             <Flex
               flexDirection="column"
               verticalGap="lg"
-              width={{ sm: '25rem' }}
-              minWidth={{ sm: '25rem' }}
+              width={{ sm: 'maxLayoutMd' }}
+              minWidth={{ sm: 'maxLayoutMd' }}
               pr={{ sm: 'md' }}
             >
               {learnHowToInvestArr.map((i) => (
@@ -295,7 +314,9 @@ const Home = ({ data }: IProps) => {
             />
           </Flex>
         </Box>
+        {/* LEARN HOW TO INVEST SECTION --- END --- */}
 
+        {/* JOIN OUR NEWSLETTER SECTION --- START --- */}
         <Flex
           mt="xl"
           py={{ xss: 'lg', lg: 'sm' }}
@@ -309,8 +330,8 @@ const Home = ({ data }: IProps) => {
           overflow="hidden"
         >
           <Box
-            width={{ sm: '25rem' }}
-            minWidth={{ sm: '25rem' }}
+            width={{ sm: 'maxLayoutMd' }}
+            minWidth={{ sm: 'maxLayoutMd' }}
             zIndex="2"
             pr={{ lg: 'md' }}
           >
@@ -329,9 +350,12 @@ const Home = ({ data }: IProps) => {
             </Button>
           </Box>
           <Image
-            mb={{ md: '-5rem', lg: '-4.4rem' }}
-            top="0"
+            mb={{
+              md: '-5rem',
+              lg: '-4.4rem' /* Theme exception for absolute positioning of image to bottom of container */,
+            }}
             right={{ xss: '-12rem', md: '-3rem' }}
+            top="0"
             position={{ xss: 'absolute', md: 'relative' }}
             display={{ xss: 'none', sm: 'block' }}
             src="/ChartNewsletter.svg"
@@ -340,6 +364,9 @@ const Home = ({ data }: IProps) => {
             minWidth={{ xss: 'max', sm: 'img', lg: 'imgXl' }}
           />
         </Flex>
+        {/* JOIN OUR NEWSLETTER SECTION --- END --- */}
+
+        {/* BELOW FOLD --- END --- */}
       </Box>
     </Layout>
   );
