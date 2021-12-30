@@ -80,7 +80,7 @@ declare module '@emotion/react' {
       extraBold: number;
     };
     lineHeights: Record<string, string>;
-    letterSpacings: Record<string, string>;
+    letterSpacings: Record<'sm', string>;
     sizes: {
       xss: string;
       xs: string;
@@ -95,11 +95,12 @@ declare module '@emotion/react' {
       maxLayoutMd: string;
       img: string;
       imgXl: string;
+      inputXl: string;
       max: string;
     };
     breakpoints: Record<'xss' | 'xs' | 'sm' | 'md' | 'lg', string>;
     borders: Record<'sm', string>;
-    radii: Record<'sm', string>;
+    radii: Record<'sm', 'xl', string>;
     shadows: Record<string, string>;
     zIndices: Record<'navbar', number>;
     transition: Record<'standard', string>;

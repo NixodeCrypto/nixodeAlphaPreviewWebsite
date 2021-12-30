@@ -85,7 +85,9 @@ export const GlobalTheme: Theme = {
     extraBold: 800,
   },
   lineHeights: {},
-  letterSpacings: {},
+  letterSpacings: {
+    sm: rem(1.5),
+  },
   sizes: {
     xss: rem(14),
     xs: rem(19),
@@ -100,12 +102,13 @@ export const GlobalTheme: Theme = {
     maxLayoutMd: rem(400),
     img: rem(432),
     imgXl: rem(480),
+    inputXl: rem(480),
     max: '100%',
   },
   screenMaxWidths: {
     xs: rem(400),
     sm: rem(700),
-    md: rem(1000),
+    md: rem(1100),
   },
   breakpoints: {
     xss: '0px',
@@ -119,6 +122,7 @@ export const GlobalTheme: Theme = {
   },
   radii: {
     sm: rem(4),
+    xl: rem(24),
   },
   shadows: {
     focus: '0 0 0 3px rgba(66,153,225,0.3)',
@@ -128,7 +132,7 @@ export const GlobalTheme: Theme = {
     navbar: 9999,
   },
   transition: {
-    standard: 'all 0.1s ease-in-out',
+    standard: 'all 0.1s ease-in-out, width 0s, height 0s',
   },
 };
 
