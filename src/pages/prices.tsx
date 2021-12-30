@@ -1,6 +1,6 @@
 /* @jsxImportSource @emotion/react */
 import { useState, useEffect, Dispatch, SetStateAction } from 'react';
-import { useRouter, NextRouter } from 'next/router';
+import Router, { useRouter, NextRouter } from 'next/router';
 import { GetServerSideProps } from 'next';
 import axios from 'axios';
 import { css } from '@emotion/react';
@@ -30,14 +30,12 @@ const Pagination = ({
   start,
   max,
   siblingCount,
-  router,
 }: {
   page: number;
   setPage: Dispatch<SetStateAction<number>>;
   start: number;
   max: number;
   siblingCount: number;
-  router: NextRouter;
 }) => {
   const pageRange = Array(max - start + 1)
     .fill(0)
@@ -45,7 +43,6 @@ const Pagination = ({
 
   const changePage = (newPageNum: number) => {
     if (newPageNum === page) return;
-    router.push(`/prices?page=${newPageNum}`, undefined, { shallow: true });
     setPage(newPageNum);
   };
 
@@ -155,12 +152,23 @@ const Pagination = ({
 const Prices = ({ cryptoData, globalMarketData, initialPage }: IProps) => {
   const [page, setPage] = useState(initialPage);
   const [coinData, setCoinData] = useState(cryptoData.coins);
-
+  const [timeResolution, setTimeResolution] = useState(['1H', '1h']);
   const [assetCategory, setAssetCategory] = useState('All Assets');
-  const possibleAssetCategories = ['All Assets', 'Gainers', 'Losers'];
 
-  const [timeResolution, setTimeResolution] = useState('1D');
-  const possibleTimeResolutions = ['1H', '1D', '1W', '1M', '1Y'];
+  /*
+   * first value is the alias for the page and the secound value
+   * is the end key to match with the crypto object's percentage change
+   * (e.g. 7d -> 'percent_change_7d')
+   * */
+  const possibleTimeResolutions = [
+    ['1H', '1h'],
+    ['1D', '24h'],
+    ['1W', '7d'],
+    ['1M', '30d'],
+    ['1Y', '1y'],
+  ];
+
+  const possibleAssetCategories = ['All Assets', 'Gainers', 'Losers'];
 
   const handleChangeAssetCategory = (currAssetCategory: string) => {
     if (currAssetCategory !== assetCategory) {
@@ -168,16 +176,28 @@ const Prices = ({ cryptoData, globalMarketData, initialPage }: IProps) => {
     }
   };
 
-  const handleChangeTimeResolution = (currTimeResolution: string) => {
-    if (currTimeResolution !== timeResolution) {
+  const handleChangeTimeResolution = (currTimeResolution: string[]) => {
+    if (currTimeResolution[0] !== timeResolution[0]) {
       setTimeResolution(currTimeResolution);
     }
   };
 
+  const router = useRouter();
+
   useEffect(() => {
+    const sortByLosers =
+      assetCategory === 'Losers'
+        ? `&sortBy=quotes.USD.percent_change_${timeResolution[1]}-ascending`
+        : '';
+
+    const sortBy =
+      assetCategory === 'Gainers'
+        ? `&sortBy=quotes.USD.percent_change_${timeResolution[1]}-descending`
+        : sortByLosers;
+
     axios
       .get(
-        `${process.env.NEXT_PUBLIC_SERVER_API}/api/crypto/getAllCoins?page=${page}`,
+        `${process.env.NEXT_PUBLIC_SERVER_API}/api/crypto/getAllCoins?page=${page}${sortBy}`,
       )
       .then((res) => {
         setCoinData(res.data.coins);
@@ -185,9 +205,15 @@ const Prices = ({ cryptoData, globalMarketData, initialPage }: IProps) => {
       .catch(() => {
         throw new Error();
       });
-  }, [page]);
+  }, [page, timeResolution, assetCategory]);
 
-  const router = useRouter();
+  useEffect(() => {
+    setPage(1);
+  }, [timeResolution, assetCategory]);
+
+  useEffect(() => {
+    Router.push(`/prices?page=${page}`, undefined, { shallow: true });
+  }, [page]);
 
   return (
     <Layout>
@@ -222,7 +248,11 @@ const Prices = ({ cryptoData, globalMarketData, initialPage }: IProps) => {
             >
               {/* removes negative sign from number */}
               {(globalMarketData.market_cap_change_24h < 0
-                ? globalMarketData.market_cap_change_24h.toString().substring(1)
+                ? parseFloat(
+                    globalMarketData.market_cap_change_24h
+                      .toString()
+                      .substring(1),
+                  )
                 : globalMarketData.market_cap_change_24h
               ).toLocaleString(undefined, {
                 minimumFractionDigits: 2,
@@ -244,38 +274,40 @@ const Prices = ({ cryptoData, globalMarketData, initialPage }: IProps) => {
         >
           <Flex horizontalGap="xss">
             {possibleAssetCategories.map((i) => (
-              <>
-                <Button
-                  borderRadius="xl"
-                  size="sm"
-                  px="sm"
-                  variant={i === assetCategory ? 'solid' : 'text'}
-                  color={i === assetCategory ? 'secondary' : 'grey'}
-                  onClick={() => handleChangeAssetCategory(i)}
-                >
-                  {i}
-                </Button>
-              </>
+              <Button
+                key={i}
+                borderRadius="xl"
+                size="sm"
+                px="sm"
+                variant={i === assetCategory ? 'solid' : 'text'}
+                color={i === assetCategory ? 'secondary' : 'grey'}
+                onClick={() => handleChangeAssetCategory(i)}
+              >
+                {i}
+              </Button>
             ))}
           </Flex>
           <Flex horizontalGap="xss">
             {possibleTimeResolutions.map((i) => (
-              <>
-                <Button
-                  borderRadius="xl"
-                  size="sm"
-                  px="sm"
-                  variant={i === timeResolution ? 'solid' : 'text'}
-                  color={i === timeResolution ? 'secondary' : 'grey'}
-                  onClick={() => handleChangeTimeResolution(i)}
-                >
-                  {i}
-                </Button>
-              </>
+              <Button
+                key={i[0]}
+                borderRadius="xl"
+                size="sm"
+                px="sm"
+                variant={i[0] === timeResolution[0] ? 'solid' : 'text'}
+                color={i[0] === timeResolution[0] ? 'secondary' : 'grey'}
+                onClick={() => handleChangeTimeResolution(i)}
+              >
+                {i[0]}
+              </Button>
             ))}
           </Flex>
         </Flex>
-        <CoinTable tickerData={coinData} extended />
+        <CoinTable
+          tickerData={coinData}
+          extended
+          timeResolution={timeResolution[1]}
+        />
         <Flex justifyContent="center" pt="md">
           <Pagination
             page={page}
@@ -283,7 +315,6 @@ const Prices = ({ cryptoData, globalMarketData, initialPage }: IProps) => {
             max={cryptoData.totalPageCount}
             start={1}
             siblingCount={1}
-            router={router}
           />
         </Flex>
       </Box>

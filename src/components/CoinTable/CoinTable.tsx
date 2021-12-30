@@ -1,4 +1,5 @@
 /* @jsxImportSource @emotion/react */
+import { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import SVG from 'react-inlinesvg';
 import { css } from '@emotion/react';
@@ -12,6 +13,7 @@ import { space, border, layout, typography } from '@/system';
 export interface IProps {
   tickerData: Record<string, any>;
   extended?: boolean;
+  timeResolution?: string;
 }
 
 const Table = styled.table`
@@ -90,7 +92,7 @@ const percentFormatter = (percentage: number) => {
 };
 
 const CoinTable = (props: IProps) => {
-  const { tickerData, extended } = props;
+  const { tickerData, extended, timeResolution = '24h' } = props;
 
   return (
     <Table>
@@ -170,12 +172,14 @@ const CoinTable = (props: IProps) => {
                   <Body
                     display={{ sm: 'none' }}
                     color={
-                      i.quotes.USD.percent_change_24h < 0
+                      i.quotes.USD[`percent_change_${timeResolution}`] < 0
                         ? 'red.800'
                         : 'green.800'
                     }
                   >
-                    {percentFormatter(i.quotes.USD.percent_change_24h)}
+                    {percentFormatter(
+                      i.quotes.USD[`percent_change_${timeResolution}`],
+                    )}
                   </Body>
                 </Flex>
               </Td>
@@ -188,12 +192,14 @@ const CoinTable = (props: IProps) => {
                 <Flex alignItems="flex-end" flexDirection="column">
                   <Body
                     color={
-                      i.quotes.USD.percent_change_24h < 0
+                      i.quotes.USD[`percent_change_${timeResolution}`] < 0
                         ? 'red.800'
                         : 'green.800'
                     }
                   >
-                    {percentFormatter(i.quotes.USD.percent_change_24h)}
+                    {percentFormatter(
+                      i.quotes.USD[`percent_change_${timeResolution}`],
+                    )}
                   </Body>
                 </Flex>
               </Td>
@@ -218,7 +224,7 @@ const CoinTable = (props: IProps) => {
                   <SVG
                     src={`${process.env.NEXT_PUBLIC_GRAPH_API}/currency/chart/${i.id}/7d/chart.svg`}
                     width="100%"
-                    height="1.5rem"
+                    height="24px"
                   />
                 </Box>
               </Td>
@@ -230,7 +236,7 @@ const CoinTable = (props: IProps) => {
                     py="sm"
                     display={{ xss: 'none', md: 'table-cell' }}
                   >
-                    <Flex justifyContent="flex-end">
+                    <Flex justifyContent="flex-end" suppressHydrationWarning>
                       US$
                       {Intl.NumberFormat('en-US', {
                         notation: 'compact',
@@ -244,7 +250,7 @@ const CoinTable = (props: IProps) => {
                     py="sm"
                     display={{ xss: 'none', md: 'table-cell' }}
                   >
-                    <Flex justifyContent="flex-end">
+                    <Flex justifyContent="flex-end" suppressHydrationWarning>
                       US$
                       {Intl.NumberFormat('en-US', {
                         notation: 'compact',
@@ -258,7 +264,7 @@ const CoinTable = (props: IProps) => {
                     py="sm"
                     display={{ xss: 'none', md: 'table-cell' }}
                   >
-                    <Flex justifyContent="flex-end">
+                    <Flex justifyContent="flex-end" suppressHydrationWarning>
                       {Intl.NumberFormat('en-US', {
                         notation: 'compact',
                         maximumFractionDigits: 1,

@@ -30,7 +30,7 @@ const Footer = () => {
         {title}
       </Body>
       {links.map((i) => (
-        <Link href={i[1]} key={i[1]}>
+        <Link href={i[1]} key={i[0]}>
           <Body fontWeight="regular" color="grey.900">
             {i[0]}
           </Body>
