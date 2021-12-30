@@ -26,7 +26,7 @@ const Footer = () => {
 
   const sectionGen = (title: string, links: Array<Array<string>>) => (
     <Flex verticalGap="xs" flexDirection="column" mb="md" mr={{ sm: 'xl' }}>
-      <Body fontWeight="bold" color="blueGrey.900">
+      <Body fontWeight="bold" color="grey.900">
         {title}
       </Body>
       {links.map((i) => (
