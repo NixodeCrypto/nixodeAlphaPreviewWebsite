@@ -64,8 +64,8 @@ const CoinCard = (props: IProps) => {
               fontWeight="semiBold"
               color={
                 tickerData.quotes.USD.percent_change_7d >= 0
-                  ? 'green.600'
-                  : 'red.600'
+                  ? 'green.800'
+                  : 'red.800'
               }
             >
               {tickerData.quotes.USD.percent_change_7d < 0
@@ -84,8 +84,8 @@ const CoinCard = (props: IProps) => {
               }
               & polyline {
                 stroke: ${tickerData.quotes.USD.percent_change_7d > 0
-                  ? token.colors('green.600')
-                  : token.colors('red.600')};
+                  ? token.colors('green.800')
+                  : token.colors('red.800')};
               }
             `}
           >
