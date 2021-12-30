@@ -11,6 +11,7 @@ import logger from '@/utils/winston';
 import errorMiddleware from '@/middleware/error';
 import { InternalServer } from '@/utils/error';
 import '@/cronjobs/genCryptoData';
+import '@/cronjobs/genGlobalCryptoData';
 
 const PORT = process.env.PORT || 7000;
 

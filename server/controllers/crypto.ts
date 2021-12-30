@@ -2,7 +2,8 @@ import { Response, NextFunction, Request, RequestHandler } from 'express';
 import redis from '@/services/redis';
 import { InternalServer } from '@/utils/error';
 import Ticker from '@/models/Ticker';
-import { TICKER_DATA_TTL } from '@/constants/TTL';
+import GlobalMarket from '@/models/GlobalMarket';
+import { TICKER_DATA_TTL, GLOBAL_MARKET_TTL } from '@/constants/TTL';
 
 interface AllCoinsRequest extends Request {
   query: {
@@ -137,4 +138,22 @@ const getPreviewCoins: RequestHandler = (_, res, next) => {
   });
 };
 
-export default { getAllCoins, getPreviewCoins };
+const getGlobalMarketData: RequestHandler = (_, res, next) => {
+  redis.get('globalMarketData', async (err, data) => {
+    if (err) return next(InternalServer);
+
+    if (data) {
+      const parsedData = JSON.parse(data);
+      return res.status(200).json(parsedData);
+    }
+
+    const globalMarketData = await GlobalMarket.find({});
+    const globalMarketDoc = globalMarketData[0];
+
+    const stringData = JSON.stringify(globalMarketDoc);
+    redis.setex('globalMarketData', GLOBAL_MARKET_TTL.s, stringData);
+
+    return res.status(200).json(globalMarketDoc);
+  });
+};
+export default { getAllCoins, getPreviewCoins, getGlobalMarketData };
