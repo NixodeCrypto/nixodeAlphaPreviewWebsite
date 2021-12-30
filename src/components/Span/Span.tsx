@@ -22,7 +22,7 @@ import {
 } from '@/system';
 
 export interface IProps
-  extends DivProps,
+  extends SpanProps,
     FlexboxProps,
     BackgroundProps,
     SpaceProps,
