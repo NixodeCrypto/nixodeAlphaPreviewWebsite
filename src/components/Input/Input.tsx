@@ -149,11 +149,7 @@ const Input = React.forwardRef(
             {...other}
           />
           {error && (
-            <Flex
-              alignItems="center"
-              horizontalGap={token.space('xss')}
-              height="sm"
-            >
+            <Flex alignItems="center" horizontalGap="4px" height="sm">
               <AlertCircle
                 size={token.sizes('xss')}
                 color={token.colors('red.500')}
@@ -168,13 +164,15 @@ const Input = React.forwardRef(
       );
     }
     return (
-      <InputRoot
-        variant={variant}
-        size={size as any}
-        ref={ref}
-        placeholder={label}
-        {...other}
-      />
+      <Box position="relative">
+        <InputRoot
+          variant={variant}
+          size={size as any}
+          ref={ref}
+          placeholder={label}
+          {...other}
+        />
+      </Box>
     );
   },
 );

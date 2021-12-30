@@ -14,6 +14,8 @@ import Link from '@/components/Link';
 import CoinTable from '@/components/CoinTable';
 import CoinCard from '@/components/CoinCard';
 import Footer from '@/components/Footer';
+import IconButton from '@/components/IconButton';
+import Span from '@/components/Span';
 
 export {
   Button,
@@ -32,4 +34,6 @@ export {
   CoinTable,
   CoinCard,
   Footer,
+  IconButton,
+  Span,
 };
