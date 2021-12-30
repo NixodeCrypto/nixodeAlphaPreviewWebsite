@@ -377,7 +377,7 @@ export default Home;
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const res = await fetch(
-    `${process.env.SERVER_API}/api/crypto/getPreviewCoins`,
+    `${process.env.NEXT_PUBLIC_SERVER_API}/api/crypto/getPreviewCoins`,
   );
   const data = await res.json();
 
