@@ -8,12 +8,18 @@ import {
   SpaceProps,
   layout,
   LayoutProps,
+  border,
+  BorderProps,
   variant as CSSVariant,
 } from '@/system';
 import { ColorSwatches } from '@/utils/colorSwatches';
 import { token } from '@/utils';
 
-export interface IProps extends ButtonProps, SpaceProps, LayoutProps {
+export interface IProps
+  extends ButtonProps,
+    SpaceProps,
+    LayoutProps,
+    BorderProps {
   color?: 'primary' | 'secondary' | 'accent' | 'grey';
   size?: 'sm' | 'md' | 'lg' | 'icon';
   variant?: 'solid' | 'text' | 'outlined';
@@ -36,7 +42,7 @@ const solidGreyComposer = (color: keyof Theme['colors']) => {
     border-color: ${tokenColorPicks[0]};
     background: ${tokenColorPicks[0]};
     color: ${tokenColorPicks[3]};
-    &:hover {
+    &:hover, &:focus-visible {
       border-color: ${tokenColorPicks[1]};
       background: ${tokenColorPicks[1]};
     }
@@ -62,8 +68,7 @@ const ButtonRoot = styled.button<IProps>`
   justify-content: center;
   align-items: center;
 
-  &:focus {
-    box-shadow: ${token.shadows('focus')};
+  &:focus-visible {
     outline: 0;
   }
 
@@ -75,7 +80,8 @@ const ButtonRoot = styled.button<IProps>`
       `,
       solid: solidGreyComposer(props.color),
       text: css`
-        &:hover {
+        &:hover,
+        &:focus-visible {
           background: ${transparentize(
             0.9,
             token.colors(`${props.color}.500`),
@@ -92,7 +98,8 @@ const ButtonRoot = styled.button<IProps>`
       outlined: css`
         border: ${token.borders('sm')};
         border-color: ${token.colors(`${props.color}.500`)};
-        &:hover {
+        &:hover,
+        &:focus-visible {
           background: ${transparentize(
             0.9,
             token.colors(`${props.color}.500`),
@@ -134,6 +141,7 @@ const ButtonRoot = styled.button<IProps>`
 
   ${space};
   ${layout};
+  ${border};
 `;
 
 const Button = React.forwardRef(
