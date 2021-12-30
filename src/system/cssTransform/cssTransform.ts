@@ -78,6 +78,7 @@ export const typography: InternalSystemProp = {
   fontStyle: true,
   wordWrap: true,
   whiteSpace: true,
+  textTransform: true,
 };
 
 export const layout: InternalSystemProp = {
