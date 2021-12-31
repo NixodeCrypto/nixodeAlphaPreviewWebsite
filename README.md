@@ -21,7 +21,7 @@ Developers must install the following packages globally through npm
 - ```redis```
 
 ## Secrets
-Local .env files or secrets are not shared within this company, instead we use ![Doppler](https://www.doppler.com/)
+Local .env files or secrets are not shared within this company, instead we use [Doppler](https://www.doppler.com/)
 
 ### What this means
 - Developers must install Doppler on their local machine and authenticate with it using ```doppler login```
