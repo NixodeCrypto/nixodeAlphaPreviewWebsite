@@ -14,7 +14,7 @@ describe('components/Input', () => {
   describe('error state', () => {
     it('color change', () => {
       const wrapper = mount(<Input error />);
-      expect(wrapper.find('InputRoot')).toHaveStyleRule(
+      expect(wrapper.find('InputWrapper')).toHaveStyleRule(
         'border-color',
         GlobalTheme.colors.red[500],
       );

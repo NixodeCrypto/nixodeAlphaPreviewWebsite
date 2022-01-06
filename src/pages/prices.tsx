@@ -1,10 +1,10 @@
 /* @jsxImportSource @emotion/react */
-import { useState, useEffect, Dispatch, SetStateAction } from 'react';
-import Router, { useRouter, NextRouter } from 'next/router';
+import { useState, useEffect, useMemo, Dispatch, SetStateAction } from 'react';
+import Router, { useRouter } from 'next/router';
 import { GetServerSideProps } from 'next';
 import axios from 'axios';
 import { css } from '@emotion/react';
-import { ChevronLeft, ChevronRight } from 'react-feather';
+import { ChevronLeft, ChevronRight, Search } from 'react-feather';
 import {
   Flex,
   Box,
@@ -154,6 +154,7 @@ const Prices = ({ cryptoData, globalMarketData, initialPage }: IProps) => {
   const [coinData, setCoinData] = useState(cryptoData.coins);
   const [timeResolution, setTimeResolution] = useState(['1H', '1h']);
   const [assetCategory, setAssetCategory] = useState('All Assets');
+  const [loading, setLoading] = useState(false);
 
   /*
    * first value is the alias for the page and the secound value
@@ -182,9 +183,8 @@ const Prices = ({ cryptoData, globalMarketData, initialPage }: IProps) => {
     }
   };
 
-  const router = useRouter();
-
   useEffect(() => {
+    setLoading(true);
     const sortByLosers =
       assetCategory === 'Losers'
         ? `&sortBy=quotes.USD.percent_change_${timeResolution[1]}-ascending`
@@ -201,6 +201,7 @@ const Prices = ({ cryptoData, globalMarketData, initialPage }: IProps) => {
       )
       .then((res) => {
         setCoinData(res.data.coins);
+        setLoading(false);
       })
       .catch(() => {
         throw new Error();
@@ -262,6 +263,8 @@ const Prices = ({ cryptoData, globalMarketData, initialPage }: IProps) => {
             </Span>
           </Header>
           <Input
+            error
+            startIcon={<Search />}
             label="Search all assets"
             size="lg"
             width={{ xss: 'max', sm: 'inputXl' }}
@@ -303,11 +306,16 @@ const Prices = ({ cryptoData, globalMarketData, initialPage }: IProps) => {
             ))}
           </Flex>
         </Flex>
-        <CoinTable
-          tickerData={coinData}
-          extended
-          timeResolution={timeResolution[1]}
-        />
+        {useMemo(
+          () => (
+            <CoinTable
+              tickerData={coinData}
+              extended
+              timeResolution={timeResolution[1]}
+            />
+          ),
+          [coinData, timeResolution],
+        )}
         <Flex justifyContent="center" pt="md">
           <Pagination
             page={page}

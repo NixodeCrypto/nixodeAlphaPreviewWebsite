@@ -255,7 +255,8 @@ describe('components/Button', () => {
     it('sm', () => {
       const wrapper = mountWithTheme(<Button size="sm" />);
       expect(wrapper).toHaveStyleRule('height', GlobalTheme.sizes.sm);
-      expect(wrapper).toHaveStyleRule('padding', GlobalTheme.space.xs);
+      expect(wrapper).toHaveStyleRule('padding-right', GlobalTheme.space.xs);
+      expect(wrapper).toHaveStyleRule('padding-left', GlobalTheme.space.xs);
       expect(wrapper).toHaveStyleRule(
         'font-size',
         GlobalTheme.fontSizes.bodySm,
@@ -265,7 +266,8 @@ describe('components/Button', () => {
     it('md', () => {
       const wrapper = mountWithTheme(<Button size="md" />);
       expect(wrapper).toHaveStyleRule('height', GlobalTheme.sizes.md);
-      expect(wrapper).toHaveStyleRule('padding', GlobalTheme.space.sm);
+      expect(wrapper).toHaveStyleRule('padding-right', GlobalTheme.space.sm);
+      expect(wrapper).toHaveStyleRule('padding-left', GlobalTheme.space.sm);
       expect(wrapper).toHaveStyleRule(
         'font-size',
         GlobalTheme.fontSizes.bodyLg,
@@ -275,7 +277,8 @@ describe('components/Button', () => {
     it('lg', () => {
       const wrapper = mountWithTheme(<Button size="lg" />);
       expect(wrapper).toHaveStyleRule('height', GlobalTheme.sizes.lg);
-      expect(wrapper).toHaveStyleRule('padding', GlobalTheme.space.md);
+      expect(wrapper).toHaveStyleRule('padding-right', GlobalTheme.space.md);
+      expect(wrapper).toHaveStyleRule('padding-left', GlobalTheme.space.md);
       expect(wrapper).toHaveStyleRule(
         'font-size',
         GlobalTheme.fontSizes.bodyLg,

@@ -1,5 +1,4 @@
 /* @jsxImportSource @emotion/react */
-import { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import SVG from 'react-inlinesvg';
 import { css } from '@emotion/react';

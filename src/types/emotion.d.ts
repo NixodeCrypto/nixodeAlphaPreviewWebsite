@@ -95,6 +95,7 @@ declare module '@emotion/react' {
       maxLayoutMd: string;
       img: string;
       imgXl: string;
+      input: string;
       inputXl: string;
       max: string;
     };

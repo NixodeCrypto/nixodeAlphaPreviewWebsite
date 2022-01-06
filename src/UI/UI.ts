@@ -102,6 +102,7 @@ export const GlobalTheme: Theme = {
     maxLayoutMd: rem(400),
     img: rem(432),
     imgXl: rem(480),
+    input: rem(280),
     inputXl: rem(480),
     max: '100%',
   },
