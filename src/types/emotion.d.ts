@@ -102,8 +102,8 @@ declare module '@emotion/react' {
     breakpoints: Record<'xss' | 'xs' | 'sm' | 'md' | 'lg', string>;
     borders: Record<'sm', string>;
     radii: Record<'sm', 'xl', string>;
-    shadows: Record<string, string>;
-    zIndices: Record<'navbar', number>;
+    shadows: Record<'focus' | 'reg', string>;
+    zIndices: Record<'navbar' | 'popup', number>;
     transition: Record<'standard', string>;
     screenMaxWidths: {
       xs: string;

@@ -131,6 +131,7 @@ export const GlobalTheme: Theme = {
   },
   zIndices: {
     navbar: 9999,
+    popup: 6000,
   },
   transition: {
     standard: 'all 0.1s ease-in-out, width 0s, height 0s',

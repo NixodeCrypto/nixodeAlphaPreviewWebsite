@@ -263,7 +263,6 @@ const Prices = ({ cryptoData, globalMarketData, initialPage }: IProps) => {
             </Span>
           </Header>
           <Input
-            error
             startIcon={<Search />}
             label="Search all assets"
             size="lg"

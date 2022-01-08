@@ -25,54 +25,6 @@ export interface IProps extends SpaceProps, LayoutProps {
   errorHelperLabel?: string;
 }
 
-const InputWrapper = styled(Box)<IProps>`
-  position: relative;
-  transition: ${token.transition('standard')};
-  border: ${token.borders('sm')};
-  border-color: ${token.colors('grey.300')};
-  border-radius: ${token.radii('sm')};
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  &:hover {
-    border-color: ${token.colors('grey.400')};
-  }
-  &:focus {
-    border-color: ${token.colors('grey.500')};
-  }
-  ${(props) =>
-    props.error &&
-    css`
-      border-color: ${token.colors('red.500')};
-      &:hover {
-        border-color: ${token.colors('red.500')};
-      }
-      &:focus {
-        border-color: ${token.colors('red.500')};
-      }
-    `}
-  width: ${token.sizes('input')};
-  ${(props) =>
-    CSSVariant(props.size, {
-      all: css`
-        font-size: ${token.fontSizes('bodyLg')};
-      `,
-      sm: css`
-        height: ${token.sizes('sm')};
-        font-size: ${token.fontSizes('bodySm')};
-      `,
-      md: css`
-        height: ${token.sizes('md')};
-      `,
-      lg: css`
-        height: ${token.sizes('lg')};
-      `,
-    })};
-
-  ${space};
-  ${layout};
-`;
-
 const InputRoot = styled.input<any>`
   font-family: ${token.fonts('text')};
   font-weight: ${token.fontWeights('medium')};
@@ -148,6 +100,55 @@ const IconWrapper = styled.div<{
         color: ${token.colors('red.500')};
       `}
   }
+`;
+
+const InputWrapper = styled(Box)<IProps>`
+  position: relative;
+  transition: ${token.transition('standard')};
+  border: ${token.borders('sm')};
+  border-color: ${token.colors('grey.300')};
+  border-radius: ${token.radii('sm')};
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  &:hover {
+    border-color: ${token.colors('grey.400')};
+  }
+  &:focus {
+    border-color: ${token.colors('grey.500')};
+    box-shadow: ${token.shadows('focus')};
+  }
+  ${(props) =>
+    props.error &&
+    css`
+      border-color: ${token.colors('red.500')};
+      &:hover {
+        border-color: ${token.colors('red.500')};
+      }
+      &:focus {
+        border-color: ${token.colors('red.500')};
+      }
+    `}
+  width: ${token.sizes('input')};
+  ${(props) =>
+    CSSVariant(props.size, {
+      all: css`
+        font-size: ${token.fontSizes('bodyLg')};
+      `,
+      sm: css`
+        height: ${token.sizes('sm')};
+        font-size: ${token.fontSizes('bodySm')};
+      `,
+      md: css`
+        height: ${token.sizes('md')};
+      `,
+      lg: css`
+        height: ${token.sizes('lg')};
+      `,
+    })};
+
+  ${space};
+  ${layout};
 `;
 
 const Input = React.forwardRef(
