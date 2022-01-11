@@ -126,16 +126,19 @@ const ButtonRoot = styled.button<IProps>`
       `,
       sm: css`
         height: ${token.sizes('sm')};
-        padding: ${token.space('xs')};
+        padding-left: ${token.space('xs')};
+        padding-right: ${token.space('xs')};
         font-size: ${token.fontSizes('bodySm')};
       `,
       md: css`
         height: ${token.sizes('md')};
-        padding: ${token.space('sm')};
+        padding-left: ${token.space('sm')};
+        padding-right: ${token.space('sm')};
       `,
       lg: css`
         height: ${token.sizes('lg')};
-        padding: ${token.space('md')};
+        padding-left: ${token.space('md')};
+        padding-right: ${token.space('md')};
       `,
     })}
 

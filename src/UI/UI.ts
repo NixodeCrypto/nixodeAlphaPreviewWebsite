@@ -102,6 +102,7 @@ export const GlobalTheme: Theme = {
     maxLayoutMd: rem(400),
     img: rem(432),
     imgXl: rem(480),
+    input: rem(280),
     inputXl: rem(480),
     max: '100%',
   },
@@ -130,6 +131,7 @@ export const GlobalTheme: Theme = {
   },
   zIndices: {
     navbar: 9999,
+    popup: 6000,
   },
   transition: {
     standard: 'all 0.1s ease-in-out, width 0s, height 0s',

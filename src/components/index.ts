@@ -16,6 +16,7 @@ import CoinCard from '@/components/CoinCard';
 import Footer from '@/components/Footer';
 import IconButton from '@/components/IconButton';
 import Span from '@/components/Span';
+import Select from '@/components/Select';
 
 export {
   Button,
@@ -36,4 +37,5 @@ export {
   Footer,
   IconButton,
   Span,
+  Select,
 };
