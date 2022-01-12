@@ -69,9 +69,6 @@ const SelectRoot = styled(Box)<Omit<IProps, 'menuItems'>>`
 `;
 
 const Menu = styled(Box)`
-  font-family: ${token.fonts('text')};
-  font-weight: ${token.fontWeights('medium')};
-  font-size: ${token.fontSizes('bodySm')};
   z-index: ${token.zIndices('popup')};
   position: absolute;
   top: calc(100% + ${token.space('xss')});
@@ -82,7 +79,29 @@ const Menu = styled(Box)`
 `;
 
 const MenuItem = styled(Box)`
-  padding: ${token.space('xs')};
+  ${(props) =>
+    CSSVariant(props.size as string, {
+      sm: css`
+        font-size: ${token.fontSizes('bodySm')};
+        padding: ${token.space('xs')};
+      `,
+      md: css`
+        font-size: ${token.fontSizes('bodyLg')};
+        padding-top: ${token.space('xs')};
+        padding-bottom: ${token.space('xs')};
+        padding-right: ${token.space('sm')};
+        padding-left: ${token.space('sm')};
+      `,
+      lg: css`
+        font-size: ${token.fontSizes('bodyLg')};
+        padding-top: ${token.space('xs')};
+        padding-bottom: ${token.space('xs')};
+        padding-right: ${token.space('md')};
+        padding-left: ${token.space('md')};
+      `,
+    })}
+  font-family: ${token.fonts('text')};
+  font-weight: ${token.fontWeights('medium')};
   color: ${token.colors('grey.900')};
   cursor: pointer;
   &:hover {
@@ -111,6 +130,7 @@ const Select = React.forwardRef(
       setOpen(false);
     };
 
+    // TODO: make MenuItems based on state and not css hover to allow a11y
     return (
       <Box position="relative">
         <SelectRoot
@@ -130,13 +150,20 @@ const Select = React.forwardRef(
               }
             `}
           >
-            <ChevronDown width={token.sizes('xss')} strokeWidth="2.5px" />
+            <ChevronDown
+              width={token.sizes('xss')}
+              strokeWidth={size === 'sm' ? '2.5px' : '4px'}
+            />
           </Box>
         </SelectRoot>
         {open && (
           <Menu>
             {menuItems.map((i) => (
-              <MenuItem key={i} onClick={() => menuItemClickHandler(i)}>
+              <MenuItem
+                key={i}
+                onClick={() => menuItemClickHandler(i)}
+                size={size}
+              >
                 {i}
               </MenuItem>
             ))}

@@ -1,17 +1,16 @@
-import React, { ChangeEvent } from 'react';
-import { Select, Button, Flex } from '@/components';
+import React from 'react';
+import { Select, Flex } from '@/components';
 
 const Testpage = () => {
   const [selectValue, setSelectValue] = React.useState('');
-
   return (
     <Flex>
       <Select
-        size="sm"
-        label="Age"
+        size="lg"
+        label="Hello friend how are you doing"
         value={selectValue}
         onChange={(item: string) => setSelectValue(item)}
-        menuItems={['10', '20', '25', '30']}
+        menuItems={['apple', 'pizza', 'friend', 'nope']}
       />
     </Flex>
   );

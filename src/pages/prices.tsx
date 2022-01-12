@@ -1,6 +1,6 @@
 /* @jsxImportSource @emotion/react */
 import { useState, useEffect, useMemo, Dispatch, SetStateAction } from 'react';
-import Router, { useRouter } from 'next/router';
+import Router from 'next/router';
 import { GetServerSideProps } from 'next';
 import axios from 'axios';
 import { css } from '@emotion/react';
