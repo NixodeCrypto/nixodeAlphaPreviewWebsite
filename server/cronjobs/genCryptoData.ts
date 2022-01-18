@@ -8,6 +8,10 @@ cron.schedule(TICKER_DATA_TTL.cron, () => {
   axios
     .get(`${process.env.COIN_API}/tickers`)
     .then((res) => {
+      /*
+       creates a document out of every object within array recieved from
+       res.data
+	* */
       const bulkData = res.data.map(
         (item: Record<string, string | object>) => ({
           replaceOne: {

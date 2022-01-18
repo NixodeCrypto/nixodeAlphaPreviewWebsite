@@ -54,7 +54,7 @@ const server = app.listen(PORT, () =>
   logger.info(`App is running on port ${PORT}`),
 );
 
-// process events
+// process events (last resort error handling & shutdown)
 process.on('SIGTERM', () => {
   logger.info('SIGTERM signal recieved');
   logger.info('Closing HTTP server');
