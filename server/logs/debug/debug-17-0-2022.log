@@ -30,3 +30,57 @@
 2022-01-18 03:15:32 [[32minfo[39m]: Connected to MongoDB 
 2022-01-18 03:47:57 [[32minfo[39m]: App is running on port 7000 
 2022-01-18 03:47:59 [[32minfo[39m]: Connected to MongoDB 
+2022-01-18 03:48:04 [[32minfo[39m]: App is running on port 7000 
+2022-01-18 03:48:06 [[32minfo[39m]: Connected to MongoDB 
+2022-01-18 04:12:36 [[31merror[39m]: Failed Request to Crypto API Servers 
+2022-01-18 04:28:33 [[31merror[39m]: uncaughtException: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1157:16) {
+  "error": {
+    "errno": -111,
+    "code": "ECONNREFUSED",
+    "syscall": "connect",
+    "address": "127.0.0.1",
+    "port": 6379
+  },
+  "stack": "Error: connect ECONNREFUSED 127.0.0.1:6379\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1157:16)",
+  "exception": true,
+  "date": "Mon Jan 17 2022 21:28:33 GMT-0700 (Mountain Standard Time)",
+  "process": {
+    "pid": 56282,
+    "uid": 1000,
+    "gid": 1000,
+    "cwd": "/home/herilsaha/nixodeWebsite/server",
+    "execPath": "/usr/bin/node",
+    "version": "v17.3.0",
+    "argv": [
+      "/home/herilsaha/nixodeWebsite/server/node_modules/.bin/ts-node",
+      "/home/herilsaha/nixodeWebsite/server/index.ts"
+    ],
+    "memoryUsage": {
+      "rss": 365813760,
+      "heapTotal": 230297600,
+      "heapUsed": 223081336,
+      "external": 20026795,
+      "arrayBuffers": 18341139
+    }
+  },
+  "os": {
+    "loadavg": [
+      0.96,
+      0.99,
+      0.99
+    ],
+    "uptime": 248168.11
+  },
+  "trace": [
+    {
+      "column": 16,
+      "file": "node:net",
+      "function": "TCPConnectWrap.afterConnect [as oncomplete]",
+      "line": 1157,
+      "method": "afterConnect [as oncomplete]",
+      "native": false
+    }
+  ]
+}
