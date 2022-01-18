@@ -27,48 +27,44 @@ export interface IProps
 const HeaderRoot = styled.h1<IProps>`
   font-family: ${token.fonts('title')};
   ${(props) =>
-    variant(
-      props.as,
-      {
-        h1: css`
-          font-size: ${token.fontSizes('h1Sm')};
-          ${mq('sm')} {
-            font-size: ${token.fontSizes('h1')};
-          }
-        `,
-        h2: css`
-          font-size: ${token.fontSizes('h2Sm')};
-          ${mq('sm')} {
-            font-size: ${token.fontSizes('h2')};
-          }
-        `,
-        h3: css`
-          font-size: ${token.fontSizes('h3Sm')};
-          ${mq('sm')} {
-            font-size: ${token.fontSizes('h3')};
-          }
-        `,
-        h4: css`
-          font-size: ${token.fontSizes('h4Sm')};
-          ${mq('sm')} {
-            font-size: ${token.fontSizes('h4')};
-          }
-        `,
-        h5: css`
-          font-size: ${token.fontSizes('h5Sm')};
-          ${mq('sm')} {
-            font-size: ${token.fontSizes('h5')};
-          }
-        `,
-        h6: css`
-          font-size: ${token.fontSizes('h6Sm')};
-          ${mq('sm')} {
-            font-size: ${token.fontSizes('h6')};
-          }
-        `,
-      },
-      true,
-    )}
+    variant(props.as, {
+      h1: css`
+        font-size: ${token.fontSizes('h1Sm')};
+        ${mq('sm')} {
+          font-size: ${token.fontSizes('h1')};
+        }
+      `,
+      h2: css`
+        font-size: ${token.fontSizes('h2Sm')};
+        ${mq('sm')} {
+          font-size: ${token.fontSizes('h2')};
+        }
+      `,
+      h3: css`
+        font-size: ${token.fontSizes('h3Sm')};
+        ${mq('sm')} {
+          font-size: ${token.fontSizes('h3')};
+        }
+      `,
+      h4: css`
+        font-size: ${token.fontSizes('h4Sm')};
+        ${mq('sm')} {
+          font-size: ${token.fontSizes('h4')};
+        }
+      `,
+      h5: css`
+        font-size: ${token.fontSizes('h5Sm')};
+        ${mq('sm')} {
+          font-size: ${token.fontSizes('h5')};
+        }
+      `,
+      h6: css`
+        font-size: ${token.fontSizes('h6Sm')};
+        ${mq('sm')} {
+          font-size: ${token.fontSizes('h6')};
+        }
+      `,
+    })}
   line-height: 130%;
   ${space};
   ${color};
