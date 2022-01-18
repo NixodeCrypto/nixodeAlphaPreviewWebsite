@@ -8,6 +8,7 @@ const shallowFlatten = <T>(
   const objEntries = Object.entries(obj);
   for (let i = 0; i < objEntries.length; i += 1) {
     if (isObject(objEntries[i][1])) {
+      // takes nested object and puts it in fresh object (newObj)
       newObj = { ...newObj, ...objEntries[i][1] };
     } else {
       newObj = { ...newObj, [objEntries[i][0]]: objEntries[i][1] };

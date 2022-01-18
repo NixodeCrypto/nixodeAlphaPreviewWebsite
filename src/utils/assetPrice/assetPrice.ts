@@ -2,6 +2,7 @@ const assetPrice = (value: number): string => {
   // seperates numbers after and before decimal
   const parsedNumber = value.toString().split('.');
 
+  // gets first two non-zero numbers after decimal (e.g. 0.0000000014)
   if (parsedNumber[0] === '0') {
     // puts all numbers after decimal in array
     const parsedDecimalNums = parsedNumber[1].split('');

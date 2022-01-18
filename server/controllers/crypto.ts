@@ -104,6 +104,7 @@ const getAllCoins = async (
 };
 
 const getPreviewCoins: RequestHandler = (_, res, next) => {
+  // check cache for preview coins
   redis.get('previewCoins', async (err, data) => {
     if (err) return next(InternalServer);
 
@@ -112,6 +113,7 @@ const getPreviewCoins: RequestHandler = (_, res, next) => {
       return res.status(200).json(parsedData);
     }
 
+    // specific hand picked coins that are always popular in the market
     const cryptoData = await Ticker.find({
       id: {
         $in: [
@@ -139,6 +141,7 @@ const getPreviewCoins: RequestHandler = (_, res, next) => {
 };
 
 const getGlobalMarketData: RequestHandler = (_, res, next) => {
+  // check cache for globalMarketData
   redis.get('globalMarketData', async (err, data) => {
     if (err) return next(InternalServer);
 
@@ -147,13 +150,16 @@ const getGlobalMarketData: RequestHandler = (_, res, next) => {
       return res.status(200).json(parsedData);
     }
 
+    // globalMarketData consists of a single document
     const globalMarketData = await GlobalMarket.find({});
     const globalMarketDoc = globalMarketData[0];
 
+    // add to cache
     const stringData = JSON.stringify(globalMarketDoc);
     redis.setex('globalMarketData', GLOBAL_MARKET_TTL.s, stringData);
 
     return res.status(200).json(globalMarketDoc);
   });
 };
+
 export default { getAllCoins, getPreviewCoins, getGlobalMarketData };

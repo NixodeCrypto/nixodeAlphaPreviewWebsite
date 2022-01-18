@@ -5,6 +5,7 @@ const productionLog = format.combine(
   format.printf((info) => {
     const { timestamp, level, message, ...args } = info;
 
+    // specific format for log files
     const ts = timestamp.slice(0, 19).replace('T', ' ');
     return `${ts} [${level}]: ${message} ${
       Object.keys(args).length ? JSON.stringify(args, null, 2) : ''

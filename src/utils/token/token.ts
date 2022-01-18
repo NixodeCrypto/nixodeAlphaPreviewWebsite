@@ -30,14 +30,20 @@ const token: FnTheme = (() => {
     ['fs', 'fontSizes'],
     ['bp', 'breakpoints'],
   ];
+  // key value array pairs from global theme object (e.g. ["space", {"sm": rem(4), "xs": "rem(8)"...}])
   const tokenEntries = Object.entries(GlobalTheme);
   for (let i = 0; i < tokenEntries.length; i += 1) {
     const tokenVal = { ...tokenEntries[i][1] };
+    // turn second property in key value array into function that returns a specific property
+    // from each theme category (e.g. ["space", ("xss") => space.xss])
     tokenEntries[i][1] = (key: string) => strToObj(key, tokenVal);
   }
 
+  // handle tokenAliases
   for (let i = 0; i < tokenEntries.length; i += 1) {
     tokenAliases.forEach((alias) => {
+      // (e.g. "fontSizes" in alias list matches "fontSizes" in GlobalTheme, so a replica with the
+      // alias key is pushed into the tokenEntries array)
       if (alias[1] === tokenEntries[i][0]) {
         tokenEntries.push([alias[0], tokenEntries[i][1]]);
       }
