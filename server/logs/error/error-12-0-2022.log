@@ -1,0 +1,51 @@
+2022-01-12 17:52:09 [[31merror[39m]: uncaughtException: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379
+Error: connect ECONNREFUSED 127.0.0.1:6379
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1157:16) {
+  "error": {
+    "errno": -61,
+    "code": "ECONNREFUSED",
+    "syscall": "connect",
+    "address": "127.0.0.1",
+    "port": 6379
+  },
+  "stack": "Error: connect ECONNREFUSED 127.0.0.1:6379\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1157:16)",
+  "exception": true,
+  "date": "Wed Jan 12 2022 10:52:09 GMT-0700 (Mountain Standard Time)",
+  "process": {
+    "pid": 24239,
+    "uid": 501,
+    "gid": 20,
+    "cwd": "/Users/herilsaha/nixodeWebsite/server",
+    "execPath": "/usr/local/Cellar/node/17.3.0/bin/node",
+    "version": "v17.3.0",
+    "argv": [
+      "/Users/herilsaha/nixodeWebsite/server/node_modules/.bin/ts-node",
+      "/Users/herilsaha/nixodeWebsite/server/index.ts"
+    ],
+    "memoryUsage": {
+      "rss": 332709888,
+      "heapTotal": 309727232,
+      "heapUsed": 245853864,
+      "external": 34449990,
+      "arrayBuffers": 32764902
+    }
+  },
+  "os": {
+    "loadavg": [
+      9.4326171875,
+      6.30322265625,
+      5.986328125
+    ],
+    "uptime": 4985953
+  },
+  "trace": [
+    {
+      "column": 16,
+      "file": "node:net",
+      "function": "TCPConnectWrap.afterConnect [as oncomplete]",
+      "line": 1157,
+      "method": "afterConnect [as oncomplete]",
+      "native": false
+    }
+  ]
+}
