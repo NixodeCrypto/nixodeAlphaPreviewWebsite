@@ -1,4 +1,4 @@
-import { RequestHandler, Application } from 'express';
+import { RequestHandler } from 'express';
 import httpStatusCodes from '@/constants/HTTP_STATUS_CODES';
 
 // general HOC handler for routes (e.g. api.post("/route", use(apiController)))
@@ -21,7 +21,7 @@ export class BaseError extends Error {
   ) {
     super(description);
 
-    Object.setPrototypeOf(this, new.target.prototype);
+    Object.setPrototypeOf(this, new.target.prototype); // restore prototype chain
     this.name = name;
     this.statusCode = statusCode;
     this.isOperational = isOperational;

@@ -26,4 +26,4 @@ Local .env files or secrets are not shared within this company, instead we use [
 ### What this means
 - Developers must install Doppler on their local machine and authenticate with it using ```doppler login```
 - Setup is also required with the command ```doppler setup``` within the root directory or /server directory and the respective environments must be chosen before proceeding to the next step
-- Instead of running applications with ```npm run dev```, it will instead use ```doppler -- npm run dev```
+- Instead of running package.json scripts with ```npm run dev```, it will instead use ```doppler -- npm run dev```

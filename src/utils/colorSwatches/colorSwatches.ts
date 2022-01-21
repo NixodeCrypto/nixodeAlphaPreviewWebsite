@@ -13,6 +13,7 @@ export interface ColorSwatches {
   900: string;
 }
 
+// creates palette of colors based on single color prop given (500)
 const colorSwatches = (color: string): ColorSwatches => ({
   50: lighten(0.34, color),
   100: lighten(0.288, color),

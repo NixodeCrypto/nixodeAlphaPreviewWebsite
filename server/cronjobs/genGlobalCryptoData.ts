@@ -9,9 +9,11 @@ cron.schedule(GLOBAL_MARKET_TTL.cron, () => {
     .get(`${process.env.COIN_API}/global`)
     .then(async (res) => {
       try {
+        // update global market collection which consists of a single document
         const data = res.data;
         const docCount = await GlobalMarket.estimatedDocumentCount();
         if (docCount === 0) {
+          // if the single document is not found, create a new one
           const globalMarket = new GlobalMarket(data);
           await globalMarket.save();
         }
