@@ -17,6 +17,8 @@ const getAllCoins = async (
   res: Response,
   next: NextFunction,
 ) => {
+  // how many coins per page
+  const pageCount = 25;
   // pagination for mongoDB
   const idxPage = Math.max(parseFloat(req.query.page) || 1, 1);
 
@@ -24,7 +26,7 @@ const getAllCoins = async (
   const documentCount = await Ticker.estimatedDocumentCount();
 
   // get maximum amount of pages
-  const totalPageCount = Math.ceil(documentCount / 50);
+  const totalPageCount = Math.ceil(documentCount / pageCount);
 
   const composePaginatedData = (
     cryptoData: Record<string, any>,
@@ -53,8 +55,8 @@ const getAllCoins = async (
         const cryptoData = await Ticker.aggregate(
           [
             { $sort: { [keyValPair[0]]: orderRange } },
-            { $skip: (idxPage - 1) * 50 },
-            { $limit: 50 },
+            { $skip: (idxPage - 1) * pageCount },
+            { $limit: pageCount },
           ],
           { allowDiskUse: true },
         );
@@ -86,7 +88,11 @@ const getAllCoins = async (
       }
 
       const cryptoData = await Ticker.aggregate(
-        [{ $sort: { rank: 1 } }, { $skip: (idxPage - 1) * 50 }, { $limit: 50 }],
+        [
+          { $sort: { rank: 1 } },
+          { $skip: (idxPage - 1) * pageCount },
+          { $limit: pageCount },
+        ],
         { allowDiskUse: true },
       );
 

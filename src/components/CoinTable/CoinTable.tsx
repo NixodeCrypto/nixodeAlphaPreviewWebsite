@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import SVG from 'react-inlinesvg';
 import { css } from '@emotion/react';
 import Image from '@/components/Image';
+import FallbackCoinImg from '@/public/fallbackCoin.svg';
 import Flex from '@/components/Flex';
 import Body from '@/components/Body';
 import Box from '@/components/Box';
@@ -149,7 +150,13 @@ const CoinTable = (props: IProps) => {
             >
               <Td px="sm" py="sm" data-testid="generalData">
                 <Flex alignItems="center">
-                  <Image src={i.img} alt={i.name} width="sm" mr="xs" />
+                  <Image
+                    src={i.img}
+                    alt={i.name}
+                    width="sm"
+                    mr="xs"
+                    fallback={FallbackCoinImg}
+                  />
                   <Flex
                     flexDirection={{ xss: 'column', sm: 'row' }}
                     alignItems={{ md: 'center' }}

@@ -302,16 +302,11 @@ const Prices = ({ cryptoData, globalMarketData, initialPage }: IProps) => {
             ))}
           </Flex>
         </Flex>
-        {useMemo(
-          () => (
-            <CoinTable
-              tickerData={coinData}
-              extended
-              timeResolution={timeResolution[1]}
-            />
-          ),
-          [coinData, timeResolution],
-        )}
+        <CoinTable
+          tickerData={coinData}
+          extended
+          timeResolution={timeResolution[1]}
+        />
         <Flex justifyContent="center" pt="md">
           <Pagination
             page={page}
