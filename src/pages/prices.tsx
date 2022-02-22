@@ -154,7 +154,6 @@ const Prices = ({ cryptoData, globalMarketData, initialPage }: IProps) => {
   const [coinData, setCoinData] = useState(cryptoData.coins);
   const [timeResolution, setTimeResolution] = useState(['1H', '1h']);
   const [assetCategory, setAssetCategory] = useState('All Assets');
-  const [loading, setLoading] = useState(false);
 
   /*
    * first value is the alias for the page and the secound value
@@ -184,7 +183,6 @@ const Prices = ({ cryptoData, globalMarketData, initialPage }: IProps) => {
   };
 
   useEffect(() => {
-    setLoading(true);
     const sortByLosers =
       assetCategory === 'Losers'
         ? `&sortBy=quotes.USD.percent_change_${timeResolution[1]}-ascending`
@@ -201,7 +199,6 @@ const Prices = ({ cryptoData, globalMarketData, initialPage }: IProps) => {
       )
       .then((res) => {
         setCoinData(res.data.coins);
-        setLoading(false);
       })
       .catch(() => {
         throw new Error();

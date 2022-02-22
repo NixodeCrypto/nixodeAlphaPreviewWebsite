@@ -1,5 +1,4 @@
 import Select from '.';
-import { GlobalTheme } from '@/UI';
 import { mountWithTheme } from '@/utils';
 
 describe('components/Select', () => {
