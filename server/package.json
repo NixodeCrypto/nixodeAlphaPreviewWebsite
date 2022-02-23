@@ -16,7 +16,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "module-alias": "^2.2.2",
-    "mongoose": "^6.0.13",
+    "mongoose": "^6.2.2",
     "node-cron": "^3.0.0",
     "redis": "^3.1.2",
     "winston": "^3.3.3"

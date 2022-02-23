@@ -1,5 +1,5 @@
 /* @jsxImportSource @emotion/react */
-import { useState, useEffect, useMemo, Dispatch, SetStateAction } from 'react';
+import { useState, useEffect, Dispatch, SetStateAction } from 'react';
 import Router from 'next/router';
 import { GetServerSideProps } from 'next';
 import axios from 'axios';
@@ -150,47 +150,56 @@ const Pagination = ({
 };
 
 const Prices = ({ cryptoData, globalMarketData, initialPage }: IProps) => {
+  type AssetCategoryMapping = typeof assetCategoryMapping[number];
+  type TimeResolutionMappingKeys = keyof typeof timeResolutionMapping;
   const [page, setPage] = useState(initialPage);
   const [coinData, setCoinData] = useState(cryptoData.coins);
-  const [timeResolution, setTimeResolution] = useState(['1H', '1h']);
-  const [assetCategory, setAssetCategory] = useState('All Assets');
+  const [timeResolution, setTimeResolution] =
+    useState<TimeResolutionMappingKeys>('1H');
+  const [assetCategory, setAssetCategory] =
+    useState<AssetCategoryMapping>('All Assets');
+  const [loading, setLoading] = useState(false);
+  const [visibleAssetCount, setVisibleAssetCount] =
+    useState<TimeResolutionMappingKeys>('1H');
+  const assetCategoryMapping = ['All Assets', 'Gainers', 'Losers'] as const;
 
   /*
-   * first value is the alias for the page and the secound value
-   * is the end key to match with the crypto object's percentage change
-   * (e.g. 7d -> 'percent_change_7d')
+   * key represents option on website, and value represents value piece within database
    * */
-  const possibleTimeResolutions = [
-    ['1H', '1h'],
-    ['1D', '24h'],
-    ['1W', '7d'],
-    ['1M', '30d'],
-    ['1Y', '1y'],
-  ];
+  const timeResolutionMapping = {
+    '1H': '1h',
+    '1D': '24h',
+    '1W': '7d',
+    '1M': '30d',
+    '1Y': '1y',
+  };
 
-  const possibleAssetCategories = ['All Assets', 'Gainers', 'Losers'];
-
-  const handleChangeAssetCategory = (currAssetCategory: string) => {
+  const handleChangeAssetCategory = (
+    currAssetCategory: AssetCategoryMapping,
+  ) => {
     if (currAssetCategory !== assetCategory) {
       setAssetCategory(currAssetCategory);
     }
   };
 
-  const handleChangeTimeResolution = (currTimeResolution: string[]) => {
-    if (currTimeResolution[0] !== timeResolution[0]) {
+  const handleChangeTimeResolution = (
+    currTimeResolution: TimeResolutionMappingKeys,
+  ) => {
+    if (currTimeResolution !== timeResolution) {
       setTimeResolution(currTimeResolution);
     }
   };
 
   useEffect(() => {
+    setLoading(true);
     const sortByLosers =
       assetCategory === 'Losers'
-        ? `&sortBy=quotes.USD.percent_change_${timeResolution[1]}-ascending`
+        ? `&sortBy=quotes.USD.percent_change_${timeResolutionMapping[timeResolution]}-ascending`
         : '';
 
     const sortBy =
       assetCategory === 'Gainers'
-        ? `&sortBy=quotes.USD.percent_change_${timeResolution[1]}-descending`
+        ? `&sortBy=quotes.USD.percent_change_${timeResolutionMapping[timeResolution]}-descending`
         : sortByLosers;
 
     axios
@@ -199,11 +208,12 @@ const Prices = ({ cryptoData, globalMarketData, initialPage }: IProps) => {
       )
       .then((res) => {
         setCoinData(res.data.coins);
+        setLoading(false);
       })
       .catch(() => {
         throw new Error();
       });
-  }, [page, timeResolution, assetCategory]);
+  }, [page, timeResolution, assetCategory]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     setPage(1);
@@ -212,6 +222,10 @@ const Prices = ({ cryptoData, globalMarketData, initialPage }: IProps) => {
   useEffect(() => {
     Router.push(`/prices?page=${page}`, undefined, { shallow: true });
   }, [page]);
+
+  useEffect(() => {
+    setVisibleAssetCount(timeResolution);
+  }, [coinData]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <Layout>
@@ -272,7 +286,7 @@ const Prices = ({ cryptoData, globalMarketData, initialPage }: IProps) => {
           px={{ xss: 'sm', lg: '0' }}
         >
           <Flex horizontalGap="xss">
-            {possibleAssetCategories.map((i) => (
+            {assetCategoryMapping.map((i) => (
               <Button
                 key={i}
                 borderRadius="xl"
@@ -287,17 +301,19 @@ const Prices = ({ cryptoData, globalMarketData, initialPage }: IProps) => {
             ))}
           </Flex>
           <Flex horizontalGap="xss">
-            {possibleTimeResolutions.map((i) => (
+            {Object.keys(timeResolutionMapping).map((i) => (
               <Button
-                key={i[0]}
+                key={i}
                 borderRadius="xl"
                 size="sm"
                 px="sm"
-                variant={i[0] === timeResolution[0] ? 'solid' : 'text'}
-                color={i[0] === timeResolution[0] ? 'secondary' : 'grey'}
-                onClick={() => handleChangeTimeResolution(i)}
+                variant={i === timeResolution ? 'solid' : 'text'}
+                color={i === timeResolution ? 'secondary' : 'grey'}
+                onClick={() =>
+                  handleChangeTimeResolution(i as TimeResolutionMappingKeys)
+                }
               >
-                {i[0]}
+                {i}
               </Button>
             ))}
           </Flex>
@@ -305,7 +321,8 @@ const Prices = ({ cryptoData, globalMarketData, initialPage }: IProps) => {
         <CoinTable
           tickerData={coinData}
           extended
-          timeResolution={timeResolution[1]}
+          timeResolution={timeResolutionMapping[visibleAssetCount]}
+          loading={loading}
         />
         <Flex justifyContent="center" pt="md">
           <Pagination
