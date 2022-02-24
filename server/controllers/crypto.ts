@@ -9,6 +9,7 @@ interface AllCoinsRequest extends Request {
   query: {
     page: string;
     sortBy: string;
+    rankLimit: string;
   };
 }
 
@@ -26,7 +27,10 @@ const getAllCoins = async (
   const documentCount = await Ticker.estimatedDocumentCount();
 
   // get maximum amount of pages
-  const totalPageCount = Math.ceil(documentCount / pageCount);
+  const totalPageCount = req.query.rankLimit
+    ? Math.ceil(parseInt(req.query.rankLimit, 10) / pageCount)
+    : Math.ceil(documentCount / pageCount);
+  console.log(totalPageCount);
 
   const composePaginatedData = (
     cryptoData: Record<string, any>,
@@ -52,14 +56,28 @@ const getAllCoins = async (
         const keyValPair = req.query.sortBy.split('-');
         const orderRange = keyValPair[1] === 'ascending' ? 1 : -1;
 
-        const cryptoData = await Ticker.aggregate(
-          [
-            { $sort: { [keyValPair[0]]: orderRange } },
-            { $skip: (idxPage - 1) * pageCount },
-            { $limit: pageCount },
-          ],
-          { allowDiskUse: true },
-        );
+        let cryptoData: Record<string, any>;
+
+        if (req.query.rankLimit) {
+          cryptoData = await Ticker.aggregate(
+            [
+              { $limit: parseInt(req.query.rankLimit, 10) },
+              { $sort: { [keyValPair[0]]: orderRange } },
+              { $skip: (idxPage - 1) * pageCount },
+              { $limit: pageCount },
+            ],
+            { allowDiskUse: true },
+          );
+        } else {
+          cryptoData = await Ticker.aggregate(
+            [
+              { $sort: { [keyValPair[0]]: orderRange } },
+              { $skip: (idxPage - 1) * pageCount },
+              { $limit: pageCount },
+            ],
+            { allowDiskUse: true },
+          );
+        }
 
         const responseData = composePaginatedData(cryptoData);
 
@@ -87,14 +105,28 @@ const getAllCoins = async (
         return res.status(200).json(parsedData);
       }
 
-      const cryptoData = await Ticker.aggregate(
-        [
-          { $sort: { rank: 1 } },
-          { $skip: (idxPage - 1) * pageCount },
-          { $limit: pageCount },
-        ],
-        { allowDiskUse: true },
-      );
+      let cryptoData: Record<string, any>;
+
+      if (req.query.rankLimit) {
+        cryptoData = await Ticker.aggregate(
+          [
+            { $limit: parseInt(req.query.rankLimit, 10) },
+            { $sort: { rank: 1 } },
+            { $skip: (idxPage - 1) * pageCount },
+            { $limit: pageCount },
+          ],
+          { allowDiskUse: true },
+        );
+      } else {
+        cryptoData = await Ticker.aggregate(
+          [
+            { $sort: { rank: 1 } },
+            { $skip: (idxPage - 1) * pageCount },
+            { $limit: pageCount },
+          ],
+          { allowDiskUse: true },
+        );
+      }
 
       const responseData = composePaginatedData(cryptoData);
 

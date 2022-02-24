@@ -161,6 +161,8 @@ const Prices = ({ cryptoData, globalMarketData, initialPage }: IProps) => {
   const [loading, setLoading] = useState(false);
   const [visibleAssetCount, setVisibleAssetCount] =
     useState<TimeResolutionMappingKeys>('1H');
+  const [paginationLimit, setPaginationLimit] = useState(5);
+
   const assetCategoryMapping = ['All Assets', 'Gainers', 'Losers'] as const;
 
   /*
@@ -194,12 +196,12 @@ const Prices = ({ cryptoData, globalMarketData, initialPage }: IProps) => {
     setLoading(true);
     const sortByLosers =
       assetCategory === 'Losers'
-        ? `&sortBy=quotes.USD.percent_change_${timeResolutionMapping[timeResolution]}-ascending`
+        ? `&sortBy=quotes.USD.percent_change_${timeResolutionMapping[timeResolution]}-ascending&rankLimit=500`
         : '';
 
     const sortBy =
       assetCategory === 'Gainers'
-        ? `&sortBy=quotes.USD.percent_change_${timeResolutionMapping[timeResolution]}-descending`
+        ? `&sortBy=quotes.USD.percent_change_${timeResolutionMapping[timeResolution]}-descending&rankLimit=500`
         : sortByLosers;
 
     axios
@@ -208,6 +210,7 @@ const Prices = ({ cryptoData, globalMarketData, initialPage }: IProps) => {
       )
       .then((res) => {
         setCoinData(res.data.coins);
+        setPaginationLimit(res.data.totalPageCount);
         setLoading(false);
       })
       .catch(() => {
@@ -328,7 +331,7 @@ const Prices = ({ cryptoData, globalMarketData, initialPage }: IProps) => {
           <Pagination
             page={page}
             setPage={setPage}
-            max={cryptoData.totalPageCount}
+            max={paginationLimit}
             start={1}
             siblingCount={1}
           />
